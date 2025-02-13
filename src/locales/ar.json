@@ -1,0 +1,11 @@
+{
+
+  "loader": {
+    "welcome": "مرحبًا بكم في منتدى إنوفيست العربي"
+  },
+
+  "navbar": {
+    "ticket": "شراء تذكرة",
+    "langSwitcher":"Translate into Arabic"
+  }
+}

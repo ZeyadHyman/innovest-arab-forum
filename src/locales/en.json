@@ -1,0 +1,11 @@
+{
+
+  "loader": {
+    "welcome": "Welcome to Innovest Arab Forum"
+  },
+  
+  "navbar": {
+    "ticket": "Buy a Ticket",
+    "langSwitcher":"ترجم إلى العربية"
+  }
+}
