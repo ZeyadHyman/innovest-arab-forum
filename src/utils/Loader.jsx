@@ -14,11 +14,11 @@ export default function Loader() {
   }, []);
 
   return (
-    <div className="h-screen w-screen overflow-hidden bg-[#13212E] flex items-center justify-center">
+    <div className="h-dvh w-screen overflow-hidden bg-[#13212E] flex items-center justify-center">
       <div
-        className={`absolute transition-all duration-1000 ease-out ${position} text-center mb-32`}
+        className={`absolute transition-all duration-1000 ease-out ${position} text-center`}
       >
-        <img src="./logo.png" alt="logo" className="w-1/4 mx-auto mb-4" />
+        <img src="./logo.png" alt="logo" className="w-1/2 md:w-1/4 mx-auto mb-4" />
         <h1 className="text-4xl md:text-6xl font-extrabold tracking-wide text-[#c3aa6a]">
           Welcome to Innovest Arab Forum
         </h1>
