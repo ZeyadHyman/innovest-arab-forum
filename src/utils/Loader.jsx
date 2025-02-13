@@ -18,8 +18,8 @@ export default function Loader() {
       <div
         className={`absolute transition-all duration-1000 ease-out ${position} text-center mb-32`}
       >
-        <img src="./logo.png" alt="logo" className="w-20 mx-auto mb-4" />
-        <h1 className="text-4xl md:text-6xl font-extrabold tracking-wide text-white">
+        <img src="./logo.png" alt="logo" className="w-1/4 mx-auto mb-4" />
+        <h1 className="text-4xl md:text-6xl font-extrabold tracking-wide text-[#c3aa6a]">
           Welcome to Innovest Arab Forum
         </h1>
       </div>
