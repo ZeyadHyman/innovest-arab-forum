@@ -3,9 +3,11 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Loader from "./utils/loader";
 
 const Home = lazy(() => import("./pages/Home"));
+const Navbar = lazy(() => import("./components/Navbar/Navbar"));
 
 function App() {
-  const [isLoaded, setIsLoaded] = useState(false);
+  // make it true if you want to cancel it ↓↓↓↓↓
+  const [isLoaded, setIsLoaded] = useState(false); 
 
   return (
     <>
@@ -13,6 +15,7 @@ function App() {
         <Loader onComplete={() => setIsLoaded(true)} />
       ) : (
         <Router>
+          <Navbar/>
           <Routes>
             <Route path="/" element={<Home />} />
           </Routes>
