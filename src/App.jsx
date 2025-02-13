@@ -1,6 +1,6 @@
 import { lazy, useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Loader from "./utils/loader";
+import Loader from "./utils/Loader";
 
 const Home = lazy(() => import("./pages/Home"));
 const Navbar = lazy(() => import("./components/Navbar/Navbar"));
