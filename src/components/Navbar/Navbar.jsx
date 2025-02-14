@@ -15,13 +15,47 @@ function Home() {
 
   useEffect(() => {
     setTimeout(() => setIsLoaded(true), 100);
-
     const interval = setInterval(() => {
-      setTimeLeft(getTimeLeft());
+      const updatedTimeLeft = getTimeLeft();
+      if (updatedTimeLeft) {
+        setTimeLeft(updatedTimeLeft);
+      }
     }, 1000);
 
     return () => clearInterval(interval);
   }, []);
+
+  const getFormattedKey = (key, value) => {
+    const isArabic = i18n.language === "ar";
+
+    if (isArabic) {
+      switch (key) {
+        case "days":
+          return value > 10 ? "يوم" : "أيام";
+        case "hours":
+          return value > 10 ? "ساعة" : "ساعات";
+        case "minutes":
+          return value > 10 ? "دقيقة" : "دقائق";
+        case "seconds":
+          return value > 10 ? "ثانية" : "ثواني";
+        default:
+          return key;
+      }
+    } else {
+      switch (key) {
+        case "days":
+          return value > 10 ? "Day" : "Days";
+        case "hours":
+          return value > 10 ? "Hour" : "Hours";
+        case "minutes":
+          return value > 10 ? "Minute" : "Minutes";
+        case "seconds":
+          return value > 10 ? "Second" : "Seconds";
+        default:
+          return key;
+      }
+    }
+  };
 
   return (
     <>
@@ -38,26 +72,27 @@ function Home() {
         }`}
       >
         <div className="flex gap-1">
-          {Object.entries(timeLeft).map(([key, value], index, arr) => (
-            <div
-              key={key}
-              className={`text-white flex flex-col items-center text-center text-base ${
-                index !== arr.length - 1
-                  ? i18n.language === "ar"
-                    ? "border-l border-white/40 pl-3"
-                    : "border-r border-white/40 pr-3"
-                  : ""
-              }`}
-            >
-              <span
-                className={`${
-                  i18n.language === "ar" ? "text-base" : "text-sm"
+          {timeLeft &&
+            Object.entries(timeLeft).map(([key, value], index, arr) => (
+              <div
+                key={key}
+                className={`text-white flex flex-col items-center text-center text-base ${
+                  index !== arr.length - 1
+                    ? i18n.language === "ar"
+                      ? "border-l border-white/40 px-2"
+                      : "border-r border-white/40 pr-2"
+                    : "px-1"
                 }`}
               >
-                {value}
-              </span>
-            </div>
-          ))}
+                <span
+                  className={`${
+                    i18n.language === "ar" ? "text-base " : "text-sm"
+                  } `}
+                >
+                  {value} {getFormattedKey(key, value)}
+                </span>
+              </div>
+            ))}
         </div>
 
         <button className="bg-[#2E2E2E] text-white px-3 py-3 rounded-xl text-xs font-semibold shadow-md transition-all duration-300 active:bg-[#444] active:scale-95">
