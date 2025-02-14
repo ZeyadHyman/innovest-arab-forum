@@ -3,6 +3,7 @@ import { getTimeLeft } from "../../utils/countdownTimer";
 import { useTranslation } from "react-i18next";
 import globe from "/icons/globe.svg";
 import logo from "/logos/logo_trans.webp";
+import { FaTicketAlt } from "react-icons/fa";
 
 function Home() {
   const [timeLeft, setTimeLeft] = useState(getTimeLeft());
@@ -69,21 +70,45 @@ function Home() {
   return (
     <>
       <nav
-        className={`sticky top-0 w-full flex justify-between items-center bg-gradient-to-l from-blue-950 to-gray-800 py-4 px-6 md:py-5 md:px-32 transition-all duration-1000 ease-in-out
-            ${isScrolled ? "rounded-b-xl" : "rounded-none"}
-            ${isLoaded ? "translate-y-0" : "-translate-y-40"}
-        `}
+        className={`
+    sticky top-0 w-full flex justify-between items-center 
+    bg-gradient-to-l from-blue-950 to-gray-800 
+    py-4 px-6 md:py-5 md:px-32  
+    transition-transform duration-700 ease-out shadow-lg
+    ${isLoaded ? "translate-y-0 opacity-100" : "-translate-y-40 opacity-0"}
+  `}
       >
         {/* Logo Section */}
-        <div className="flex flex-col items-center text-center">
-          <img src={logo} alt="INNOVEST Logo" className="w-16 md:w-24" />
-          <h1 className="org-font text-gold text-2xl md:text-4xl tracking-wide">
+        <div className="flex flex-col items-center text-center transition-all duration-300 ease-out">
+          <img
+            src={logo}
+            alt="INNOVEST Logo"
+            className={`transition-all duration-300 ease-out
+               ${isScrolled ? "w-14" : "w-24"}`}
+          />
+          <h1
+            className={`org-font text-gold tracking-wide transition-all duration-300 ease-out
+              ${isScrolled ? "text-lg md:text-2xl" : "text-2xl md:text-4xl"}
+          `}
+          >
             INNOVEST
           </h1>
-          <p className="text-white text-[4px] md:text-[5px]">
+
+          {/* Forum Name - English */}
+          <p
+            className={`text-white transition-all duration-300 ease-out
+             ${isScrolled ? "hidden" : "text-[4px] md:text-[5px]"}
+          `}
+          >
             {t("navbar.forum_name", { lng: "en" })}
           </p>
-          <p className="text-white text-[7px] md:text-[8.5px]">
+
+          {/* Forum Name - Arabic */}
+          <p
+            className={`text-white transition-all duration-300 ease-out
+            ${isScrolled ? "hidden" : "text-[7px] md:text-[8.5px]"}
+          `}
+          >
             {t("navbar.forum_name", { lng: "ar" })}
           </p>
         </div>
@@ -91,19 +116,55 @@ function Home() {
         {/* Language Switcher Button */}
         <button
           onClick={switchLanguage}
-          className="relative p-2 rounded-full transition-all duration-300 hover:scale-105 active:scale-95"
+          className="p-2 rounded-full transition-all duration-300 hover:scale-110 active:scale-95"
         >
           <img
             src={globe}
             alt="Globe Icon"
-            className="w-10 md:w-12 transition-all duration-500 ease-in-out transform hover:rotate-180"
+            className={`transition-all duration-500 ease-out transform hover:rotate-180
+           ${isScrolled ? "w-8 md:w-8" : "w-10 md:w-12"}
+          `}
           />
         </button>
       </nav>
 
+      <div
+        className={`w-full fixed hidden bg-[#c3aa6a]/90 backdrop-blur-xl md:flex justify-between items-center py-4 px-32 transition-all duration-500 
+          ${isLoaded ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}
+          ${isScrolled ? "rounded-b-xl" : "rounded-none"}
+          `}
+      >
+        <div className="flex gap-1">
+          {timeLeft &&
+            Object.entries(timeLeft).map(([key, value], index, arr) => (
+              <div
+                key={key}
+                className={`text-white flex flex-col items-center text-center text-base 
+                  ${
+                    index !== arr.length - 1
+                      ? i18n.language === "ar"
+                        ? "border-l border-white px-2"
+                        : "border-r border-white px-4"
+                      : "px-4"
+                  }`}
+              >
+                <span className="text-xl">
+                  {value} {getFormattedKey(key, value)}
+                </span>
+              </div>
+            ))}
+        </div>
+
+        {/* Ticket Button */}
+        <button className="cursor-pointer bg-gradient-to-r from-gray-900 to-gray-800 text-white px-3 py-3 rounded-xl text-md font-semibold flex items-center gap-2 transition-all duration-300 active:bg-[#444] active:scale-95">
+          {t("navbar.ticket")}
+          <FaTicketAlt className="text-lg" />
+        </button>
+      </div>
+
       {/* Mobile Count Down Timer */}
       <div
-        className={`bottom-0 fixed w-full md:hidden bg-[#c3aa6a]/90 backdrop-blur-xl  flex justify-between items-center px-4 py-5 transition-all duration-500 
+        className={`bottom-0 fixed w-full md:hidden bg-[#c3aa6a]/90 backdrop-blur-xl  flex justify-between items-center px-2 py-5 transition-all duration-500 
           ${
             isLoaded ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
           }`}
@@ -133,7 +194,8 @@ function Home() {
         </div>
 
         {/* Ticket Button */}
-        <button className="bg-gradient-to-r from-gray-900 to-gray-800 text-white px-3 py-3 rounded-xl text-xs font-semibold transition-all duration-300 active:bg-[#444] active:scale-95">
+        <button className="bg-gradient-to-r from-gray-900 to-gray-800 text-white px-3 py-3 rounded-xl text-xs font-semibold flex items-center gap-1 transition-all duration-300 active:bg-[#444] active:scale-95">
+          <FaTicketAlt className="text-lg" />
           {t("navbar.ticket")}
         </button>
       </div>
