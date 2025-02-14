@@ -3,7 +3,7 @@
 function Home() {
   return (
     <>
-      <h1 className="org-font text-[#b99647] text-9xl">Home</h1>
+      <h1 className="org-font text-gold text-9xl">Home</h1>
     </>
   );
 }

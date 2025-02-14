@@ -50,7 +50,7 @@ export default function Loader({ onComplete }) {
           className="w-1/2 md:w-1/4 mx-auto mb-4 animate-pulse"
         />
         <h1
-          className={`px-1 text-4xl md:text-6xl font-extrabold tracking-wide leading-relaxed text-[#c3aa6a] ${
+          className={`px-1 text-4xl md:text-6xl font-extrabold tracking-wide leading-relaxed text-gold ${
             isFadingOut ? "opacity-0" : "opacity-100"
           } transition-opacity duration-700`}
         >
