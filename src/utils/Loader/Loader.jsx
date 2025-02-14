@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
-import logo from "../../../public/logos/logo_trans.webp";
+import logo from "/logos/logo_trans.webp";
 
 export default function Loader({ onComplete }) {
   const { t } = useTranslation();
