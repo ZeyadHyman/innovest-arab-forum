@@ -41,7 +41,7 @@ export default function Loader({ onComplete }) {
         className={`absolute transition-all duration-1000 ease-out ${animation} text-center`}
       >
         <img
-          src="./logo-name.png"
+          src="./test1.png"
           alt="logo"
           className="w-1/2 md:w-1/4 mx-auto mb-4 animate-spin-slow"
         />
