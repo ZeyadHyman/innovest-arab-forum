@@ -8,6 +8,7 @@ function Home() {
   const [timeLeft, setTimeLeft] = useState(getTimeLeft());
   const [isLoaded, setIsLoaded] = useState(false);
   const { i18n, t } = useTranslation();
+  const [isScrolled, setIsScrolled] = useState(false);
 
   const switchLanguage = () => {
     const newLang = i18n.language === "en" ? "ar" : "en";
@@ -16,6 +17,12 @@ function Home() {
   };
 
   useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 0);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
     setTimeout(() => setIsLoaded(true), 100);
     const interval = setInterval(() => {
       const updatedTimeLeft = getTimeLeft();
@@ -61,7 +68,12 @@ function Home() {
 
   return (
     <>
-      <nav className="flex justify-between items-center bg-gradient-to-l from-blue-950 to-gray-800 py-4 px-6 md:py-5 md:px-32 shadow-lg rounded-b-2xl">
+      <nav
+        className={`sticky top-0 w-full flex justify-between items-center bg-gradient-to-l from-blue-950 to-gray-800 py-4 px-6 md:py-5 md:px-32 transition-all duration-1000 ease-in-out
+            ${isScrolled ? "rounded-b-xl" : "rounded-none"}
+            ${isLoaded ? "translate-y-0" : "-translate-y-40"}
+        `}
+      >
         {/* Logo Section */}
         <div className="flex flex-col items-center text-center">
           <img src={logo} alt="INNOVEST Logo" className="w-16 md:w-24" />
@@ -91,9 +103,10 @@ function Home() {
 
       {/* Mobile Count Down Timer */}
       <div
-        className={`bottom-0 fixed w-full md:hidden bg-[#c3aa6a]/90 backdrop-blur-xl shadow-md flex justify-between items-center px-2 py-5 transition-all duration-500 ${
-          isLoaded ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
-        }`}
+        className={`bottom-0 fixed w-full md:hidden bg-[#c3aa6a]/90 backdrop-blur-xl  flex justify-between items-center px-4 py-5 transition-all duration-500 
+          ${
+            isLoaded ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
+          }`}
       >
         <div className="flex gap-1">
           {timeLeft &&
@@ -120,7 +133,7 @@ function Home() {
         </div>
 
         {/* Ticket Button */}
-        <button className="bg-[#2E2E2E] text-white px-3 py-3 rounded-xl text-xs font-semibold shadow-md transition-all duration-300 active:bg-[#444] active:scale-95">
+        <button className="bg-gradient-to-r from-gray-900 to-gray-800 text-white px-3 py-3 rounded-xl text-xs font-semibold transition-all duration-300 active:bg-[#444] active:scale-95">
           {t("navbar.ticket")}
         </button>
       </div>

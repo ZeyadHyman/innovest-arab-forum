@@ -24,3 +24,28 @@
 .org-font {
     font-family: 'itcMachine', sans-serif;
 }
+
+
+body {
+    --sb-track-color: #ffffff;
+    --sb-thumb-gradient: linear-gradient(180deg, #172554, #1f2937);
+    --sb-size: 8px;
+}
+
+body::-webkit-scrollbar {
+    inline-size: var(--sb-size);
+}
+
+body::-webkit-scrollbar-track {
+    background: var(--sb-track-color);
+}
+
+body::-webkit-scrollbar-thumb {
+    background: var(--sb-thumb-gradient);
+}
+
+@supports not selector(::-webkit-scrollbar) {
+    body {
+        scrollbar-color: var(--sb-thumb-gradient) var(--sb-track-color);
+    }
+}
