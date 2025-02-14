@@ -1,4 +1,4 @@
-import i18n from "../i18n"; // Import your i18n instance
+import i18n from "../i18n";
 
 export function getTimeLeft() {
   const now = new Date().getTime();
@@ -15,9 +15,17 @@ export function getTimeLeft() {
   const isArabic = i18n.language === "ar";
 
   return {
-    days: isArabic ? `${days} يوم${days !== 1 ? "ًا" : ""}` : `${days} Day${days !== 1 ? "s" : ""}`,
-    hours: isArabic ? `${hours} ساعة${hours !== 1 ? "ً" : ""}` : `${hours} Hour${hours !== 1 ? "s" : ""}`,
-    minutes: isArabic ? `${minutes} دقيقة${minutes !== 1 ? "ً" : ""}` : `${minutes} Minute${minutes !== 1 ? "s" : ""}`,
-    seconds: isArabic ? `${seconds} ثانية${seconds !== 1 ? "ً" : ""}` : `${seconds} Second${seconds !== 1 ? "s" : ""}`,
+    days: isArabic
+      ? `${days} يوم${days !== 1 ? "ًا" : ""}`
+      : `${days} Day${days !== 1 ? "s" : ""}`,
+    hours: isArabic
+      ? `${hours} ساعة${hours !== 1 ? "ً" : ""}`
+      : `${hours} Hour${hours !== 1 ? "s" : ""}`,
+    minutes: isArabic
+      ? `${minutes} دقيقة${minutes !== 1 ? "ً" : ""}`
+      : `${minutes} Minute${minutes !== 1 ? "s" : ""}`,
+    seconds: isArabic
+      ? `${seconds} ثانية${seconds !== 1 ? "ً" : ""}`
+      : `${seconds} Second${seconds !== 1 ? "s" : ""}`,
   };
 }

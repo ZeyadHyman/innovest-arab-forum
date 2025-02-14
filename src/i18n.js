@@ -10,8 +10,9 @@ i18n
   .init({
     resources: {
       en: { translation: en },
-      ar: { translation: ar }
+      ar: { translation: ar },
     },
+
     lng: "ar",
     fallbackLng: "en",
     interpolation: { escapeValue: false },
