@@ -16,7 +16,7 @@ function Home() {
   const { i18n, t } = useTranslation();
   const isArabic = i18n.language === "ar";
   const menuLinks = t("navbar.menu", { returnObjects: true });
-  
+
   // Handle language switch
   const switchLanguage = () => {
     setIsLangSwitched(true);
@@ -99,7 +99,7 @@ function Home() {
           <div className="flex justify-center items-center text-lg space-x-5">
             {Object.entries(menuLinks).map(([key, value]) => (
               <Link
-                to={`/${key}`}
+                to={`/${key == "home" ? "" : key}`}
                 key={key}
                 className="text-zinc-200 hover:text-zinc-50 active:text-zinc-50 font-normal hover:font-bold cursor-pointer transition-all duration-100"
               >
