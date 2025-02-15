@@ -6,6 +6,7 @@ import Footer from "./components/Footer/Footer";
 
 const Home = lazy(() => import("./pages/Home"));
 const Navbar = lazy(() => import("./components/Navbar/Navbar"));
+const ScrollToTop = lazy(() => import("./utils/ScrollToTop"));
 
 function App() {
   // make it true if you want to cancel it ↓↓↓↓↓
@@ -22,6 +23,9 @@ function App() {
         <Loader onComplete={() => setIsLoaded(true)} />
       ) : (
         <Router>
+          {/* Ensures the page scrolls to the top on route change */}
+          <ScrollToTop />
+          
           <div className="mb-34 md:mb-60">
             <Navbar />
           </div>
