@@ -66,6 +66,8 @@ function Home() {
               <img
                 src={logo}
                 alt="INNOVEST Logo"
+                width="96"
+                height="96"
                 className={`transition-all duration-300 ease-out hover:scale-105 active:scale-95 ${
                   isScrolled ? "w-14" : "w-24"
                 }`}
@@ -116,6 +118,8 @@ function Home() {
             <img
               src={globe}
               alt="Globe Icon"
+              width="48"
+              height="48"
               className={`transition-all duration-500 ease-out transform hover:rotate-180 ${
                 isScrolled ? "w-8 md:w-8" : "w-10 md:w-12"
               }`}
