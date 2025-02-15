@@ -13,6 +13,7 @@ function Home() {
   const [isHidden, setIsHidden] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isLangSwitched, setIsLangSwitched] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { i18n, t } = useTranslation();
   const isArabic = i18n.language === "ar";
   const menuLinks = t("navbar.menu", { returnObjects: true });
@@ -97,8 +98,8 @@ function Home() {
             </p>
           </div>
 
-          {/* Navigation Links */}
-          <div className="flex justify-center items-center text-lg space-x-5">
+          {/* Desktop Navigation Links */}
+          <div className="hidden md:flex justify-center items-center text-lg space-x-5">
             {Object.entries(menuLinks).map(([key, value]) => (
               <Link
                 to={`/${key == "home" ? "" : key}`}
@@ -110,10 +111,40 @@ function Home() {
             ))}
           </div>
 
-          {/* Language Switcher Button */}
+          {/* Mobile Navigation Links */}
+          <div className="md:hidden flex flex-col items-center">
+            {/* Hamburger Icon */}
+            <div
+              className="flex flex-col justify-center items-center space-y-1 cursor-pointer group"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+            >
+              <div className={`w-10 h-1 bg-white transition-transform ${isMenuOpen ? "rotate-45 translate-y-2" : ""}`}></div>
+              <div className={`w-10 h-1 bg-white transition-opacity ${isMenuOpen ? "opacity-0" : "opacity-100"}`}></div>
+              <div className={`w-10 h-1 bg-white transition-transform ${isMenuOpen ? "-rotate-45 -translate-y-2" : ""}`}></div>
+            </div>
+
+            {/* Mobile Menu */}
+            <div className={`absolute top-16 left-0 w-full bg-gradient-to-l from-blue-950 to-gray-800 transition-all duration-300
+              ${isMenuOpen ? "opacity-100 translate-y-6" : "opacity-0 -translate-y-10 pointer-events-none"}`}>
+              <div className="flex flex-col justify-center items-center text-lg space-y-2 pb-5">
+                {Object.entries(menuLinks).map(([key, value]) => (
+                  <Link
+                    onClick={() => setIsMenuOpen(!isMenuOpen)}
+                    to={`/${key == "home" ? "" : key}`}
+                    key={key}
+                    className="text-zinc-200 hover:text-zinc-50 active:text-zinc-50 font-normal hover:font-bold cursor-pointer transition-all duration-100"
+                  >
+                    {value}
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Desktop Language Switcher Button */}
           <button
             onClick={switchLanguage}
-            className="select-none p-2 rounded-full transition-all duration-300 hover:scale-110 active:scale-95 cursor-pointer"
+            className="hidden md:block select-none p-2 rounded-full transition-all duration-300 hover:scale-110 active:scale-95 cursor-pointer"
           >
             <img
               src={globe}
@@ -186,6 +217,23 @@ function Home() {
           {t("navbar.ticket")}
         </button>
       </div>
+
+      <button
+        onClick={switchLanguage}
+        className={`fixed bottom-25 md:hidden block bg-gradient-to-l from-blue-950 to-gray-800
+        select-none p-3 rounded-full transition-all duration-1000 active:scale-110 cursor-pointer
+        ${isLoaded ? "opacity-100 scale-100" : "opacity-0 scale-0"}
+        ${i18n.language === "ar" ? "left-5" : "right-5"}
+      `}
+      >
+        <img
+          src={globe}
+          alt="Globe Icon"
+          width="38"
+          height="38"
+          className="transition-all duration-500 ease-out transform active:rotate-180 w-8"
+        />
+      </button>
     </>
   );
 }

@@ -22,10 +22,17 @@ function App() {
         <Loader onComplete={() => setIsLoaded(true)} />
       ) : (
         <Router>
-          <Navbar />
+          <div className="mb-34 md:mb-60">
+            <Navbar />
+          </div>
           <Routes>
             <Route path="/" element={<Home />} />
           </Routes>
+          <Footer />
+          <Footer />
+          <Footer />
+          <Footer />
+          <Footer />
           <Footer />
           <Footer />
           <Footer />
