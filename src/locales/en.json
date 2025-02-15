@@ -6,6 +6,13 @@
   "navbar": {
     "forum_name": "INNOVATION AND INVESTMENT ARAB FORUM",
     "ticket": "Buy a Ticket",
-    "langSwitcher": "ترجم إلى العربية"
+    "langSwitcher": "ترجم إلى العربية",
+    "menu": {
+      "home": "Home",
+      "talkers": "Talkers",
+      "events": "Events",
+      "blog": "Blog",
+      "contact": "Contact Us"
+    }
   }
 }

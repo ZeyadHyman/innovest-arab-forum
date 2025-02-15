@@ -6,6 +6,13 @@
   "navbar": {
     "forum_name": "منتدى الابتكار والاستثمار العربي",
     "ticket": "شراء تذكرة",
-    "langSwitcher": "Translate into English"
+    "langSwitcher": "Translate into English",
+    "menu": {
+      "home": "الرئيسية",
+      "talkers": "المتحدثون",
+      "events": "الفعاليات",
+      "blog": "مدونة",
+      "contact": "اتصل بنا"
+    }
   }
 }
