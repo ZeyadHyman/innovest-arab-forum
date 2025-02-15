@@ -19,13 +19,13 @@ export default function Loader({ onComplete }) {
       setTimeout(() => {
         setAnimation("opacity-0 scale-90");
         setIsFadingOut(true);
-      }, 3000)
+      }, 2000)
     );
 
     timeoutIds.push(
       setTimeout(() => {
         if (typeof onComplete === "function") onComplete();
-      }, 3500)
+      }, 2500)
     );
 
     return () => {

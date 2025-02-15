@@ -19,7 +19,7 @@ function Home() {
   // Handle language switch
   const switchLanguage = () => {
     setIsLangSwitched(true);
-    setTimeout(() => setIsLangSwitched(false), 3500);
+    setTimeout(() => setIsLangSwitched(false), 2500);
     const newLang = isArabic ? "en" : "ar";
     i18n.changeLanguage(newLang);
     document.documentElement.dir = newLang === "ar" ? "rtl" : "ltr";
@@ -60,7 +60,7 @@ function Home() {
           className={`flex justify-between items-center py-4 px-6 md:py-5 md:px-32 `}
         >
           {/* Logo Section */}
-          <div className="flex flex-col items-center text-center">
+          <div className="flex flex-col items-center text-center select-none">
             <Link to={"/"} className="flex flex-col items-center text-center">
               <img
                 src={logo}
@@ -109,7 +109,7 @@ function Home() {
           {/* Language Switcher Button */}
           <button
             onClick={switchLanguage}
-            className="p-2 rounded-full transition-all duration-300 hover:scale-110 active:scale-95 cursor-pointer"
+            className="select-none p-2 rounded-full transition-all duration-300 hover:scale-110 active:scale-95 cursor-pointer"
           >
             <img
               src={globe}
@@ -123,7 +123,7 @@ function Home() {
 
         {/* Desktop Countdown Timer */}
         <div
-          className={`w-full fixed hidden bg-[#c3aa6a]/90 backdrop-blur-xl md:flex justify-between items-center py-4 px-32 transition-all duration-500 
+          className={`w-full fixed hidden bg-gold/90 backdrop-blur-xl md:flex justify-between items-center py-4 px-32 transition-all duration-500 
             ${isLoaded ? "" : "opacity-0 translate-y-10"}
              ${isScrolled ? "rounded-b-4xl" : "rounded-none"}`}
         >
@@ -144,7 +144,7 @@ function Home() {
                 </div>
               ))}
           </div>
-          <button className="cursor-pointer bg-gradient-to-r from-gray-900 to-gray-800 text-white px-3 py-3 rounded-xl text-md font-semibold flex items-center gap-2 transition-all duration-300 hover:scale-105 active:scale-95">
+          <button className=" select-none cursor-pointer bg-gradient-to-r from-gray-900 to-gray-800 text-white px-3 py-3 rounded-xl text-md font-semibold flex items-center gap-2 transition-all duration-300 hover:scale-105 active:scale-95">
             {t("navbar.ticket")}
             <FaTicketAlt className="text-lg" />
           </button>
@@ -153,7 +153,7 @@ function Home() {
 
       {/* Mobile Countdown Timer */}
       <div
-        className={`bottom-0 fixed w-full md:hidden bg-[#c3aa6a]/90 backdrop-blur-xl flex justify-between items-center px-2 py-5 transition-all duration-500 ${
+        className={`bottom-0 fixed w-full md:hidden bg-gold/90 backdrop-blur-xl flex justify-between items-center px-2 py-5 transition-all duration-500 ${
           isLoaded ? "" : "opacity-0 translate-y-10"
         }`}
       >

@@ -39,6 +39,11 @@ body::-webkit-scrollbar {
 body::-webkit-scrollbar-track {
     background: var(--sb-track-color);
 }
+ 
+::selection{
+    color: white;
+    background-color: #8c2c31;
+}
 
 body::-webkit-scrollbar-thumb {
     background: var(--sb-thumb-gradient);
