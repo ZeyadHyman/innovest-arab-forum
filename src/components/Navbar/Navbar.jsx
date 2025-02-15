@@ -5,6 +5,7 @@ import globe from "/icons/globe.svg";
 import logo from "/logos/logo_trans.webp";
 import { FaTicketAlt } from "react-icons/fa";
 import Loader from "../../utils/Loader/Loader";
+import { Link } from "react-router-dom";
 
 function Home() {
   const [timeLeft, setTimeLeft] = useState(getTimeLeft());
@@ -51,36 +52,41 @@ function Home() {
     <>
       {isLangSwitched && <Loader />}
       <nav
-        className={`fixed top-0 w-full bg-gradient-to-l from-blue-950 to-gray-800 transition-transform duration-500 ease-in-out shadow-lg ${
-          isHidden ? "md:-translate-y-full" : "md:translate-y-0"
-        }`}
+        className={`fixed top-0 w-full bg-gradient-to-l from-blue-950 to-gray-800 transition-transform duration-500 ease-in-out shadow-lg
+         ${isHidden ? "md:-translate-y-full" : "md:translate-y-0"}
+        `}
       >
-        <div className="flex justify-between items-center py-4 px-6 md:py-5 md:px-32">
+        <div
+          className={`flex justify-between items-center py-4 px-6 md:py-5 md:px-32 `}
+        >
           {/* Logo Section */}
           <div className="flex flex-col items-center text-center">
-            <img
-              src={logo}
-              alt="INNOVEST Logo"
-              className={`transition-all duration-300 ease-out hover:scale-105 active:scale-95 ${
-                isScrolled ? "w-14" : "w-24"
-              }`}
-            />
-            <h1
-              className={`org-font text-gold tracking-wide transition-all duration-300 ease-out ${
-                isScrolled ? "text-lg md:text-2xl" : "text-2xl md:text-4xl"
-              }`}
-            >
-              INNOVEST
-            </h1>
+            <Link to={"/"} className="flex flex-col items-center text-center">
+              <img
+                src={logo}
+                alt="INNOVEST Logo"
+                className={`transition-all duration-300 ease-out hover:scale-105 active:scale-95 ${
+                  isScrolled ? "w-14" : "w-24"
+                }`}
+              />
+              <h1
+                className={`org-font text-gold tracking-wide transition-all duration-300 ease-out ${
+                  isScrolled ? "text-lg md:text-2xl" : "text-2xl md:text-4xl"
+                }`}
+              >
+                INNOVEST
+              </h1>
+            </Link>
+
             <p
               className={`text-white transition-all duration-300 ease-out ${
-                isScrolled ? "hidden" : "text-[4px] md:text-[5px]"
+                isScrolled ? "hidden" : "text-[4px] md:text-[5.4px]"
               }`}
             >
               {t("navbar.forum_name", { lng: "en" })}
             </p>
             <p
-              className={`text-[7px] md:text-[8px] text-white transition-all duration-300 ease-out ${
+              className={`text-[7px] md:text-[9px] text-white transition-all duration-300 ease-out ${
                 isScrolled ? "hidden" : ""
               }`}
             >
@@ -117,9 +123,9 @@ function Home() {
 
         {/* Desktop Countdown Timer */}
         <div
-          className={`w-full fixed hidden bg-[#c3aa6a]/90 backdrop-blur-xl md:flex justify-between items-center py-4 px-32 transition-all duration-500 ${
-            isLoaded ? "animate-fadeInSlideUp" : "opacity-0 translate-y-10"
-          } ${isScrolled ? "rounded-b-4xl" : "rounded-none"}`}
+          className={`w-full fixed hidden bg-[#c3aa6a]/90 backdrop-blur-xl md:flex justify-between items-center py-4 px-32 transition-all duration-500 
+            ${isLoaded ? "" : "opacity-0 translate-y-10"}
+             ${isScrolled ? "rounded-b-4xl" : "rounded-none"}`}
         >
           <div className="flex gap-1">
             {timeLeft &&
@@ -148,7 +154,7 @@ function Home() {
       {/* Mobile Countdown Timer */}
       <div
         className={`bottom-0 fixed w-full md:hidden bg-[#c3aa6a]/90 backdrop-blur-xl flex justify-between items-center px-2 py-5 transition-all duration-500 ${
-          isLoaded ? "animate-fadeInSlideUp" : "opacity-0 translate-y-10"
+          isLoaded ? "" : "opacity-0 translate-y-10"
         }`}
       >
         <div className="flex">
