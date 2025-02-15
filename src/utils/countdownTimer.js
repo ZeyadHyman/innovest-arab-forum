@@ -1,8 +1,10 @@
+import i18next from "i18next";
 
 export function getTimeLeft() {
   const now = new Date().getTime();
-  const targetDate = new Date("2025-05-31T00:00:00").getTime();
-  const timeLeft = targetDate - now;
+  const target = new Date("2025-05-31T00:00:00").getTime();
+  const timeLeft = target - now;
+  const isArabic = (i18next.language === "ar")
 
   if (timeLeft <= 0) return null;
 
@@ -11,10 +13,21 @@ export function getTimeLeft() {
   const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
   const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
 
+  const formatKey = (key, value) => {
+    const units = {
+      days: isArabic ? (value > 10 ? "يوم" : "أيام") : value > 10 ? "Day" : "Days",
+      hours: isArabic ? (value > 10 ? "ساعة" : "ساعات") : value > 10 ? "Hour" : "Hours",
+      minutes: isArabic ? (value > 10 ? "دقيقة" : "دقائق") : value > 10 ? "Minute" : "Minutes",
+      seconds: isArabic ? (value > 10 ? "ثانية" : "ثواني") : value > 10 ? "Second" : "Seconds",
+    };
+
+    return units[key] || key;
+  };
+
   return {
-    days: days,
-    hours: hours,
-    minutes: minutes, 
-    seconds: seconds,
+    days: `${days} ${formatKey("days", days)}`,
+    hours: `${hours} ${formatKey("hours", hours)}`,
+    minutes: `${minutes} ${formatKey("minutes", minutes)}`,
+    seconds: `${seconds} ${formatKey("seconds", seconds)}`,
   };
 }

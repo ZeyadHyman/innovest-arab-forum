@@ -9,7 +9,7 @@ const Navbar = lazy(() => import("./components/Navbar/Navbar"));
 
 function App() {
   // make it true if you want to cancel it ↓↓↓↓↓
-  const [isLoaded, setIsLoaded] = useState(false);
+  const [isLoaded, setIsLoaded] = useState(true);
 
   useEffect(() => {
     document.documentElement.lang = i18n.language;

@@ -1,178 +1,126 @@
-import { useEffect, useState, useMemo, useCallback } from "react";
+import { useEffect, useState } from "react";
 import { getTimeLeft } from "../../utils/countdownTimer";
 import { useTranslation } from "react-i18next";
 import globe from "/icons/globe.svg";
 import logo from "/logos/logo_trans.webp";
 import { FaTicketAlt } from "react-icons/fa";
+import Loader from "../../utils/Loader/Loader";
 
 function Home() {
   const [timeLeft, setTimeLeft] = useState(getTimeLeft());
   const [isLoaded, setIsLoaded] = useState(false);
   const [isHidden, setIsHidden] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isLangSwitched, setIsLangSwitched] = useState(false);
   const { i18n, t } = useTranslation();
+  const isArabic = i18n.language === "ar";
 
-  const isArabic = useMemo(() => i18n.language === "ar", [i18n.language]);
-
-  const switchLanguage = useCallback(() => {
+  // Handle language switch
+  const switchLanguage = () => {
+    setIsLangSwitched(true);
+    setTimeout(() => setIsLangSwitched(false), 3500);
     const newLang = isArabic ? "en" : "ar";
     i18n.changeLanguage(newLang);
     document.documentElement.dir = newLang === "ar" ? "rtl" : "ltr";
-  }, [i18n, isArabic]);
+  };
 
+  // Handle scroll events
   useEffect(() => {
+    let lastScrollY = window.scrollY;
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
       setIsScrolled(currentScrollY > 1);
       setIsHidden(currentScrollY > (lastScrollY || 0));
       lastScrollY = currentScrollY;
     };
-
-    let lastScrollY = window.scrollY;
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Update countdown timer and load state
   useEffect(() => {
     const loadTimeout = setTimeout(() => setIsLoaded(true), 100);
-    const interval = setInterval(() => {
-      setTimeLeft((prev) => {
-        const updatedTimeLeft = getTimeLeft();
-        return JSON.stringify(prev) !== JSON.stringify(updatedTimeLeft)
-          ? updatedTimeLeft
-          : prev;
-      });
-    }, 1000);
-
+    const interval = setInterval(() => setTimeLeft(getTimeLeft()), 1000);
     return () => {
       clearTimeout(loadTimeout);
       clearInterval(interval);
     };
   }, []);
 
-  const getFormattedKey = useCallback(
-    (key, value) => {
-      const units = {
-        days: isArabic
-          ? value > 10
-            ? "يوم"
-            : "أيام"
-          : value > 10
-          ? "Day"
-          : "Days",
-        hours: isArabic
-          ? value > 10
-            ? "ساعة"
-            : "ساعات"
-          : value > 10
-          ? "Hour"
-          : "Hours",
-        minutes: isArabic
-          ? value > 10
-            ? "دقيقة"
-            : "دقائق"
-          : value > 10
-          ? "Minute"
-          : "Minutes",
-        seconds: isArabic
-          ? value > 10
-            ? "ثانية"
-            : "ثواني"
-          : value > 10
-          ? "Second"
-          : "Seconds",
-      };
-      return units[key] || key;
-    },
-    [isArabic]
-  );
-
-  const navClasses = `fixed top-0 w-full bg-gradient-to-l from-blue-950 to-gray-800
-    transition-transform duration-500 ease-in-out shadow-lg
-    ${isHidden ? "md:-translate-y-full" : "md:translate-y-0"}`;
-
-  const logoClasses = `transition-all duration-300 ease-out ${
-    isScrolled ? "w-14" : "w-24"
-  }`;
-
-  const titleClasses = `org-font text-gold tracking-wide transition-all duration-300 ease-out ${
-    isScrolled ? "text-lg md:text-2xl" : "text-2xl md:text-4xl"
-  }`;
-
-  const englishForumNameClasses = `text-white transition-all duration-300 ease-out ${
-    isScrolled ? "hidden" : "text-[4px] md:text-[5px]"
-  }`;
-
-  const arabicForumNameClasses = `text-[7px] md:text-[8px] text-white transition-all duration-300 ease-out${
-    isScrolled ? "hidden" : ""
-  }`;
-
-  const globeClasses = `transition-all duration-500 ease-out transform hover:rotate-180 ${
-    isScrolled ? "w-8 md:w-8" : "w-10 md:w-12"
-  }`;
-
-  const desktopCountdownClasses = `w-full fixed hidden bg-[#c3aa6a]/90 backdrop-blur-xl md:flex justify-between items-center py-4 px-32 transition-all duration-500 
-    ${isLoaded ? "animate-fadeInSlideUp" : "opacity-0 translate-y-10"}
-    ${isScrolled ? "rounded-b-4xl" : "rounded-none"}`;
-
-  const mobileCountdownClasses = `bottom-0 fixed w-full md:hidden bg-[#c3aa6a]/90 backdrop-blur-xl flex justify-between items-center px-2 py-5 transition-all duration-500 
-    ${isLoaded ? "animate-fadeInSlideUp" : "opacity-0 translate-y-10"}`;
-
   return (
     <>
-      <nav className={navClasses}>
-        <div className="flex justify-between items-center  py-4 px-6 md:py-5 md:px-32  ">
-          <div className="flex flex-col items-center text-center transition-all duration-300 ease-out">
+      {isLangSwitched && <Loader />}
+      <nav
+        className={`fixed top-0 w-full bg-gradient-to-l from-blue-950 to-gray-800 transition-transform duration-500 ease-in-out shadow-lg ${
+          isHidden ? "md:-translate-y-full" : "md:translate-y-0"
+        }`}
+      >
+        <div className="flex justify-between items-center py-4 px-6 md:py-5 md:px-32">
+          {/* Logo Section */}
+          <div className="flex flex-col items-center text-center">
             <img
               src={logo}
               alt="INNOVEST Logo"
-              className={`${logoClasses} hover:scale-105 active:scale-95`}
+              className={`transition-all duration-300 ease-out hover:scale-105 active:scale-95 ${
+                isScrolled ? "w-14" : "w-24"
+              }`}
             />
-            <h1 className={`${titleClasses} hover:scale-105 active:scale-95`}>
+            <h1
+              className={`org-font text-gold tracking-wide transition-all duration-300 ease-out ${
+                isScrolled ? "text-lg md:text-2xl" : "text-2xl md:text-4xl"
+              }`}
+            >
               INNOVEST
             </h1>
-            <p className={englishForumNameClasses}>
+            <p
+              className={`text-white transition-all duration-300 ease-out ${
+                isScrolled ? "hidden" : "text-[4px] md:text-[5px]"
+              }`}
+            >
               {t("navbar.forum_name", { lng: "en" })}
             </p>
-            <p className={arabicForumNameClasses}>
+            <p
+              className={`text-[7px] md:text-[8px] text-white transition-all duration-300 ease-out ${
+                isScrolled ? "hidden" : ""
+              }`}
+            >
               {t("navbar.forum_name", { lng: "ar" })}
             </p>
           </div>
 
-          <div className="flex justify-center items-center text-base  space-x-5">
-            <h1 className="text-white/90 hover:text-white font-normal hover:font-bold cursor-pointer transform-all duration-100">
-              TEST
-            </h1>
-            <h1 className="text-white/90 hover:text-white font-normal hover:font-bold cursor-pointer transform-all duration-100">
-              TEST
-            </h1>
-            <h1 className="text-white/90 hover:text-white font-normal hover:font-bold cursor-pointer transform-all duration-100">
-              TEST
-            </h1>
-            <h1 className="text-white/90 hover:text-white font-normal hover:font-bold cursor-pointer transform-all duration-100">
-              TEST
-            </h1>
-            <h1 className="text-white/90 hover:text-white font-normal hover:font-bold cursor-pointer transform-all duration-100">
-              TEST
-            </h1>
-            <h1 className="text-white/90 hover:text-white font-normal hover:font-bold cursor-pointer transform-all duration-100">
-              TEST
-            </h1>
+          {/* Navigation Links */}
+          <div className="flex justify-center items-center text-lg space-x-5">
+            {Array.from({ length: 3 }).map((_, index) => (
+              <button
+                key={index}
+                className="text-zinc-200 hover:text-zinc-50 active:text-zinc-50 font-normal hover:font-bold cursor-pointer transition-all duration-100"
+              >
+                {i18n.language === "ar" ? "تجربة" : "Test"}
+              </button>
+            ))}
           </div>
 
+          {/* Language Switcher Button */}
           <button
             onClick={switchLanguage}
-            className="p-2 rounded-full transition-all duration-300 hover:scale-110 active:scale-95"
+            className="p-2 rounded-full transition-all duration-300 hover:scale-110 active:scale-95 cursor-pointer"
           >
             <img
               src={globe}
               alt="Globe Icon"
-              className={`${globeClasses} hover:rotate-180`}
+              className={`transition-all duration-500 ease-out transform hover:rotate-180 ${
+                isScrolled ? "w-8 md:w-8" : "w-10 md:w-12"
+              }`}
             />
           </button>
         </div>
 
-        <div className={desktopCountdownClasses}>
+        {/* Desktop Countdown Timer */}
+        <div
+          className={`w-full fixed hidden bg-[#c3aa6a]/90 backdrop-blur-xl md:flex justify-between items-center py-4 px-32 transition-all duration-500 ${
+            isLoaded ? "animate-fadeInSlideUp" : "opacity-0 translate-y-10"
+          } ${isScrolled ? "rounded-b-4xl" : "rounded-none"}`}
+        >
           <div className="flex gap-1">
             {timeLeft &&
               Object.entries(timeLeft).map(([key, value], index, arr) => (
@@ -186,9 +134,7 @@ function Home() {
                       : "px-4"
                   }`}
                 >
-                  <span className="text-xl hover:scale-105 active:scale-95">
-                    {value} {getFormattedKey(key, value)}
-                  </span>
+                  <span className="text-xl">{value}</span>
                 </div>
               ))}
           </div>
@@ -199,7 +145,12 @@ function Home() {
         </div>
       </nav>
 
-      <div className={mobileCountdownClasses}>
+      {/* Mobile Countdown Timer */}
+      <div
+        className={`bottom-0 fixed w-full md:hidden bg-[#c3aa6a]/90 backdrop-blur-xl flex justify-between items-center px-2 py-5 transition-all duration-500 ${
+          isLoaded ? "animate-fadeInSlideUp" : "opacity-0 translate-y-10"
+        }`}
+      >
         <div className="flex">
           {timeLeft &&
             Object.entries(timeLeft).map(([key, value], index, arr) => (
@@ -209,16 +160,12 @@ function Home() {
                   index !== arr.length - 1
                     ? isArabic
                       ? "border-l border-white/40"
-                      : "border-r border-white/40 "
+                      : "border-r border-white/40"
                     : ""
                 }`}
               >
-                <span
-                  className={`${
-                    isArabic ? "text-sm" : "text-xs"
-                  } hover:scale-105 active:scale-95`}
-                >
-                  {value} {getFormattedKey(key, value)}
+                <span className={`${isArabic ? "text-sm" : "text-xs"}`}>
+                  {value}
                 </span>
               </div>
             ))}
