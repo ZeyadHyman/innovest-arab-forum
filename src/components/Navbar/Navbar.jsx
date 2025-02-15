@@ -65,13 +65,13 @@ function Home() {
             <Link to={"/"} className="flex flex-col items-center text-center">
               <img
                 src={logo}
+                sizes="(max-inline-size: 768px) 64px, (max-inline-size: 1024px) 96px, 128px"
                 alt="INNOVEST Logo"
                 width="96"
                 height="96"
-                className={`transition-all duration-300 ease-out hover:scale-105 active:scale-95 ${
-                  isScrolled ? "w-14" : "w-24"
-                }`}
+                className="transition-all duration-300 ease-out hover:scale-105 active:scale-95 "
               />
+
               <h1
                 className={`org-font text-gold tracking-wide transition-all duration-300 ease-out ${
                   isScrolled ? "text-lg md:text-2xl" : "text-2xl md:text-4xl"
