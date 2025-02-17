@@ -1,13 +1,13 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { getTimeLeft } from "../../utils/countdownTimer";
 import { useTranslation } from "react-i18next";
 import globe from "/icons/globe.svg";
 import logo from "/logos/logo_trans.webp";
 import { FaTicketAlt } from "react-icons/fa";
 import Loader from "../../utils/Loader/Loader";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
-function Home() {
+function Navbar() {
   const [timeLeft, setTimeLeft] = useState(getTimeLeft());
   const [isLoaded, setIsLoaded] = useState(false);
   const [isHidden, setIsHidden] = useState(false);
@@ -17,6 +17,9 @@ function Home() {
   const { i18n, t } = useTranslation();
   const isArabic = i18n.language === "ar";
   const menuLinks = t("navbar.menu", { returnObjects: true });
+  const location = useLocation();
+
+  const lastScrollY = useRef(window.innerHeight);
 
   // Handle language switch
   const switchLanguage = () => {
@@ -29,16 +32,25 @@ function Home() {
 
   // Handle scroll events
   useEffect(() => {
-    let lastScrollY = window.scrollY;
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
-      setIsScrolled(currentScrollY > 1);
-      setIsHidden(currentScrollY > (lastScrollY || 0));
-      lastScrollY = currentScrollY;
+
+      setIsScrolled(currentScrollY > 0);
+      setIsHidden(currentScrollY > lastScrollY.current);
+      // new configration of home page Specifically - 😚 اي خدمة يا امير  -
+      if (location.pathname === "/") {
+        setIsScrolled(currentScrollY > window.innerHeight);
+        if (currentScrollY > window.innerHeight) {
+          lastScrollY.current = currentScrollY;
+        }
+      } else {
+        lastScrollY.current = currentScrollY;
+      }
     };
+
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [location.pathname]);
 
   // Update countdown timer and load state
   useEffect(() => {
@@ -53,17 +65,16 @@ function Home() {
   return (
     <>
       {isLangSwitched && <Loader />}
+
+      {/* Navbar */}
       <nav
-        className={`fixed top-0 w-full bg-gradient-to-l from-blue-950 to-gray-800 transition-transform duration-500 ease-in-out shadow-lg
-          ${isHidden ? "md:-translate-y-full" : "md:translate-y-0"}
-          `}
+        className={`sticky top-0 w-full bg-gradient-to-l from-blue-950 to-gray-800 transition-transform duration-500 ease-in-out shadow-lg
+          ${isHidden ? "md:-translate-y-full" : "md:translate-y-0"}`}
       >
-        <div
-          className={`flex justify-between items-center py-4 px-6 md:py-5 md:px-32 `}
-        >
+        <div className="flex justify-between items-center py-4 px-6 md:py-5 md:px-32">
           {/* Logo Section */}
           <div className="flex flex-col items-center text-center select-none">
-            <Link to={"/"} className="flex flex-col items-center text-center">
+            <Link to="/" className="flex flex-col items-center text-center">
               <img
                 src={logo}
                 alt="INNOVEST Logo"
@@ -81,7 +92,7 @@ function Home() {
                 INNOVEST
               </h1>
             </Link>
-
+            {/* Forum Name */}
             <p
               className={`text-white transition-all duration-300 ease-out ${
                 isScrolled ? "hidden" : "text-[4px] md:text-[5.4px]"
@@ -102,7 +113,7 @@ function Home() {
           <div className="hidden md:flex justify-center items-center text-lg space-x-5">
             {Object.entries(menuLinks).map(([key, value]) => (
               <Link
-                to={`/${key == "home" ? "" : key}`}
+                to={`/${key === "home" ? "" : key}`}
                 key={key}
                 className="text-zinc-200 hover:text-zinc-50 active:text-zinc-50 font-normal hover:font-bold cursor-pointer transition-all duration-100"
               >
@@ -113,24 +124,40 @@ function Home() {
 
           {/* Mobile Navigation Links */}
           <div className="md:hidden flex flex-col items-center">
-            {/* Hamburger Icon */}
             <div
               className="flex flex-col justify-center items-center space-y-1 cursor-pointer group"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
-              <div className={`w-10 h-1 bg-white transition-transform ${isMenuOpen ? "rotate-45 translate-y-2" : ""}`}></div>
-              <div className={`w-10 h-1 bg-white transition-opacity ${isMenuOpen ? "opacity-0" : "opacity-100"}`}></div>
-              <div className={`w-10 h-1 bg-white transition-transform ${isMenuOpen ? "-rotate-45 -translate-y-2" : ""}`}></div>
+              <div
+                className={`w-10 h-1 bg-white transition-transform ${
+                  isMenuOpen ? "rotate-45 translate-y-2" : ""
+                }`}
+              ></div>
+              <div
+                className={`w-10 h-1 bg-white transition-opacity ${
+                  isMenuOpen ? "opacity-0" : "opacity-100"
+                }`}
+              ></div>
+              <div
+                className={`w-10 h-1 bg-white transition-transform ${
+                  isMenuOpen ? "-rotate-45 -translate-y-2" : ""
+                }`}
+              ></div>
             </div>
 
-            {/* Mobile Menu */}
-            <div className={`absolute top-16 left-0 w-full bg-gradient-to-l from-blue-950 to-gray-800 transition-all duration-300
-              ${isMenuOpen ? "opacity-100 translate-y-6" : "opacity-0 -translate-y-10 pointer-events-none"}`}>
+            <div
+              className={`absolute top-16 left-0 w-full bg-gradient-to-l from-blue-950 to-gray-800 transition-all duration-300
+              ${
+                isMenuOpen
+                  ? "opacity-100 translate-y-6"
+                  : "opacity-0 -translate-y-10 pointer-events-none"
+              }`}
+            >
               <div className="flex flex-col justify-center items-center text-lg space-y-2 pb-5">
                 {Object.entries(menuLinks).map(([key, value]) => (
                   <Link
                     onClick={() => setIsMenuOpen(!isMenuOpen)}
-                    to={`/${key == "home" ? "" : key}`}
+                    to={`/${key === "home" ? "" : key}`}
                     key={key}
                     className="text-zinc-200 hover:text-zinc-50 active:text-zinc-50 font-normal hover:font-bold cursor-pointer transition-all duration-100"
                   >
@@ -160,16 +187,21 @@ function Home() {
 
         {/* Desktop Countdown Timer */}
         <div
-          className={`w-full fixed hidden bg-gold/90 backdrop-blur-xl md:flex justify-between items-center py-4 px-32 transition-all duration-500 
-              ${isLoaded ? "" : "opacity-0 translate-y-10"}
-              ${isScrolled ? "rounded-b-4xl" : "rounded-none"}`}
+          className={`w-full fixed hidden md:flex bg-gold/90 backdrop-blur-xl justify-between items-center py-4 px-32 transition-all duration-1000 ease-in-out
+          ${isLoaded ? "" : "opacity-0 translate-y-10"}
+          ${
+            isScrolled
+              ? "opacity-100 pointer-events-auto rounded-b-4xl"
+              : "opacity-0 pointer-events-none rounded-b-none"
+          }`}
         >
           <div className="flex gap-1">
             {timeLeft &&
               Object.entries(timeLeft).map(([key, value], index, arr) => (
                 <div
                   key={key}
-                  className={`text-white flex flex-col items-center text-center text-base ${
+                  className={`text-white flex flex-col items-center text-center text-base
+                  ${
                     index !== arr.length - 1
                       ? isArabic
                         ? "border-l border-white px-2"
@@ -181,7 +213,7 @@ function Home() {
                 </div>
               ))}
           </div>
-          <button className=" select-none cursor-pointer bg-gradient-to-r from-gray-900 to-gray-800 text-white px-3 py-3 rounded-xl text-md font-semibold flex items-center gap-2 transition-all duration-300 hover:scale-105 active:scale-95">
+          <button className="select-none cursor-pointer bg-gradient-to-r from-gray-900 to-gray-800 text-white px-3 py-3 rounded-xl text-md font-semibold flex items-center gap-2 transition-all duration-300 hover:scale-105 active:scale-95">
             {t("navbar.ticket")}
             <FaTicketAlt className="text-lg" />
           </button>
@@ -190,15 +222,15 @@ function Home() {
 
       {/* Mobile Countdown Timer */}
       <div
-        className={`bottom-0 fixed w-full md:hidden bg-gold/90 backdrop-blur-xl flex justify-between items-center px-2 py-5 transition-all duration-500 ${
-          isLoaded ? "" : "opacity-0 translate-y-10"
-        }`}
+        className={`bottom-0 fixed w-full md:hidden bg-gold/90 backdrop-blur-xl flex justify-between items-center px-2 py-5 transition-all duration-500
+          ${isLoaded ? "" : "opacity-0 translate-y-10"}`}
       >
         <div className="flex">
           {Object.entries(timeLeft).map(([key, value], index, arr) => (
             <div
               key={key}
-              className={`text-white px-2 flex flex-col items-center text-center text-base ${
+              className={`text-white px-2 flex flex-col items-center text-center text-base
+              ${
                 index !== arr.length - 1
                   ? isArabic
                     ? "border-l border-white/40"
@@ -218,13 +250,13 @@ function Home() {
         </button>
       </div>
 
+      {/* Mobile Language Switcher Button */}
       <button
         onClick={switchLanguage}
         className={`fixed bottom-25 md:hidden block bg-gradient-to-l from-blue-950 to-gray-800
         select-none p-3 rounded-full transition-all duration-1000 active:scale-110 cursor-pointer
         ${isLoaded ? "opacity-100 scale-100" : "opacity-0 scale-0"}
-        ${i18n.language === "ar" ? "left-5" : "right-5"}
-      `}
+        ${i18n.language === "ar" ? "left-5" : "right-5"}`}
       >
         <img
           src={globe}
@@ -238,4 +270,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default Navbar;

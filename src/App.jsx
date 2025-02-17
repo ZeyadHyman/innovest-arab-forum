@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Loader from "./utils/Loader/Loader";
 import i18n from "./i18n";
 import Footer from "./components/Footer/Footer";
-import Speakers from './pages/Speakers'; // Correct case
+import Speakers from "./pages/Speakers"; // Correct case
 
 const Home = lazy(() => import("./pages/Home"));
 const Navbar = lazy(() => import("./components/Navbar/Navbar"));
@@ -27,13 +27,34 @@ function App() {
           {/* Ensures the page scrolls to the top on route change */}
           <ScrollToTop />
           
-          <div className="mb-34 md:mb-60">
-            <Navbar />
-          </div>
+          <Navbar />
+
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/speakers" element={<Speakers />} />
           </Routes>
+          <Footer />
+          <Footer />
+          <Footer />
+          <Footer />
+          <Footer />
+          <Footer />
+          <Footer />
+          <Footer />
+          <Footer />
+          <Footer />
+          <Footer />
+          <Footer />
+          <Footer />
+          <Footer />
+          <Footer />
+          <Footer />
+          <Footer />
+          <Footer />
+          <Footer />
+          <Footer />
+          <Footer />
+          <Footer />
           <Footer />
           <Footer />
           <Footer />
