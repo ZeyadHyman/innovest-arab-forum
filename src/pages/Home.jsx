@@ -1,13 +1,8 @@
-
+import "./home.css";
+import Landing from "../components/Landing/Landing";
 
 function Home() {
-  return (
-    <>
-      <div className="">
-      Home
-      </div>
-    </>
-  );
+  return <Landing />;
 }
 
-export default Home;  
+export default Home;
