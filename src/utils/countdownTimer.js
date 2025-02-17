@@ -4,7 +4,7 @@ export function getTimeLeft() {
   const now = new Date().getTime();
   const target = new Date("2025-05-31T00:00:00").getTime();
   const timeLeft = target - now;
-  const isArabic = (i18next.language === "ar")
+  const isArabic = i18next.language === "ar";
 
   if (timeLeft <= 0) return null;
 
@@ -25,9 +25,9 @@ export function getTimeLeft() {
   };
 
   return {
-    days: `${days} ${formatKey("days", days)}`,
-    hours: `${hours} ${formatKey("hours", hours)}`,
-    minutes: `${minutes} ${formatKey("minutes", minutes)}`,
-    seconds: `${seconds} ${formatKey("seconds", seconds)}`,
+    days: { value: days, unit: formatKey("days", days) },
+    hours: { value: hours, unit: formatKey("hours", hours) },
+    minutes: { value: minutes, unit: formatKey("minutes", minutes) },
+    seconds: { value: seconds, unit: formatKey("seconds", seconds) },
   };
 }
