@@ -2,54 +2,70 @@
 @import "@fontsource/readex-pro";
 
 @font-face {
-    font-family: 'itcMachine';
-    src: url('./fonts/ITC-Machine-Medium.woff2') format('woff2');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
+  font-family: "itcMachine";
+  src: url("./fonts/ITC-Machine-Medium.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Almarai";
+  src: url("./fonts/Almarai-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Almarai";
+  src: url("./fonts/Almarai-Light.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Almarai";
+  src: url("./fonts/Almarai-Bold.ttf") format("truetype");
+}
+
+.ar-font {
+  font-family: "Almarai", serif;
 }
 
 @layer base {
-    html {
-        font-family: 'Readex Pro', sans-serif;
-    }
+  html {
+    font-family: "Readex Pro", sans-serif;
+  }
 }
 
 @layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
 
-    .no-scrollbar::-webkit-scrollbar {
-        display: none;
-    }
-
-    .no-scrollbar {
-        -ms-overflow-style: none;
-        scrollbar-width: none;
-    }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
 }
 
 @theme {
-    --color-primary: #c52c2b;
-    --color-secondary: #8c2c31;
-    --color-gold: #b99647;
+  --color-primary: #c52c2b;
+  --color-secondary: #8c2c31;
+  --color-gold: #b99647;
 }
 
 .org-font {
-    font-family: 'itcMachine', sans-serif;
+  font-family: "itcMachine", sans-serif;
 }
 
-
 body::-webkit-scrollbar {
-    inline-size: 0;
+  inline-size: 0;
 }
 
 ::selection {
-    color: white;
-    background-color: #8c2c31;
+  color: white;
+  background-color: #8c2c31;
 }
 
-
 @supports not selector(::-webkit-scrollbar) {
-    body {
-        scrollbar-color: var(--sb-thumb-gradient) var(--sb-track-color);
-    }
+  body {
+    scrollbar-color: var(--sb-thumb-gradient) var(--sb-track-color);
+  }
 }
