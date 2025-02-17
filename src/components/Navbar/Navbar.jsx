@@ -38,6 +38,7 @@ function Navbar() {
       setIsScrolled(currentScrollY > 0);
       setIsHidden(currentScrollY > lastScrollY.current);
       // new configration of home page Specifically - 😚 اي خدمة يا امير  -
+      // احب الهيمن
       if (location.pathname === "/") {
         setIsScrolled(currentScrollY > window.innerHeight);
         if (currentScrollY > window.innerHeight) {
