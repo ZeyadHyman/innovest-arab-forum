@@ -24,7 +24,7 @@ function Speakers() {
             <div className="card-subtitle">CEO &amp; Co-Founder</div>
           </div>
           <div className="card-social">
-            <button
+            {/* <button
               className="cssbuttons-io-button"
               onClick={(e) => {
                 e.stopPropagation(); 
@@ -46,6 +46,29 @@ function Speakers() {
                   ></path>
                 </svg>
               </div>
+            </button> */}
+            <button
+              className="view-details-button"
+              onClick={(e) => {
+                e.stopPropagation();
+                openModal();
+              }}
+            >
+              <p className="view-details-button__text text-gradient-to-r from-gray-900 to-gray-800 ">View Details</p>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="view-details-button__icon h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                strokeWidth={4}
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M14 5l7 7m0 0l-7 7m7-7H3"
+                />
+              </svg>
             </button>
           </div>
         </div>
