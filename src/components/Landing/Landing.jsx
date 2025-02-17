@@ -39,8 +39,7 @@ const Landing = () => {
                     className="relative hidden md:inline-block text-center rounded border border-white/15 w-[150px] text-white py-4 px-8 font-bold mr-3 z-10 "
                   >
                     {value} <p className="text-lg font-normal">{formattedUnit}</p>
-                  </span>
-                  
+                  </span> 
                 ))}
               </p>
             </div>
