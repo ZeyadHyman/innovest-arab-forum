@@ -26,11 +26,7 @@
           "Enhance youth capabilities in innovation and digital transformation.",
           "Strengthen women's economic empowerment."
         ],
-        "topics": [
-          "Entrepreneurship and small businesses.",
-          "Digital transformation and information technology.",
-          "Women's economic empowerment."
-        ],
+        "topics": ["Entrepreneurship and small businesses.", "Digital transformation and information technology.", "Women's economic empowerment."],
         "highlights": [
           "Showcased various tech projects with the participation of the Egyptian SME Authority and the Federation of Egyptian Industries.",
           "Attended by Arab delegations, including the Ministry of Youth & Sports, Jordanian and Egyptian Parliaments, ambassadors, and diplomatic representatives."
@@ -179,5 +175,10 @@
       }
     ]
   },
-  "events": {}
+  "events": {},
+  "hero": {
+    "title": "Innovest Arab Forum",
+    "button": "Buy a Ticket",
+    "welcome": "Welcome to" 
+  }
 }
