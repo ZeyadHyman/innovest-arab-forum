@@ -40,6 +40,7 @@ const Landing = () => {
                   >
                     {value} <p className="text-lg font-normal">{formattedUnit}</p>
                   </span>
+                  
                 ))}
               </p>
             </div>
