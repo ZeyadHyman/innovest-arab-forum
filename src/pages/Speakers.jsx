@@ -15,12 +15,13 @@ function Speakers() {
   return (
     <>
       <div className="container mx-auto my-10 px-4 sm:px-6 md:my-22 lg:px-12 ">
-        <h2 className="text-6xl p-10 text-center">{t("speakers.title", { returnObjects: true })}</h2>
+        <h2 className="text-6xl pt-6 text-center text-secondary">{t("speakers.title", { returnObjects: true })}</h2>
+        <p className="text-slate-600 text-center text-2xl pt-4 pb-6">{t("speakers.subtitile", { returnObjects: true })}</p>
         <div className="flex flex-wrap justify-center gap-12 ">
           {Object.entries(speakersData).map(([key, value]) => (
             <div className="card group overflow-hidden cursor-pointer" onClick={() => openModal(value)} key={key}>
               <div className="card-info">
-                <img src={value.image} alt={value.name} className="card-avatar" />
+                <img src={value.image} alt={value.name} className="card-avatar select-none" />
                 <div className="card-title">{value.name}</div>
                 <div className="card-subtitle mt-2">{value.role}</div>
               </div>
@@ -88,7 +89,7 @@ function Speakers() {
                     </a>
 
                     <div className="w-full md:w-1/3 flex-shrink-0">
-                      <img src={value.image} alt={value.name} className="w-full h-64 md:h-96 object-cover rounded-lg" />
+                      <img src={value.image} alt={value.name} className="w-full h-64 md:h-96 object-cover rounded-lg select-none" />
                     </div>
 
                     <div className="w-full md:w-2/3 md:px-6 flex flex-col mt-4 md:mt-0">
