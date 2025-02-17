@@ -24,13 +24,13 @@
   border-radius: 50%;
   transition: transform 0.2s ease;
   margin-bottom: 1rem;
-  object-fit: cover; 
+  object-fit: cover;
 }
 
 .card-social {
   transform: translateY(200%);
   display: flex;
-  justify-content: center; 
+  justify-content: center;
   width: 100%;
   opacity: 0;
   transition: transform 0.2s ease, opacity 0.2s ease;
@@ -52,7 +52,7 @@
 }
 
 .card:hover .card-info {
-  transform: translateY(-5%); 
+  transform: translateY(-5%);
 }
 
 .card:hover .card-social {
@@ -61,10 +61,10 @@
 }
 
 .card-avatar:hover {
-  transform: scale(1.1); 
+  transform: scale(1.1);
 }
 
-.view-details-button {
+.view-details-button-en {
   padding: 0;
   margin: 0;
   border: none;
@@ -78,12 +78,12 @@
   align-items: center;
 }
 
-.view-details-button__text {
+.view-details-button__text-en {
   margin: 0;
   position: relative;
 }
 
-.view-details-button::after {
+.view-details-button-en::after {
   position: absolute;
   content: "";
   width: 0;
@@ -94,7 +94,7 @@
   transition: 0.3s ease-out;
 }
 
-.view-details-button__text::before {
+.view-details-button__text-en::before {
   position: absolute;
   content: "View Details";
   width: 0%;
@@ -104,24 +104,86 @@
   transition: 0.3s ease-out;
 }
 
-.view-details-button:hover::after {
+.view-details-button-en:hover::after {
   width: 100%;
 }
 
-.view-details-button:hover .view-details-button__text::before {
+.view-details-button-en:hover .view-details-button__text-en::before {
   width: 100%;
 }
 
-.view-details-button:hover .view-details-button__icon {
+.view-details-button-en:hover .view-details-button__icon-en {
   transform: translateX(4px);
-  color: rgba(255, 215, 0, 0.9); 
+  color: rgba(255, 215, 0, 0.9);
 }
 
-.view-details-button__icon {
+.view-details-button__icon-en {
   transition: 0.2s;
   position: relative;
   width: 15px;
   transition-delay: 0.2s;
+}
+.view-details-button-ar {
+  padding: 0;
+  margin: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  font-weight: 600;
+  font-size: 20px;
+  gap: 0.5rem;
+  align-items: center;
+  flex-direction: row-reverse; 
+}
+
+.view-details-button__text-ar {
+  margin: 0;
+  position: relative;
+}
+
+.view-details-button-ar::after {
+  position: absolute;
+  content: "";
+  width: 0;
+  right: 0;
+  bottom: -7px;
+  background: rgba(255, 215, 0, 0.9);
+  height: 2px;
+  transition: 0.3s ease-out;
+}
+
+.view-details-button__text-ar::before {
+  position: absolute;
+  content: "عرض التفاصيل"; 
+  width: 0%;
+  inset: 0;
+  color: rgba(255, 215, 0, 0.9);
+  overflow: hidden;
+  transition: 0.3s ease-out;
+  direction: rtl;
+}
+
+.view-details-button-ar:hover::after {
+  width: 100%;
+}
+
+.view-details-button-ar:hover .view-details-button__text-ar::before {
+  width: 100%;
+}
+
+.view-details-button-ar:hover .view-details-button__icon-ar {
+  transform: translateX(-4px);
+  color: rgba(255, 215, 0, 0.9);
+}
+
+.view-details-button__icon-ar {
+  transition: 0.2s;
+  position: relative;
+  width: 15px;
+  transition-delay: 0.2s;
+  transform: scaleX(-1);
 }
 .modal-enter {
   opacity: 0;
@@ -140,4 +202,3 @@
   opacity: 0;
   transition: opacity 300ms;
 }
-
