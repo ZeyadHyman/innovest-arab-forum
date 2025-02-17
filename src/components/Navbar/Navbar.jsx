@@ -81,9 +81,7 @@ function Navbar() {
                 alt="INNOVEST Logo"
                 width="96"
                 height="96"
-                className={`transition-all duration-300 ease-out hover:scale-105 active:scale-95 ${
-                  isScrolled ? "w-14" : "w-24"
-                }`}
+                className={`transition-all duration-300 ease-out hover:scale-105 active:scale-95 ${isScrolled ? "w-14" : "w-24"}`}
               />
               <h1
                 className={`org-font text-gold tracking-wide transition-all duration-300 ease-out ${
@@ -94,18 +92,10 @@ function Navbar() {
               </h1>
             </Link>
             {/* Forum Name */}
-            <p
-              className={`text-white transition-all duration-300 ease-out ${
-                isScrolled ? "hidden" : "text-[4px] md:text-[5.4px]"
-              }`}
-            >
+            <p className={`text-white transition-all duration-300 ease-out ${isScrolled ? "hidden" : "text-[4px] md:text-[5.4px]"}`}>
               {t("navbar.forum_name", { lng: "en" })}
             </p>
-            <p
-              className={`text-[7px] md:text-[9px] text-white transition-all duration-300 ease-out ${
-                isScrolled ? "hidden" : ""
-              }`}
-            >
+            <p className={`text-[7px] md:text-[9px] text-white transition-all duration-300 ease-out ${isScrolled ? "hidden" : ""}`}>
               {t("navbar.forum_name", { lng: "ar" })}
             </p>
           </div>
@@ -125,34 +115,15 @@ function Navbar() {
 
           {/* Mobile Navigation Links */}
           <div className="md:hidden flex flex-col items-center">
-            <div
-              className="flex flex-col justify-center items-center space-y-1 cursor-pointer group"
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-            >
-              <div
-                className={`w-10 h-1 bg-white transition-transform ${
-                  isMenuOpen ? "rotate-45 translate-y-2" : ""
-                }`}
-              ></div>
-              <div
-                className={`w-10 h-1 bg-white transition-opacity ${
-                  isMenuOpen ? "opacity-0" : "opacity-100"
-                }`}
-              ></div>
-              <div
-                className={`w-10 h-1 bg-white transition-transform ${
-                  isMenuOpen ? "-rotate-45 -translate-y-2" : ""
-                }`}
-              ></div>
+            <div className="flex flex-col justify-center items-center space-y-1 cursor-pointer group" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+              <div className={`w-10 h-1 bg-white transition-transform ${isMenuOpen ? "rotate-45 translate-y-2" : ""}`}></div>
+              <div className={`w-10 h-1 bg-white transition-opacity ${isMenuOpen ? "opacity-0" : "opacity-100"}`}></div>
+              <div className={`w-10 h-1 bg-white transition-transform ${isMenuOpen ? "-rotate-45 -translate-y-2" : ""}`}></div>
             </div>
 
             <div
               className={`absolute top-16 left-0 w-full bg-gradient-to-l from-blue-950 to-gray-800 transition-all duration-300
-              ${
-                isMenuOpen
-                  ? "opacity-100 translate-y-6"
-                  : "opacity-0 -translate-y-10 pointer-events-none"
-              }`}
+              ${isMenuOpen ? "opacity-100 translate-y-6" : "opacity-0 -translate-y-10 pointer-events-none"}`}
             >
               <div className="flex flex-col justify-center items-center text-lg space-y-6 pb-8">
                 {Object.entries(menuLinks).map(([key, value]) => (
@@ -179,9 +150,7 @@ function Navbar() {
               alt="Globe Icon"
               width="48"
               height="48"
-              className={`transition-all duration-500 ease-out transform hover:rotate-180 ${
-                isScrolled ? "w-8 md:w-8" : "w-10 md:w-12"
-              }`}
+              className={`transition-all duration-500 ease-out transform hover:rotate-180 ${isScrolled ? "w-8 md:w-8" : "w-10 md:w-12"}`}
             />
           </button>
         </div>
@@ -190,27 +159,20 @@ function Navbar() {
         <div
           className={`z-40 w-full fixed hidden md:flex bg-gold/90 backdrop-blur-xl justify-between items-center py-4 px-32 transition-all duration-1000 ease-in-out
           ${isLoaded ? "" : "opacity-0 translate-y-10"}
-          ${
-            isScrolled
-              ? "opacity-100 pointer-events-auto rounded-b-4xl"
-              : "opacity-0 pointer-events-none rounded-b-none"
-          }`}
+          ${isScrolled ? "opacity-100 pointer-events-auto rounded-b-4xl" : "opacity-0 pointer-events-none rounded-b-none"}`}
         >
           <div className="flex gap-1">
             {timeLeft &&
-              Object.entries(timeLeft).map(([key, value], index, arr) => (
+              Object.entries(timeLeft).map(([key, { value, unit }], index, arr) => (
                 <div
                   key={key}
                   className={`text-white flex flex-col items-center text-center text-base
-                  ${
-                    index !== arr.length - 1
-                      ? isArabic
-                        ? "border-l border-white px-2"
-                        : "border-r border-white px-4"
-                      : "px-4"
-                  }`}
+                  ${index !== arr.length - 1 ? (isArabic ? "border-l border-white px-2" : "border-r border-white px-4") : "px-4"}`}
                 >
-                  <span className="text-xl">{value}</span>
+                  <span className="text-xl">
+                    {value + " "}
+                    {unit}
+                  </span>
                 </div>
               ))}
           </div>
@@ -227,20 +189,15 @@ function Navbar() {
           ${isLoaded ? "" : "opacity-0 translate-y-10"}`}
       >
         <div className="flex">
-          {Object.entries(timeLeft).map(([key, value], index, arr) => (
+          {Object.entries(timeLeft).map(([key, { value, unit }], index, arr) => (
             <div
               key={key}
               className={`text-white px-2 flex flex-col items-center text-center text-base
-              ${
-                index !== arr.length - 1
-                  ? isArabic
-                    ? "border-l border-white/40"
-                    : "border-r border-white/40"
-                  : ""
-              }`}
+              ${index !== arr.length - 1 ? (isArabic ? "border-l border-white/40" : "border-r border-white/40") : ""}`}
             >
               <span className={`${isArabic ? "text-sm" : "text-xs"}`}>
-                {value}
+                {value + " "}
+                {unit}
               </span>
             </div>
           ))}
@@ -259,13 +216,7 @@ function Navbar() {
         ${isLoaded ? "opacity-100 scale-100" : "opacity-0 scale-0"}
         ${i18n.language === "ar" ? "left-5" : "right-5"}`}
       >
-        <img
-          src={globe}
-          alt="Globe Icon"
-          width="38"
-          height="38"
-          className="transition-all duration-500 ease-out transform active:rotate-180 w-8"
-        />
+        <img src={globe} alt="Globe Icon" width="38" height="38" className="transition-all duration-500 ease-out transform active:rotate-180 w-8" />
       </button>
     </>
   );
