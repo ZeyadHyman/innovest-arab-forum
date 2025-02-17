@@ -2,7 +2,6 @@
   "loader": {
     "welcome": "مرحبًا بكم في منتدى إنوفيست العربي"
   },
-
   "navbar": {
     "forum_name": "منتدى الابتكار والاستثمار العربي",
     "ticket": "اشترِ تذكرة",
@@ -13,10 +12,8 @@
       "previousConferences": "المؤتمرات السابقة"
     }
   },
-
   "previousConferences": {
     "title": "المؤتمرات السابقة",
-
     "conferences": [
       {
         "title": " مؤتمر ريادة الأعمال والتحول الرقمي",
@@ -77,6 +74,106 @@
       }
     ]
   },
-  "speakers": {},
+  "speakers": {
+    "title": "المتحدثون",
+    "speakersList": [
+      {
+        "image": "https://images.pexels.com/photos/674010/pexels-photo-674010.jpeg?cs=srgb&dl=pexels-anjana-c-169994-674010.jpg&fm=jpg",
+        "name": "محمد أحمد",
+        "role": "رئيس مجلس إدارة شركة التقنية الحديثة",
+        "description": "محمد أحمد هو رائد أعمال في مجال التكنولوجيا مع أكثر من 20 عامًا من الخبرة في التحول الرقمي.",
+        "social_media_link": "https://twitter.com/mohamedahmed",
+        "button_text": "عرض التفاصيل"
+      },
+      {
+        "image": "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_1280.jpg",
+        "name": "فاطمة علي",
+        "role": "مؤسسة شركة الحلول الخضراء",
+        "description": "فاطمة علي هي من أبرز المدافعين عن الممارسات التجارية المستدامة والابتكار البيئي.",
+        "social_media_link": "https://linkedin.com/in/fatimaali",
+        "button_text": "عرض التفاصيل"
+      },
+      {
+        "image": "https://images.unsplash.com/photo-1575936123452-b67c3203c357?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aW1hZ2V8ZW58MHx8MHx8fDA%3D",
+        "name": "أحمد خان",
+        "role": "مدير أبحاث الذكاء الاصطناعي",
+        "description": "أحمد خان متخصص في الذكاء الاصطناعي وتطبيقاته في الأسواق الناشئة.",
+        "social_media_link": "https://facebook.com/ahmedkhan",
+        "button_text": "عرض التفاصيل"
+      },
+      {
+        "image": "https://media.istockphoto.com/id/1403500817/photo/the-craggies-in-the-blue-ridge-mountains.jpg?s=612x612&w=0&k=20&c=N-pGA8OClRVDzRfj_9AqANnOaDS3devZWwrQNwZuDSk=",
+        "name": "ماريا غونزاليز",
+        "role": "استراتيجية الابتكار",
+        "description": "ماريا غونزاليز تساعد الشركات على دمج التقنيات المبتكرة لتعزيز ميزتها التنافسية.",
+        "social_media_link": "https://instagram.com/mariagonzalez",
+        "button_text": "عرض التفاصيل"
+      },
+      {
+        "image": "https://media.istockphoto.com/id/1403500817/photo/the-craggies-in-the-blue-ridge-mountains.jpg?s=612x612&w=0&k=20&c=N-pGA8OClRVDzRfj_9AqANnOaDS3devZWwrQNwZuDSk=",
+        "name": "لي وي",
+        "role": "مستثمر رأسمالي",
+        "description": "لي وي يركز على تمويل الشركات الناشئة ذات الإمكانات العالية في قطاعات التكنولوجيا والبيوتكنولوجيا.",
+        "social_media_link": "https://twitter.com/liwei",
+        "button_text": "عرض التفاصيل"
+      },
+      {
+        "image": "https://media.istockphoto.com/id/1317323736/photo/a-view-up-into-the-trees-direction-sky.jpg?s=612x612&w=0&k=20&c=i4HYO7xhao7CkGy7Zc_8XSNX_iqG0vAwNsrH1ERmw2Q=",
+        "name": "فاطمة المنصوري",
+        "role": "مدربة ريادة الأعمال",
+        "description": "فاطمة المنصوري قامت بتوجيه أكثر من 100 شركة ناشئة في الشرق الأوسط لمساعدتها على التوسع بفعالية.",
+        "social_media_link": "https://linkedin.com/in/fatimaalmansoori",
+        "button_text": "عرض التفاصيل"
+      },
+      {
+        "image": "https://static.vecteezy.com/vite/assets/photo-masthead-375-BoK_p8LG.webp",
+        "name": "كارلوس رويز",
+        "role": "خبير في تقنية البلوك تشين",
+        "description": "كارلوس رويز هو خبير معروف في تقنية البلوك تشين وتطبيقاتها في القطاع المالي.",
+        "social_media_link": "https://facebook.com/carlosruiz",
+        "button_text": "عرض التفاصيل"
+      },
+      {
+        "image": "https://images.pexels.com/photos/414612/pexels-photo-414612.jpeg?cs=srgb&dl=pexels-souvenirpixels-414612.jpg&fm=jpg",
+        "name": "سارة كيم",
+        "role": "خبيرة في التسويق الرقمي",
+        "description": "سارة كيم أحدثت ثورة في استراتيجيات التسويق الرقمي للعلامات التجارية الكبرى في آسيا.",
+        "social_media_link": "https://instagram.com/sarakim",
+        "button_text": "عرض التفاصيل"
+      },
+      {
+        "image": "https://next-images.123rf.com/index/_next/image/?url=https://assets-cdn.123rf.com/index/static/assets/hero-banner-2x.jpeg&w=3840&q=75",
+        "name": "محمد علي",
+        "role": "مستشار سياسات التكنولوجيا",
+        "description": "محمد علي يقدم المشورة للحكومات حول سياسات التكنولوجيا التي تعزز الابتكار والنمو الاقتصادي.",
+        "social_media_link": "https://twitter.com/mohammedali",
+        "button_text": "عرض التفاصيل"
+      },
+      {
+        "image": "https://media.istockphoto.com/id/814423752/photo/eye-of-model-with-colorful-art-make-up-close-up.jpg?s=2048x2048&w=is&k=20&c=KTpY1O4d7-EuX-R_GR_44Upc-n9esJOZFpcqvA4CM0E=",
+        "name": "إيميلي تشانغ",
+        "role": "مديرة منتجات",
+        "description": "إيميلي تشانغ قادت العديد من إطلاق المنتجات الناجحة في قطاع الإلكترونيات الاستهلاكية.",
+        "social_media_link": "https://linkedin.com/in/emilychang",
+        "button_text": "عرض التفاصيل"
+      },
+      {
+        "image": "https://media.istockphoto.com/id/520700958/photo/beautiful-flowers-background.jpg?s=2048x2048&w=is&k=20&c=OFq8_xh2M46tc6hIWIuCnfzDLMXRmC3GWu_Dbd1mlzA=",
+        "name": "راج باتيل",
+        "role": "مستشار الاستدامة",
+        "description": "راج باتيل يعمل مع الشركات لتنفيذ ممارسات مستدامة وتقليل الأثر البيئي.",
+        "social_media_link": "https://facebook.com/rajpatel",
+        "button_text": "عرض التفاصيل"
+      },
+      {
+        "image": "https://static.vecteezy.com/system/resources/thumbnails/036/324/708/small/ai-generated-picture-of-a-tiger-walking-in-the-forest-photo.jpg",
+        "name": "نينا إيفانوفا",
+        "role": "محللة أمن سيبراني",
+        "description": "نينا إيفانوفا هي خبيرة في الأمن السيبراني وتساعد المنظمات على حماية أصولها الرقمية.",
+        "social_media_link": "https://instagram.com/ninaivanova",
+        "button_text": "عرض التفاصيل"
+      }
+    ]
+  },
   "events": {}
 }
