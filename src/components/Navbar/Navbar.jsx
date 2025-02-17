@@ -68,7 +68,7 @@ function Navbar() {
 
       {/* Navbar */}
       <nav
-        className={`sticky top-0 w-full bg-gradient-to-l from-blue-950 to-gray-800 transition-transform duration-500 ease-in-out shadow-lg z-50
+        className={`sticky top-0 w-full bg-gradient-to-l from-blue-950 to-gray-800 transition-transform duration-500 ease-in-out shadow-lg z-40
             ${isHidden ? "md:-translate-y-full" : "md:translate-y-0"}`}
       >
         <div className="flex justify-between items-center py-4 px-6 md:py-5 md:px-32">
