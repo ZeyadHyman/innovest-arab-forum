@@ -15,7 +15,7 @@ function Speakers() {
   return (
     <>
       <div className="container mx-auto my-10 px-4 sm:px-6 md:my-22 lg:px-12 ">
-        <h2 className="text-6xl pt-6 text-center">{t("speakers.title", { returnObjects: true })}</h2>
+        <h2 className="text-6xl pt-6 text-center text-secondary">{t("speakers.title", { returnObjects: true })}</h2>
         <p className="text-slate-600 text-center text-2xl pt-4 pb-6">{t("speakers.subtitile", { returnObjects: true })}</p>
         <div className="flex flex-wrap justify-center gap-12 ">
           {Object.entries(speakersData).map(([key, value]) => (
