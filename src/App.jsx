@@ -6,6 +6,7 @@ import Footer from "./components/Footer/Footer";
 import Speakers from "./pages/Speakers"; // Correct case
 
 const Home = lazy(() => import("./pages/Home"));
+const PreviousConferences = lazy(() => import("./pages/PreviousConferences"));
 const Navbar = lazy(() => import("./components/Navbar/Navbar"));
 const ScrollToTop = lazy(() => import("./utils/ScrollToTop"));
 
@@ -32,38 +33,9 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/speakers" element={<Speakers />} />
+            <Route path="/previousConferences" element={<PreviousConferences />} />
           </Routes>
-          <Footer />
-          <Footer />
-          <Footer />
-          <Footer />
-          <Footer />
-          <Footer />
-          <Footer />
-          <Footer />
-          <Footer />
-          <Footer />
-          <Footer />
-          <Footer />
-          <Footer />
-          <Footer />
-          <Footer />
-          <Footer />
-          <Footer />
-          <Footer />
-          <Footer />
-          <Footer />
-          <Footer />
-          <Footer />
-          <Footer />
-          <Footer />
-          <Footer />
-          <Footer />
-          <Footer />
-          <Footer />
-          <Footer />
-          <Footer />
-          <Footer />
+          
           <Footer />
         </Router>
       )}

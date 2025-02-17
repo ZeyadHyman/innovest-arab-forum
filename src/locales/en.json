@@ -2,17 +2,82 @@
   "loader": {
     "welcome": "Welcome to Innovest Arab Forum"
   },
-
   "navbar": {
     "forum_name": "INNOVATION AND INVESTMENT ARAB FORUM",
     "ticket": "Buy a Ticket",
-    "langSwitcher": "ترجم إلى العربية",
+    "langSwitcher": "Translate to Arabic",
     "menu": {
       "home": "Home",
       "speakers": "Speakers",
-      "events": "Events",
-      "blog": "Blog",
-      "contact": "Contact Us"
+      "previousConferences": "Previous Conferences"
     }
-  }
+  },
+  "previousConferences": {
+    "title": "Previous Conferences",
+    "conferences": [
+      {
+        "title": "Entrepreneurship and Digital Transformation",
+        "date": "February 2023",
+        "location": "Naguib Mahfouz Hall, Al-Ahram Institution",
+        "description": "Recognizing the crucial role of entrepreneurship and innovation in economic development and job creation, this conference focused on how digital transformation can drive progress in alignment with Egypt’s Vision 2030.",
+        "objectives": [
+          "Gather young entrepreneurs to shape their future.",
+          "Utilize youth skills and talents to enhance societal roles.",
+          "Enhance youth capabilities in innovation and digital transformation.",
+          "Strengthen women's economic empowerment."
+        ],
+        "topics": [
+          "Entrepreneurship and small businesses.",
+          "Digital transformation and information technology.",
+          "Women's economic empowerment."
+        ],
+        "highlights": [
+          "Showcased various tech projects with the participation of the Egyptian SME Authority and the Federation of Egyptian Industries.",
+          "Attended by Arab delegations, including the Ministry of Youth & Sports, Jordanian and Egyptian Parliaments, ambassadors, and diplomatic representatives."
+        ],
+        "outcomes": [
+          "25 emerging tech startups received funding and support.",
+          "Launched a training initiative for 500 youth in entrepreneurship.",
+          "Kickstarted the ‘Capable Youth’ initiative in Jordan.",
+          "A startup won the ‘Best Entrepreneurial Project’ award from Orange and Aspire."
+        ]
+      },
+      {
+        "title": "Promising Investment and Innovation Opportunities",
+        "date": "October 2024",
+        "location": "Triumph Hotel, Heliopolis, Cairo",
+        "description": "In light of rapid economic changes and global transformations, the role of entrepreneurship is highlighted as a key pillar for sustainable development and driving innovation. The conference serves as a platform for Arab entrepreneurs and investors to discuss the challenges and opportunities in the region, focusing on investment in innovative ideas and startups.",
+        "objectives": [
+          "Attract investments to the region by showcasing investment opportunities.",
+          "Encourage export and market expansion for businesses.",
+          "Increase trade exchange between Arab countries and other markets.",
+          "Create new job opportunities through supporting investment projects.",
+          "Engage Arab and African investors to foster collaborations.",
+          "Support entrepreneurship and innovation in the public and private sectors."
+        ],
+        "topics": [
+          "Investment attraction and opportunities.",
+          "Export and trade growth.",
+          "Business networking and partnerships.",
+          "Innovation and entrepreneurship support."
+        ],
+        "highlights": [
+          "Organized with the patronage of the Ministry of Youth & Sports, and attended by various governmental bodies, media outlets, and entrepreneurship organizations.",
+          "Involved a committee led by expert Mr. Magdy Wahba to select the most promising projects for display at the conference.",
+          "Public announcements and press conferences were conducted, with a press conference held by the Minister of Youth & Sports, Dr. Ashraf Sobhi."
+        ],
+        "outcomes": [
+          "Awarded the Best Emerging Startup award.",
+          "Presented the Best Arab Entrepreneur award.",
+          "Recognized the Best Technological Project award.",
+          "Facilitated connections for a project with the Ministry of Youth & Sports incubator.",
+          "Facilitated connections for a project with the Egyptian Workers' Union.",
+          "Approved the Arab expansion of a key startup in February 2025.",
+          "Launched an entrepreneurship training program with the upcoming Innovest Arab Forum 3rd edition."
+        ]
+      }
+    ]
+  },
+  "speakers": {},
+  "events": {}
 }
