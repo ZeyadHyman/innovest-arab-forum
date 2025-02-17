@@ -153,7 +153,7 @@ function Navbar() {
                   : "opacity-0 -translate-y-10 pointer-events-none"
               }`}
             >
-              <div className="flex flex-col justify-center items-center text-lg space-y-2 pb-5">
+              <div className="flex flex-col justify-center items-center text-lg space-y-6 pb-8">
                 {Object.entries(menuLinks).map(([key, value]) => (
                   <Link
                     onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -187,7 +187,7 @@ function Navbar() {
 
         {/* Desktop Countdown Timer */}
         <div
-          className={`w-full fixed hidden md:flex bg-gold/90 backdrop-blur-xl justify-between items-center py-4 px-32 transition-all duration-1000 ease-in-out
+          className={`z-40 w-full fixed hidden md:flex bg-gold/90 backdrop-blur-xl justify-between items-center py-4 px-32 transition-all duration-1000 ease-in-out
           ${isLoaded ? "" : "opacity-0 translate-y-10"}
           ${
             isScrolled
@@ -222,7 +222,7 @@ function Navbar() {
 
       {/* Mobile Countdown Timer */}
       <div
-        className={`bottom-0 fixed w-full md:hidden bg-gold/90 backdrop-blur-xl flex justify-between items-center px-2 py-5 transition-all duration-500
+        className={`z-40 bottom-0 fixed w-full md:hidden bg-gold/90 backdrop-blur-xl flex justify-between items-center px-2 py-5 transition-all duration-500
           ${isLoaded ? "" : "opacity-0 translate-y-10"}`}
       >
         <div className="flex">
@@ -253,7 +253,7 @@ function Navbar() {
       {/* Mobile Language Switcher Button */}
       <button
         onClick={switchLanguage}
-        className={`fixed bottom-25 md:hidden block bg-gradient-to-l from-blue-950 to-gray-800
+        className={`z-40 fixed bottom-25 md:hidden block bg-gradient-to-l from-blue-950 to-gray-800
         select-none p-3 rounded-full transition-all duration-1000 active:scale-110 cursor-pointer
         ${isLoaded ? "opacity-100 scale-100" : "opacity-0 scale-0"}
         ${i18n.language === "ar" ? "left-5" : "right-5"}`}
