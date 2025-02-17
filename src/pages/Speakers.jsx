@@ -15,6 +15,7 @@ function Speakers() {
   return (
     <>
       <div className="container mx-auto my-10 px-4 sm:px-6 md:my-22 lg:px-12">
+        <h2 className="text-6xl p-10 text-center">{t("speakers.title", { returnObjects: true })}</h2>
         <div className="flex flex-wrap justify-center gap-12 ">
           {Object.entries(speakersData).map(([key, value]) => (
             <div
@@ -29,7 +30,7 @@ function Speakers() {
                   className="card-avatar"
                 />
                 <div className="card-title">{value.name}</div>
-                <div className="card-subtitle">{value.role}</div>
+                <div className="card-subtitle mt-2">{value.role}</div>
               </div>
               <div className="card-social">
                 <button
@@ -60,7 +61,7 @@ function Speakers() {
               </div>
               {selectedSpeaker?.name === value.name && (
                 <div
-                  className="fixed inset-0 z-[999] grid h-screen w-screen place-items-center bg-black bg-opacity-0 backdrop-blur-none transition-all duration-300"
+                  className="fixed inset-0 z-[999] grid h-screen w-screen place-items-center bg-black bg-opacity-0 backdrop-blur-none transition-all duration-300 cursor-auto"
                   style={{
                     pointerEvents: "auto",
                     backgroundColor: "rgba(0, 0, 0, 0.2)",
@@ -69,7 +70,7 @@ function Speakers() {
                   onClick={closeModal}
                 >
                   <div
-                    className="relative m-4 p-4 w-11/12 md:w-3/5 min-w-[90%] md:min-w-[60%] max-w-[90%] md:max-w-[60%] rounded-lg bg-white shadow-sm flex flex-col md:flex-row cursor-auto"
+                    className="relative m-4 p-4 w-11/12 md:w-3/5 min-w-[90%] md:min-w-[60%] max-w-[90%] md:max-w-[60%] rounded-lg bg-white shadow-sm flex flex-col md:flex-row"
                     onClick={(e) => e.stopPropagation()}
                   >
                     <button
@@ -109,7 +110,7 @@ function Speakers() {
                       />
                     </div>
 
-                    <div className="w-full md:w-2/3 md:pl-6 flex flex-col mt-4 md:mt-0">
+                    <div className="w-full md:w-2/3 md:px-6 flex flex-col mt-4 md:mt-0">
                       <div className="text-2xl px-3 text-slate-800">
                         {value.name}
                       </div>
