@@ -37,14 +37,12 @@
 }
 
 .card-title {
-  color: #333;
   font-size: 1.5em;
   font-weight: 600;
   line-height: 2rem;
 }
 
 .card-subtitle {
-  color: #859ba8;
   font-size: 0.8em;
 }
 .card:hover {
@@ -63,127 +61,36 @@
 .card-avatar:hover {
   transform: scale(1.1);
 }
-
-.view-details-button-en {
-  padding: 0;
-  margin: 0;
-  border: none;
-  background: none;
+.hover-button {
+  font-size: 18px;
+  font-family: inherit;
+  font-weight: 600;
   cursor: pointer;
   position: relative;
-  display: flex;
-  font-weight: 600;
-  font-size: 20px;
-  gap: 0.5rem;
-  align-items: center;
-}
-
-.view-details-button__text-en {
-  margin: 0;
-  position: relative;
-}
-
-.view-details-button-en::after {
-  position: absolute;
-  content: "";
-  width: 0;
-  left: 0;
-  bottom: -7px;
-  background: rgba(255, 215, 0, 0.9);
-  height: 2px;
-  transition: 0.3s ease-out;
-}
-
-.view-details-button__text-en::before {
-  position: absolute;
-  content: "View Details";
-  width: 0%;
-  inset: 0;
-  color: rgba(255, 215, 0, 0.9);
-  overflow: hidden;
-  transition: 0.3s ease-out;
-}
-
-.view-details-button-en:hover::after {
-  width: 100%;
-}
-
-.view-details-button-en:hover .view-details-button__text-en::before {
-  width: 100%;
-}
-
-.view-details-button-en:hover .view-details-button__icon-en {
-  transform: translateX(4px);
-  color: rgba(255, 215, 0, 0.9);
-}
-
-.view-details-button__icon-en {
-  transition: 0.2s;
-  position: relative;
-  width: 15px;
-  transition-delay: 0.2s;
-}
-.view-details-button-ar {
-  padding: 0;
-  margin: 0;
   border: none;
   background: none;
-  cursor: pointer;
-  position: relative;
-  display: flex;
-  font-weight: 600;
-  font-size: 20px;
-  gap: 0.5rem;
-  align-items: center;
-  flex-direction: row-reverse; 
+  text-transform: uppercase;
+  transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition-duration: 400ms;
+  transition-property: color;
+}
+.hover-button:focus:after,
+.hover-button:hover:after {
+  width: 100%;
+  left: 0%;
 }
 
-.view-details-button__text-ar {
-  margin: 0;
-  position: relative;
-}
-
-.view-details-button-ar::after {
-  position: absolute;
+.hover-button:after {
   content: "";
-  width: 0;
-  right: 0;
-  bottom: -7px;
-  background: rgba(255, 215, 0, 0.9);
-  height: 2px;
-  transition: 0.3s ease-out;
-}
-
-.view-details-button__text-ar::before {
+  pointer-events: none;
+  bottom: -2px;
+  left: 50%;
   position: absolute;
-  content: "عرض التفاصيل"; 
   width: 0%;
-  inset: 0;
-  color: rgba(255, 215, 0, 0.9);
-  overflow: hidden;
-  transition: 0.3s ease-out;
-  direction: rtl;
-}
-
-.view-details-button-ar:hover::after {
-  width: 100%;
-}
-
-.view-details-button-ar:hover .view-details-button__text-ar::before {
-  width: 100%;
-}
-
-.view-details-button-ar:hover .view-details-button__icon-ar {
-  transform: translateX(-4px);
-  color: rgba(255, 215, 0, 0.9);
-}
-
-.view-details-button__icon-ar {
-  transition: 0.2s;
-  position: relative;
-  width: 15px;
-  transition-delay: 0.2s;
-  transform: scaleX(-1);
+  height: 2px;
+  transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition-duration: 400ms;
+  transition-property: width, left;
 }
 .modal-enter {
   opacity: 0;

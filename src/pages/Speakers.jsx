@@ -18,17 +18,27 @@ function Speakers() {
         <h2 className=" text-3xl lg:text-5xl font-extrabold text-secondary tracking-wide leading-tight text-center">
           {t("speakers.title")}
         </h2>
-        <p className="text-slate-600 text-center text-2xl pt-4 pb-6">{t("speakers.subtitile")}</p>
+        <p className="text-slate-600 text-center text-2xl pt-4 pb-6">
+          {t("speakers.subtitile")}
+        </p>
         <div className="flex flex-wrap justify-center gap-12 ">
           {Object.entries(speakersData).map(([key, value]) => (
-            <div className="card group overflow-hidden cursor-pointer" onClick={() => openModal(value)} key={key}>
+            <div
+              className="card group overflow-hidden cursor-pointer"
+              onClick={() => openModal(value)}
+              key={key}
+            >
               <div className="card-info">
-                <img src={value.image} alt={value.name} className="card-avatar select-none" />
+                <img
+                  src={value.image}
+                  alt={value.name}
+                  className="card-avatar select-none"
+                />
                 <div className="card-title">{value.name}</div>
-                <div className="card-subtitle mt-2">{value.role}</div>
+                <div className="card-subtitle mt-2 text-transparent bg-clip-text bg-gradient-to-l from-blue-950 to-gray-800">{value.role}</div>
               </div>
               <div className="card-social">
-                <button
+                {/* <button
                   className={isArabic ? "view-details-button-ar" : "view-details-button-en"}
                   onClick={(e) => {
                     e.stopPropagation();
@@ -52,6 +62,15 @@ function Speakers() {
                   >
                     <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
                   </svg>
+                </button> */}
+                <button
+                  className="hover-button hover:text-gold/90 focus:text-gold/90 after:bg-gold/90"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    openModal(value);
+                  }}
+                >
+                  View Details
                 </button>
               </div>
             </div>
@@ -66,7 +85,6 @@ function Speakers() {
             pointerEvents: "auto",
             backgroundColor: "rgba(0, 0, 0, 0.2)",
             backdropFilter: "blur(8px)",
-
           }}
           onClick={closeModal}
         >
@@ -80,8 +98,19 @@ function Speakers() {
               }`}
               onClick={closeModal}
             >
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M6 18L18 6M6 6l12 12"
+                />
               </svg>
             </button>
 
@@ -97,13 +126,23 @@ function Speakers() {
             </a>
 
             <div className="w-full md:w-1/3 flex-shrink-0">
-              <img src={selectedSpeaker.image} alt={selectedSpeaker.name} className="w-full h-64 md:h-96 object-cover rounded-lg select-none" />
+              <img
+                src={selectedSpeaker.image}
+                alt={selectedSpeaker.name}
+                className="w-full h-64 md:h-96 object-cover rounded-lg select-none"
+              />
             </div>
 
             <div className="w-full md:w-2/3 md:px-6 flex flex-col mt-4 md:mt-0">
-              <div className="text-2xl px-3 text-slate-800">{selectedSpeaker.name}</div>
-              <div className="text-lg px-3 text-slate-600 mt-2 ar-font">{selectedSpeaker.role}</div>
-              <div className="mt-4 text-slate-600 font-light overflow-y-auto max-h-64 md:max-h-72 p-3 py-6">{selectedSpeaker.description}</div>
+              <div className="text-2xl px-3 text-slate-800">
+                {selectedSpeaker.name}
+              </div>
+              <div className="text-lg px-3 text-slate-600 mt-2 ar-font">
+                {selectedSpeaker.role}
+              </div>
+              <div className="mt-4 text-slate-600 font-light overflow-y-auto max-h-64 md:max-h-72 p-3 py-6">
+                {selectedSpeaker.description}
+              </div>
             </div>
           </div>
         </div>
