@@ -10,7 +10,7 @@ function Footer() {
   const { t } = useTranslation();
 
   return (
-    <footer className="bg-gray-300 text-white py-10 px-5 md:px-20 mt-2">
+    <footer className="bg-gray-300/40 text-white py-10 px-5 md:px-20 mt-2 mb-20 lg:mb-0">
       <div className="container mx-auto flex flex-col md:flex-row justify-between items-center">
         {/* Logo Section */}
         <div className="flex flex-col items-center space-y-2 mb-6 md:mb-0">
@@ -31,7 +31,7 @@ function Footer() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="WhatsApp"
-            className="text-white bg-green-500 hover:bg-green-600 p-3 rounded-full transition duration-300 transform hover:scale-110 shadow-md hover:shadow-lg"
+            className="text-green-500 border hover:text-white  hover:bg-green-600 p-3 rounded-full transition duration-300 transform hover:scale-110 shadow-md hover:shadow-lg"
           >
             <FaWhatsapp size={24} />
           </a>
@@ -40,7 +40,7 @@ function Footer() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Facebook"
-            className="text-white bg-blue-600 hover:bg-blue-700 p-3 rounded-full transition duration-300 transform hover:scale-110 shadow-md hover:shadow-lg"
+            className="text-blue-600  border hover:text-white hover:bg-blue-700 p-3 rounded-full transition duration-300 transform hover:scale-110 shadow-md hover:shadow-lg"
           >
             <FaFacebookF size={24} />
           </a>
@@ -49,7 +49,7 @@ function Footer() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Instagram"
-            className="text-white bg-pink-500 hover:bg-pink-600 p-3 rounded-full transition duration-300 transform hover:scale-110 shadow-md hover:shadow-lg"
+            className="text-pink-500  border hover:text-white hover:bg-pink-600 p-3 rounded-full transition duration-300 transform hover:scale-110 shadow-md hover:shadow-lg"
           >
             <FaInstagram size={24} />
           </a>
@@ -58,7 +58,7 @@ function Footer() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="LinkedIn"
-            className="text-white bg-blue-500 hover:bg-blue-600 p-3 rounded-full transition duration-300 transform hover:scale-110 shadow-md hover:shadow-lg"
+            className="text-blue-500  border hover:text-white hover:bg-blue-600 p-3 rounded-full transition duration-300 transform hover:scale-110 shadow-md hover:shadow-lg"
           >
             <FaLinkedinIn size={24} />
           </a>
@@ -66,7 +66,7 @@ function Footer() {
       </div>
 
       {/* Copyright */}
-      <div className="text-center text-gray-400 text-sm mt-10">
+      <div className="text-center text-gray-400 text-xs lg:text-sm mt-10">
         <p>{t("footer.copyRight")}</p>
       </div>
     </footer>

@@ -73,8 +73,9 @@ function Navbar() {
           "w-full bg-gradient-to-l from-blue-950 to-gray-800 transition-transform duration-500 ease-in-out shadow-lg z-40",
           isHidden ? "md:-translate-y-full" : "md:translate-y-0",
           !isScrolled && location.pathname === "/"
-            ? "bg-transparent absolute shadow-none mt-4"
-            : "sticky top-0"
+            ? "bg-transparent absolute shadow-none pt-4"
+            : "sticky top-0",
+          isMenuOpen ? "bg-gradient-to-l from-blue-950 to-gray-800" : ""
         )}
       >
         <div className="flex justify-between items-center py-4 px-6 md:py-5 md:px-32">
@@ -163,13 +164,12 @@ function Navbar() {
 
             <div
               className={cn(
-                "absolute top-16 left-0 w-full  transition-all duration-300",
+                "absolute top-16 left-0 w-full transition-all duration-300 bg-gradient-to-l from-blue-950 to-gray-800",
                 isMenuOpen
                   ? "opacity-100 translate-y-6"
                   : "opacity-0 -translate-y-10 pointer-events-none",
-                !isScrolled && location.pathname === "/"
-                  ? ""
-                  : "bg-gradient-to-l from-blue-950 to-gray-800"
+                location.pathname === "/" && isMenuOpen ? "translate-y-10" : "",
+                isMenuOpen && isScrolled ? "translate-y-6" : ""
               )}
             >
               <div className="flex flex-col justify-center items-center text-lg space-y-5 ">

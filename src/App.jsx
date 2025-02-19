@@ -29,13 +29,13 @@ function App() {
           <ScrollToTop />
           
           <Navbar />
-
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/speakers" element={<Speakers />} />
             <Route path="/previousConferences" element={<PreviousConferences />} />
           </Routes>
           
+<div className="h-screen">1</div>
           <Footer />
         
         </Router>
