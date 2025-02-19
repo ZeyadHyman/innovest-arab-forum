@@ -72,7 +72,7 @@ function Speakers() {
                     openModal(value);
                   }}
                 >
-                  View Details
+                  {value.button_text}
                 </button>
               </div>
             </div>
