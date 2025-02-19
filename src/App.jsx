@@ -3,7 +3,9 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Loader from "./utils/Loader/Loader";
 import i18n from "./i18n";
 import Footer from "./components/Footer/Footer";
-import Speakers from "./pages/Speakers"; // Correct case
+import Speakers from "./pages/Speakers";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Home = lazy(() => import("./pages/Home"));
 const PreviousConferences = lazy(() => import("./pages/PreviousConferences"));
@@ -17,6 +19,13 @@ function App() {
   useEffect(() => {
     document.documentElement.lang = i18n.language;
     document.documentElement.dir = i18n.language === "ar" ? "rtl" : "ltr";
+  }, []);
+  
+  useEffect(() => {
+    AOS.init({
+      once:"true",
+      duration: 1000,
+    });
   }, []);
 
   return (

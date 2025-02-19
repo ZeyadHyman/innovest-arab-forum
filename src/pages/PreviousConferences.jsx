@@ -22,13 +22,13 @@ function PreviousConferences() {
   const [index, setIndex] = useState(0);
 
   return (
-    <div className="px-4 lg:mx-20 mt-14 lg:mt-24">
-      <div className="lg:mb-14 text-3xl lg:text-5xl font-extrabold text-secondary tracking-wide leading-tight text-center">
+    <div className="px-4 lg:mx-20 mt-14 lg:mt-24" >
+      <div data-aos="fade-left" className="lg:mb-14 text-3xl lg:text-5xl font-extrabold text-secondary tracking-wide leading-tight text-center">
         {t("previousConferences.title")}
       </div>
 
       {/* Desktop Navigation */}
-      <div className="hidden md:flex justify-center items-center text-lg text-gray-500 font-bold">
+      <div data-aos="fade-right" className="hidden md:flex justify-center items-center text-lg text-gray-500 font-bold">
         <div className="h-[2px] w-full flex-1 bg-gold rounded-full"></div>
         {conferences.map((conference, i) => (
           <div key={i} className="flex items-center">
@@ -71,7 +71,7 @@ function PreviousConferences() {
       </div>
 
       {/* Conference Details */}
-      <div className="mt-1 lg:mt-10 py-12">
+      <div data-aos="fade-up" className="mt-1 lg:mt-10 py-12">
         {/* Title */}
         <div className="flex flex-col md:flex-row justify-between items-start space-y-6 md:space-y-0 md:space-x-8">
           <div className="flex-1">
@@ -219,7 +219,7 @@ function PreviousConferences() {
 
           {/* Outcomes */}
           {conferences[index].outcomes && (
-            <div className="text-lg text-gray-700 mt-6 mx-32">
+            <div  className="text-lg text-gray-700 mt-6 mx-32">
               <h2 className="font-bold flex items-center space-x-2">
                 <FaBullhorn className="text-gold" />
                 <span>
@@ -240,7 +240,7 @@ function PreviousConferences() {
         </div>
 
         {/* Swiper Carousel for Images */}
-        <div className="mt-10 lg:mt-20">
+        <div data-aos="fade-down" className="mt-10 lg:mt-20">
           <h1 className="text-2xl lg:text-4xl font-extrabold text-gray-800 mb-4 leading-tight">
             {i18next.language === "en"
               ? "Photos from the Conference"
