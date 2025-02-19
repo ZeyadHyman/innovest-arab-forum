@@ -66,6 +66,7 @@
       }
     ]
   },
+
   "speakers": {
     "title": "المتحدثون",
     "subtitile": "عنوان فرعي سأكتبه عندما أعرف فئة المتحدثين😂",
@@ -168,11 +169,12 @@
       }
     ]
   },
+
   "events": {},
   "hero": {
     "title": "منتدى إنوفيست العربي",
     "button": "اشترِ تذكرة",
-    "welcome": "مرحبا بك في",
+    "welcome": "مرحباً بك في",
     "location": "The Greek Campus Downtown",
     "date": "مايو 2025",
     "edition": "النسخة الثالثة"
