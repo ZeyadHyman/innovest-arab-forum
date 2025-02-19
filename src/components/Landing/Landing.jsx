@@ -20,13 +20,13 @@ const Landing = () => {
   return (
     <>
       <div
-        className="w-full block h-screen md:pt-[152.28px] bg-center bg-cover bg-no-repeat lg:pb-30  "
+        className="w-full h-screen md:pt-[152.28px] bg-center bg-cover bg-no-repeat lg:pb-30 "
         style={{
           backgroundImage: `linear-gradient(rgba(22, 37, 86, 0.9), rgba(31, 41, 56, 0.9)), url('/images/landing-cover.jpg')`,
         }}
       >
-        <div className="w-full h-full container m-auto py-4 px-6 md:py-5 md:px-10 lg:px-22 mty">
-          <div className="flex flex-col justify-center h-full w-full text-white mt-10">
+        <div className="w-full h-full container m-auto py-4 px-6 md:py-5 md:px-10 lg:px-22">
+          <div className="flex flex-col justify-center lg:items-center h-full w-full text-white mt-10 ">
             <p
               className={`font-extrabold ${
                 isArabic ? "text-3xl lg:text-5xl ar-font" : "text-4xl lg:text-6xl"
