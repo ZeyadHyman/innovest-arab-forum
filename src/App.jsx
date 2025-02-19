@@ -12,7 +12,7 @@ const ScrollToTop = lazy(() => import("./utils/ScrollToTop"));
 
 function App() {
   // make it true if you want to cancel it ↓↓↓↓↓
-  const [isLoaded, setIsLoaded] = useState(true);
+  const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
     document.documentElement.lang = i18n.language;
@@ -27,17 +27,19 @@ function App() {
         <Router>
           {/* Ensures the page scrolls to the top on route change */}
           <ScrollToTop />
-          
+
           <Navbar />
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/speakers" element={<Speakers />} />
-            <Route path="/previousConferences" element={<PreviousConferences />} />
+            <Route
+              path="/previousConferences"
+              element={<PreviousConferences />}
+            />
           </Routes>
-          
-<div className="h-screen">1</div>
+
+          <div className="h-screen">1</div>
           <Footer />
-        
         </Router>
       )}
     </>
