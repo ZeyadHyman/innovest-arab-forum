@@ -20,7 +20,7 @@ const Landing = () => {
   return (
     <>
       <div
-        className="w-full h-[calc(100vh-213.17px)] md:h-[calc(100vh-152.28px)] bg-center bg-cover bg-no-repeat"
+        className="w-full h-[calc(100vh-213.17px)] md:h-screen md:pt-[152.28px] bg-center bg-cover bg-no-repeat"
         style={{
           backgroundImage: `linear-gradient(rgba(22, 37, 86, 0.9), rgba(31, 41, 56, 0.9)), url('/images/landing-cover.jpg')`,
         }}
@@ -39,7 +39,7 @@ const Landing = () => {
                     className="relative hidden md:inline-block text-center rounded border border-white/15 w-[150px] text-white py-4 px-8 font-bold mr-3 z-10 "
                   >
                     {value} <p className="text-lg font-normal">{formattedUnit}</p>
-                  </span> 
+                  </span>
                 ))}
               </p>
             </div>
