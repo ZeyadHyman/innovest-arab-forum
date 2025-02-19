@@ -249,7 +249,7 @@ function PreviousConferences() {
 
           <Swiper
             dir="ltr"
-            slidesPerView={window.innerWidth > 768 ? 3 : 1.1}
+            slidesPerView={window.innerWidth > 768 ? 3.1 : 1.1}
             spaceBetween={10}
             centeredSlides={true}
             loop={true}

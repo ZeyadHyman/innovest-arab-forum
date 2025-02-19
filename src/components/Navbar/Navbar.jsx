@@ -70,53 +70,56 @@ function Navbar() {
       {/* Navbar */}
       <nav
         className={cn(
-          " w-full bg-gradient-to-l from-blue-950 to-gray-800 transition-transform duration-500 ease-in-out shadow-lg z-40",
+          "w-full bg-gradient-to-l from-blue-950 to-gray-800 transition-transform duration-500 ease-in-out shadow-lg z-40",
           isHidden ? "md:-translate-y-full" : "md:translate-y-0",
           !isScrolled && location.pathname === "/"
-            ? "bg-transparent absolute shadow-none"
+            ? "bg-transparent absolute shadow-none mt-4"
             : "sticky top-0"
         )}
       >
         <div className="flex justify-between items-center py-4 px-6 md:py-5 md:px-32">
           {/* Logo Section */}
           <div className="flex flex-col items-center text-center select-none">
-            <Link to="/" className="flex flex-col items-center text-center">
-              <img
-                src={logo}
-                alt="INNOVEST Logo"
-                width="96"
-                height="96"
-                className={cn(
-                  "transition-all duration-300 ease-out hover:scale-105 active:scale-95",
-                  isScrolled ? "w-14" : "w-24"
-                )}
-              />
-              <h1
-                className={cn(
-                  "org-font text-gold tracking-wide transition-all duration-300 ease-out",
-                  isScrolled ? "text-lg md:text-2xl" : "text-2xl md:text-4xl"
-                )}
-              >
-                INNOVEST
-              </h1>
-            </Link>
-            {/* Forum Name */}
-            <p
-              className={cn(
-                "text-white transition-all duration-300 ease-out",
-                isScrolled ? "hidden" : "text-[4px] md:text-[5.4px]"
-              )}
-            >
-              {t("navbar.forum_name", { lng: "en" })}
-            </p>
-            <p
-              className={cn(
-                "text-[7px] md:text-[9px] text-white transition-all duration-300 ease-out",
-                isScrolled ? "hidden" : ""
-              )}
-            >
-              {t("navbar.forum_name", { lng: "ar" })}
-            </p>
+            <div className="flex ">
+              <Link to="/" className="flex flex-col items-center text-center">
+                <img
+                  src={logo}
+                  alt="INNOVEST Logo"
+                  width="96"
+                  height="96"
+                  className={cn(
+                    "transition-all duration-300 ease-out hover:scale-105 active:scale-95",
+                    isScrolled ? "w-14" : "w-24"
+                  )}
+                />
+
+                <h1
+                  className={cn(
+                    "org-font text-gold tracking-wide transition-all duration-300 ease-out",
+                    isScrolled ? "text-lg md:text-2xl" : "text-2xl md:text-4xl"
+                  )}
+                >
+                  INNOVEST
+                </h1>
+                {/* Forum Name */}
+                <p
+                  className={cn(
+                    "text-white transition-all duration-300 ease-out",
+                    isScrolled ? "hidden" : "text-[4px] md:text-[5.4px]"
+                  )}
+                >
+                  {t("navbar.forum_name", { lng: "en" })}
+                </p>
+                <p
+                  className={cn(
+                    "text-[7px] md:text-[9px] text-white transition-all duration-300 ease-out",
+                    isScrolled ? "hidden" : ""
+                  )}
+                >
+                  {t("navbar.forum_name", { lng: "ar" })}
+                </p>
+              </Link>
+            </div>
           </div>
 
           {/* Desktop Navigation Links */}
@@ -160,13 +163,16 @@ function Navbar() {
 
             <div
               className={cn(
-                "absolute top-16 left-0 w-full bg-gradient-to-l from-blue-950 to-gray-800 transition-all duration-300",
+                "absolute top-16 left-0 w-full  transition-all duration-300",
                 isMenuOpen
                   ? "opacity-100 translate-y-6"
-                  : "opacity-0 -translate-y-10 pointer-events-none"
+                  : "opacity-0 -translate-y-10 pointer-events-none",
+                !isScrolled && location.pathname === "/"
+                  ? ""
+                  : "bg-gradient-to-l from-blue-950 to-gray-800"
               )}
             >
-              <div className="flex flex-col justify-center items-center text-lg space-y-6 pb-8">
+              <div className="flex flex-col justify-center items-center text-lg space-y-5 ">
                 {Object.entries(menuLinks).map(([key, value]) => (
                   <Link
                     onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -177,6 +183,13 @@ function Navbar() {
                     {value}
                   </Link>
                 ))}
+                <div
+                  className={cn(
+                    !isScrolled && location.pathname === "/"
+                      ? "w-full h-[1px] bg-white "
+                      : ""
+                  )}
+                ></div>
               </div>
             </div>
           </div>
@@ -285,7 +298,7 @@ function Navbar() {
           isLoaded ? "opacity-100 scale-100" : "opacity-0 scale-0",
           i18n.language === "ar" ? "left-5" : "right-5",
           !isScrolled && location.pathname === "/"
-            ? "bottom-7 border border-white/50 bg-gradient-to-r from-red-900/40 to-red-800/40 backdrop-blur-md"
+            ? "bottom-7 border border-white/50 bg-gradient-to-l from-red-600/40 to-red-800/90 backdrop-blur-md"
             : "bottom-25 bg-gradient-to-l from-blue-950 to-gray-800"
         )}
       >

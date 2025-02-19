@@ -20,7 +20,7 @@ const Landing = () => {
   return (
     <>
       <div
-        className="w-full h-screen md:pt-[152.28px] bg-center bg-cover bg-no-repeat lg:pb-30"
+        className="w-full block h-screen md:pt-[152.28px] bg-center bg-cover bg-no-repeat lg:pb-30  "
         style={{
           backgroundImage: `linear-gradient(rgba(22, 37, 86, 0.9), rgba(31, 41, 56, 0.9)), url('/images/landing-cover.jpg')`,
         }}
@@ -28,18 +28,18 @@ const Landing = () => {
         <div className="w-full h-full container m-auto py-4 px-6 md:py-5 md:px-10 lg:px-22 mty">
           <div className="flex flex-col justify-center h-full w-full text-white mt-10">
             <p
-              className={`font-bold ${
-                isArabic ? "text-5xl ar-font" : "text-6xl"
+              className={`font-extrabold ${
+                isArabic ? "text-3xl lg:text-5xl ar-font" : "text-4xl lg:text-6xl"
               }`}
             >
               {t("hero.welcome")}
             </p>
             <p
-              className={`text-[var(--color-gold)] ${
+              className={`text-gold ${
                 isArabic
-                  ? "ar-font font-bold mt-8"
-                  : "org-font tracking-widest mt-6"
-              } text-7xl`}
+                  ? "ar-font font-bold mt-6"
+                  : "org-font tracking-widest mt-4"
+              } text-4xl lg:text-7xl font-extrabold`}
             >
               {t("hero.title")}
             </p>
@@ -49,7 +49,7 @@ const Landing = () => {
                   ([unit, { value, unit: formattedUnit }]) => (
                     <span
                       key={unit}
-                      className="relative inline-block text-center rounded border border-white/15 w-[80px] lg:w-[150px] text-white py-2 px-4 lg:py-4 lg:px-8 font-bold mr-3 z-10 "
+                      className="relative inline-block text-center rounded border border-white/15 w-[60px] lg:w-[150px] text-white py-2  lg:py-4 lg:px-8 font-bold mr-3 z-10 "
                     >
                       {value}{" "}
                       <p className="text-xs lg:text-lg font-normal">
