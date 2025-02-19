@@ -22,7 +22,7 @@ const Landing = () => {
       <div
         className="w-full h-screen md:pt-[152.28px] bg-center bg-cover bg-no-repeat lg:pb-30 "
         style={{
-          backgroundImage: `linear-gradient(rgba(22, 37, 86, 0.9), rgba(31, 41, 56, 0.9)), url('/images/landing-cover.jpg')`,
+          backgroundImage: `linear-gradient(rgba(22, 37, 86, 0.9), rgba(31, 41, 56, 0.9)), url('/images/landing-cover.webp')`,
         }}
       >
         <div className="w-full h-full container m-auto py-4 px-6 md:py-5 md:px-10 lg:px-22">
