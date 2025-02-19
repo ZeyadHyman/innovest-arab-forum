@@ -294,12 +294,12 @@ function Navbar() {
       <button
         onClick={switchLanguage}
         className={cn(
-          "z-40 fixed md:hidden block select-none p-3 rounded-full transition-all duration-1000 active:scale-110 cursor-pointer",
+          "bg-gradient-to-l from-blue-950 to-gray-800 z-40 fixed md:hidden block select-none p-3 rounded-full transition-all duration-1000 active:scale-110 cursor-pointer",
           isLoaded ? "opacity-100 scale-100" : "opacity-0 scale-0",
           i18n.language === "ar" ? "left-5" : "right-5",
           !isScrolled && location.pathname === "/"
-            ? "bottom-7 border border-white/50 bg-gradient-to-l from-red-600/40 to-red-800/90 backdrop-blur-md"
-            : "bottom-25 bg-gradient-to-l from-blue-950 to-gray-800"
+            ? "bottom-7 border border-white/50 backdrop-blur-md"
+            : "bottom-25"
         )}
       >
         <img

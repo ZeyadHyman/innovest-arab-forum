@@ -184,5 +184,9 @@
     "location": "The Greek Campus Downtown",
     "date": "May 2025",
     "edition" : "3rd Edition"
+  },
+
+  "footer":{
+    "copyRight":"© 2025 Innovation and Investment Arab Forum. All rights reserved."
   }
 }
