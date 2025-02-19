@@ -18,7 +18,7 @@ function Speakers() {
         <h2 className=" text-3xl lg:text-5xl font-extrabold text-secondary tracking-wide leading-tight text-center">
           {t("speakers.title")}
         </h2>
-        <p className="text-slate-600 text-center text-2xl pt-4 pb-6">
+        <p className="text-transparent bg-clip-text bg-gradient-to-l from-blue-950 to-gray-800 text-center text-2xl pt-4 pb-6">
           {t("speakers.subtitile")}
         </p>
         <div className="flex flex-wrap justify-center gap-12 ">
@@ -35,7 +35,9 @@ function Speakers() {
                   className="card-avatar select-none"
                 />
                 <div className="card-title">{value.name}</div>
-                <div className="card-subtitle mt-2 text-transparent bg-clip-text bg-gradient-to-l from-blue-950 to-gray-800">{value.role}</div>
+                <div className="card-subtitle mt-2 text-transparent bg-clip-text bg-gradient-to-l from-blue-950 to-gray-800">
+                  {value.role}
+                </div>
               </div>
               <div className="card-social">
                 {/* <button
