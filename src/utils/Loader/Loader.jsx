@@ -12,7 +12,7 @@ export default function Loader({ onComplete }) {
     let timeoutIds = [];
 
     timeoutIds.push(
-      setTimeout(() => setAnimation("opacity-100 scale-80 md:scale-100"), 500)
+      setTimeout(() => setAnimation("opacity-100 scale-80 md:scale-120"), 500)
     );
 
     timeoutIds.push(
@@ -42,7 +42,7 @@ export default function Loader({ onComplete }) {
       }`}
     >
       <div
-        className={`absolute transition-all duration-1000 ease-out ${animation} text-center`}
+        className={`absolute transition-all duration-1000 ease-out ${animation} text-center px-52`}
       >
         <img
           src={logo}
