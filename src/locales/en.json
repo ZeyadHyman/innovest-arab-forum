@@ -1,6 +1,6 @@
 {
   "loader": {
-    "welcome": "Welcome to Innovest Arab Forum"
+    "welcome": "Welcome to the Arab Innovation and Investment Forum"
   },
   "navbar": {
     "forum_name": "INNOVATION AND INVESTMENT ARAB FORUM",
@@ -178,7 +178,7 @@
   },
   "events": {},
   "hero": {
-    "title": "Innovest Arab Forum",
+    "title": "Arab Innovation and Investment Forum",
     "button": "Buy a Ticket",
     "welcome": "Welcome to",
     "location": "The Greek Campus Downtown",
