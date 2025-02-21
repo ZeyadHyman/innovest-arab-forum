@@ -47,8 +47,7 @@ function App() {
             />
           </Routes>
 
-          <div className="h-screen">1</div>
-          <Footer />
+            <Footer />
         </Router>
       )}
     </>

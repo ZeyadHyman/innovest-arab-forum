@@ -12,7 +12,7 @@ export default function Loader({ onComplete }) {
     let timeoutIds = [];
 
     timeoutIds.push(
-      setTimeout(() => setAnimation("opacity-100 scale-100 md:scale-120"), 500)
+      setTimeout(() => setAnimation("opacity-100 scale-80 md:scale-100"), 500)
     );
 
     timeoutIds.push(
