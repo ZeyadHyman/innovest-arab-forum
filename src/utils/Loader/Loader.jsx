@@ -42,7 +42,7 @@ export default function Loader({ onComplete }) {
       }`}
     >
       <div
-        className={`absolute transition-all duration-1000 ease-out ${animation} text-center px-52`}
+        className={`absolute transition-all duration-1000 ease-out ${animation} text-center lg:px-52`}
       >
         <img
           src={logo}
