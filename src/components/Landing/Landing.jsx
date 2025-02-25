@@ -27,7 +27,6 @@ const Landing = () => {
           backgroundImage: `linear-gradient(rgba(22, 37, 86, 0.9), rgba(31, 41, 56, 0.9)), url('/images/landing-cover.webp')`,
         }}
       >
-
         <div className="w-full h-full container m-auto py-4 px-6 md:py-5 md:px-10 lg:px-22">
           <div className="flex flex-col justify-center lg:items-center h-full w-full text-white mt-10 ">
             <p
@@ -40,7 +39,7 @@ const Landing = () => {
             >
               {t("hero.welcome")}
             </p>
-            <p
+            <span
               data-aos="fade-left"
               className={`text-gold ${
                 isArabic
@@ -49,15 +48,15 @@ const Landing = () => {
               } text-4xl lg:text-7xl font-extrabold`}
             >
               {t("hero.title")}
-            </p>
+            </span>
             <div>
-              <p className="text-lg lg:text-3xl font-bold mt-8">
+              <div className="text-lg lg:text-3xl font-bold mt-8">
                 {Object.entries(timeLeft).map(
                   ([unit, { value, unit: formattedUnit }]) => (
                     <span
                       data-aos="fade-right"
                       key={unit}
-                      className="relative inline-block text-center rounded border border-white/15 w-[60px] lg:w-[150px] text-white py-2  lg:py-4 lg:px-8 font-bold mr-3 z-10 "
+                      className="relative inline-block text-center rounded border border-white/15 w-[60px] lg:w-[150px] text-white py-2 lg:py-4 lg:px-8 font-bold mr-3 z-10"
                     >
                       {value}{" "}
                       <p className="text-xs lg:text-lg font-normal">
@@ -66,7 +65,7 @@ const Landing = () => {
                     </span>
                   )
                 )}
-              </p>
+              </div>
             </div>
             <div
               data-aos="fade-left"
