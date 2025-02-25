@@ -5,6 +5,8 @@ import { FaTicketAlt } from "react-icons/fa";
 import { FaMapMarkerAlt } from "react-icons/fa";
 import { IoMdTime } from "react-icons/io";
 import { TbSchoolBell } from "react-icons/tb";
+import "./landing.css";
+
 const Landing = () => {
   const [timeLeft, setTimeLeft] = useState(getTimeLeft());
   const { t, i18n } = useTranslation();
@@ -25,16 +27,21 @@ const Landing = () => {
           backgroundImage: `linear-gradient(rgba(22, 37, 86, 0.9), rgba(31, 41, 56, 0.9)), url('/images/landing-cover.webp')`,
         }}
       >
-        <div  className="w-full h-full container m-auto py-4 px-6 md:py-5 md:px-10 lg:px-22">
+
+        <div className="w-full h-full container m-auto py-4 px-6 md:py-5 md:px-10 lg:px-22">
           <div className="flex flex-col justify-center lg:items-center h-full w-full text-white mt-10 ">
-            <p data-aos="fade-right"
+            <p
+              data-aos="fade-right"
               className={`font-extrabold ${
-                isArabic ? "text-3xl lg:text-5xl ar-font" : "text-4xl lg:text-6xl"
+                isArabic
+                  ? "text-3xl lg:text-5xl ar-font"
+                  : "text-4xl lg:text-6xl"
               }`}
             >
               {t("hero.welcome")}
             </p>
-            <p data-aos="fade-left"
+            <p
+              data-aos="fade-left"
               className={`text-gold ${
                 isArabic
                   ? "ar-font font-bold mt-6"
@@ -47,7 +54,8 @@ const Landing = () => {
               <p className="text-lg lg:text-3xl font-bold mt-8">
                 {Object.entries(timeLeft).map(
                   ([unit, { value, unit: formattedUnit }]) => (
-                    <span data-aos="fade-right"
+                    <span
+                      data-aos="fade-right"
                       key={unit}
                       className="relative inline-block text-center rounded border border-white/15 w-[60px] lg:w-[150px] text-white py-2  lg:py-4 lg:px-8 font-bold mr-3 z-10 "
                     >
@@ -60,8 +68,11 @@ const Landing = () => {
                 )}
               </p>
             </div>
-            <div data-aos="fade-left" className="flex md:gap-5 my-10 item-center md:flex-row flex-col gap-2 item">
-              <a 
+            <div
+              data-aos="fade-left"
+              className="flex md:gap-5 my-10 item-center md:flex-row flex-col gap-2 item"
+            >
+              <a
                 href="https://maps.app.goo.gl/kkq8XyM2jmRctFVz7"
                 target="_blank"
                 className="flex gap-2 "

@@ -24,7 +24,7 @@ function Speakers() {
         <div className="flex flex-wrap justify-center gap-12 ">
           {Object.entries(speakersData).map(([key, value]) => (
             <div
-              className="card group overflow-hidden cursor-pointer"
+              className="card group overflow-hidden cursor-pointer rounded-2xl"
               onClick={() => openModal(value)}
               key={key}
             >
@@ -66,7 +66,7 @@ function Speakers() {
                   </svg>
                 </button> */}
                 <button
-                  className="hover-button hover:text-gold/90 focus:text-gold/90 after:bg-gold/90"
+                  className="hover-button hover:text-gray-800 text-gold/90 focus:text-gold/90 after:bg-gray-800/90"
                   onClick={(e) => {
                     e.stopPropagation();
                     openModal(value);

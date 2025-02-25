@@ -1,4 +1,3 @@
-import "./home.css";
 import Landing from "../components/Landing/Landing";
 
 function Home() {
