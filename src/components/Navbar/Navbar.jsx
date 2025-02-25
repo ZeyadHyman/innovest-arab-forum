@@ -27,6 +27,7 @@ function Navbar() {
     setIsLangSwitched(true);
     setTimeout(() => setIsLangSwitched(false), 2500);
     const newLang = isArabic ? "en" : "ar";
+    localStorage.setItem('language', newLang);
     i18n.changeLanguage(newLang);
     document.documentElement.dir = newLang === "ar" ? "rtl" : "ltr";
   };
