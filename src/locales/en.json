@@ -9,6 +9,7 @@
     "menu": {
       "home": "Home",
       "speakers": "Speakers",
+      "sponsorPartners": "Sponsors and Partners",
       "previousConferences": "Previous Conferences"
     }
   },
@@ -26,7 +27,11 @@
           "Enhance youth capabilities in innovation and digital transformation.",
           "Strengthen women's economic empowerment."
         ],
-        "topics": ["Entrepreneurship and small businesses.", "Digital transformation and information technology.", "Women's economic empowerment."],
+        "topics": [
+          "Entrepreneurship and small businesses.",
+          "Digital transformation and information technology.",
+          "Women's economic empowerment."
+        ],
         "highlights": [
           "Showcased various tech projects with the participation of the Egyptian SME Authority and the Federation of Egyptian Industries.",
           "Attended by Arab delegations, including the Ministry of Youth & Sports, Jordanian and Egyptian Parliaments, ambassadors, and diplomatic representatives."
@@ -104,14 +109,6 @@
       },
       {
         "image": "https://media.istockphoto.com/id/1403500817/photo/the-craggies-in-the-blue-ridge-mountains.jpg?s=612x612&w=0&k=20&c=N-pGA8OClRVDzRfj_9AqANnOaDS3devZWwrQNwZuDSk=",
-        "name": "Maria Gonzalez",
-        "role": "Innovation Strategist",
-        "description": "Maria Gonzalez helps companies integrate innovative technologies to enhance their competitive edge.",
-        "social_media_link": "https://instagram.com/mariagonzalez",
-        "button_text": "View Details"
-      },
-      {
-        "image": "https://media.istockphoto.com/id/1403500817/photo/the-craggies-in-the-blue-ridge-mountains.jpg?s=612x612&w=0&k=20&c=N-pGA8OClRVDzRfj_9AqANnOaDS3devZWwrQNwZuDSk=",
         "name": "Li Wei",
         "role": "Venture Capitalist",
         "description": "Li Wei focuses on funding high-potential startups in the tech and biotech sectors.",
@@ -176,17 +173,85 @@
       }
     ]
   },
-  "events": {},
+  "conference_sponsors": {
+    "title": "Sponsorship Packages",
+    "diamond_sponsor": {
+      "title": "Diamond Sponsor",
+      "marketing_promotion": [
+        "Official partnership announcement",
+        "Prominent display of the company's name and logo in all media materials and printed advertisements",
+        "Inclusion in the digital marketing campaign and media coverage (press and TV)",
+        "Showcasing a special video advertisement during the conference and on the conference's social media platforms",
+        "Company logo placement on the training program for ideas and projects"
+      ],
+      "conference_benefits": [
+        "Front-row seat at the opening ceremony",
+        "Official acknowledgment during the opening + 10-minute speaking opportunity",
+        "Premium exhibition booth inside the conference for audience interaction",
+        "Company name and logo displayed on conference screens and advertising boards",
+        "Dedicated media coverage for the company's representative",
+        "Luxury honorary shield and a photo album documenting participation and events",
+        "10 VIP invitations to attend the conference"
+      ]
+    },
+    "platinum_sponsor": {
+      "title": "Platinum Sponsor",
+      "marketing_promotion": [
+        "Company name and logo featured in all media materials and printed advertisements",
+        "Inclusion in the digital marketing campaign and press coverage",
+        "Sponsor's video advertisement featured on the official conference page",
+        "Company logo placement on the training program for ideas and projects"
+      ],
+      "conference_benefits": [
+        "Front-row seat at the opening ceremony",
+        "Official acknowledgment + 5-minute speaking opportunity",
+        "Exhibition booth inside the conference",
+        "Company name and logo displayed on advertising boards",
+        "Media coverage for the company's representative",
+        "Luxury honorary shield",
+        "7 VIP invitations to attend the conference"
+      ]
+    },
+    "gold_sponsor": {
+      "title": "Gold Sponsor",
+      "marketing_promotion": [
+        "Company name and logo featured in all media materials and printed advertisements",
+        "Inclusion in the digital marketing campaign",
+        "Company logo placement on the training program for ideas and projects"
+      ],
+      "conference_benefits": [
+        "Front-row seat at the opening ceremony",
+        "Official speech during the opening",
+        "Exhibition booth inside the conference",
+        "Company name and logo displayed on selected advertising boards",
+        "Honorary shield",
+        "5 VIP invitations to attend the conference"
+      ]
+    },
+    "silver_partner": {
+      "title": "Silver Partner",
+      "marketing_promotion": [
+        "Company name and logo featured in selected media materials and printed advertisements",
+        "Inclusion in the digital marketing campaign"
+      ],
+      "conference_benefits": [
+        "Special VIP seat during the opening",
+        "Speaking opportunity within the conference agenda",
+        "Company name and logo displayed on selected promotional materials",
+        "Honorary shield",
+        "3 VIP invitations to attend the conference"
+      ]
+    }
+  },
   "hero": {
     "title": "Arab Innovation and Investment Forum",
     "button": "Buy a Ticket",
     "welcome": "Welcome to",
     "location": "The Greek Campus Downtown",
     "date": "May 2025",
-    "edition" : "3rd Edition"
+    "edition": "3rd Edition"
   },
-
-  "footer":{
-    "copyRight":"© 2025 Innovation and Investment Arab Forum. All rights reserved."
+  "footer": {
+    "copyRight": "© 2025 Innovation and Investment Arab Forum. All rights reserved."
   }
 }

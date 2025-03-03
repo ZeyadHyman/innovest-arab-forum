@@ -7,14 +7,15 @@ import Speakers from "./pages/Speakers";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
+const ScrollToTop = lazy(() => import("./utils/ScrollToTop"));
+const Navbar = lazy(() => import("./components/Navbar/Navbar"));
 const Home = lazy(() => import("./pages/Home"));
 const PreviousConferences = lazy(() => import("./pages/PreviousConferences"));
-const Navbar = lazy(() => import("./components/Navbar/Navbar"));
-const ScrollToTop = lazy(() => import("./utils/ScrollToTop"));
+const SponsorsPartners = lazy(() => import("./pages/SponsorsPartners"));
 
 function App() {
   // make it true if you want to cancel it ↓↓↓↓↓
-  const [isLoaded, setIsLoaded] = useState(false);
+  const [isLoaded, setIsLoaded] = useState(true);
 
   useEffect(() => {
     document.documentElement.lang = i18n.language;
@@ -41,10 +42,8 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/speakers" element={<Speakers />} />
-            <Route
-              path="/previousConferences"
-              element={<PreviousConferences />}
-            />
+            <Route path="/previousConferences" element={<PreviousConferences />}/>
+            <Route path="/SponsorsPartners" element={<SponsorsPartners />}/>
           </Routes>
 
             <Footer />
