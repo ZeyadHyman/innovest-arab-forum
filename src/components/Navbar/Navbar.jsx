@@ -125,7 +125,7 @@ function Navbar() {
           </div>
 
           {/* Desktop Navigation Links */}
-          <div className="hidden md:flex justify-center items-center text-lg space-x-5">
+          <div className="hidden md:flex justify-center items-center text-lg space-x-8">
             {Object.entries(menuLinks).map(([key, value]) => (
               <Link
                 to={`/${key === "home" ? "" : key}`}

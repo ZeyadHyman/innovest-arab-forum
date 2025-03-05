@@ -72,7 +72,6 @@ const Landing = () => {
               className="flex md:gap-5 my-10 item-center md:flex-row flex-col gap-2 item"
             >
               <a
-                href="https://maps.app.goo.gl/kkq8XyM2jmRctFVz7"
                 target="_blank"
                 className="flex gap-2 "
               >

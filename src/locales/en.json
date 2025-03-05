@@ -8,7 +8,6 @@
     "langSwitcher": "Translate to Arabic",
     "menu": {
       "home": "Home",
-      "speakers": "Speakers",
       "sponsorPartners": "Sponsors and Partners",
       "previousConferences": "Previous Conferences"
     }
@@ -247,7 +246,7 @@
     "title": "Arab Innovation and Investment Forum",
     "button": "Buy a Ticket",
     "welcome": "Welcome to",
-    "location": "The Greek Campus Downtown",
+    "location": "Cairo",
     "date": "May 2025",
     "edition": "3rd Edition"
   },
