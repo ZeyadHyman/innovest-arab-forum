@@ -40,31 +40,6 @@ function Speakers() {
                 </div>
               </div>
               <div className="card-social">
-                {/* <button
-                  className={isArabic ? "view-details-button-ar" : "view-details-button-en"}
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    openModal(value);
-                  }}
-                >
-                  <p
-                    className={`${
-                      isArabic ? "view-details-button__text-ar" : "view-details-button__text-en"
-                    } text-gradient-to-r from-gray-900 to-gray-800 `}
-                  >
-                    {value.button_text}
-                  </p>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className={`${isArabic ? "view-details-button__icon-ar" : "view-details-button__icon-en"} h-6 w-6`}
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    strokeWidth={4}
-                  >
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                  </svg>
-                </button> */}
                 <button
                   className="hover-button hover:text-gray-800 text-gold/90 focus:text-gold/90 after:bg-gray-800/90"
                   onClick={(e) => {

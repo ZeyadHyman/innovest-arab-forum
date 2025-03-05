@@ -256,11 +256,11 @@
   "about": {
     "slogan": "Arab leadership... sustainable investment",
     "desc": "The Arab Innovation and Investment Forum is a leading platform that brings together entrepreneurs, investors, and experts from the Arab world to enhance the environment for innovation and sustainable investment. The forum aims to empower youth and innovators to transform their ideas into successful projects through networking, knowledge exchange, and showcasing investment opportunities. It focuses on exploring the latest trends in entrepreneurship, technology, and finance while providing a supportive environment for partnerships and the development of strategic relationships between investors and startup founders.",
-    "stat1":"speaker",
-    "stat1Num":"99",
+    "stat1":"Projects Investment Value",
+    "stat1Num":"150 Million",
     "stat2":"project",
-    "stat2Num":"150",
+    "stat2Num":"250",
     "stat3":"participation",
-    "stat3Num":"1000"
+    "stat3Num":"1650"
   }
 }
