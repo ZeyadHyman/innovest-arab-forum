@@ -36,26 +36,29 @@ function About() {
               <div className="w-full lg:justify-start justify-center items-center sm:gap-10 gap-5 inline-flex">
                 <div className="flex-col justify-start items-start inline-flex">
                   <h3 className="text-gold/90 text-4xl font-bold font-manrope leading-normal">
-                99+
+                {aboutData.stat1Num} +
                   </h3>
                   <h6 className="text-transparent bg-clip-text bg-gradient-to-l from-blue-950 to-gray-800 leading-relaxed">
-                    Speakers
+                  {aboutData.stat1}
+
                   </h6>
                 </div>
                 <div className="flex-col justify-start items-start inline-flex">
                   <h4 className="text-gold/90 text-4xl font-bold font-manrope leading-normal text-center">
-                    150+
+                  {aboutData.stat2Num} +
+
                   </h4>
                   <h6 className="text-transparent bg-clip-text bg-gradient-to-l from-blue-950 to-gray-800 text-base font-normal leading-relaxed">
-                     projects
+                  {aboutData.stat2}
+
                   </h6>
                 </div>
                 <div className="flex-col justify-start items-start inline-flex">
                   <h4 className="text-gold/90 text-4xl font-bold font-manrope leading-normal text-center">
-                    1000+
+                  {aboutData.stat3Num} +
                   </h4>
                   <h6 className="text-transparent bg-clip-text bg-gradient-to-l from-blue-950 to-gray-800 text-base font-normal leading-relaxed">
-                    participents
+                  {aboutData.stat3}
                   </h6>
                 </div>
               </div>
