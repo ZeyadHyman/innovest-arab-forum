@@ -8,7 +8,6 @@
     "langSwitcher": "Translate to English",
     "menu": {
       "home": "الرئيسية",
-      "speakers": "المتحدثون",
       "sponsorsPartners": "الرعاة والشركاء",
       "previousConferences": "المؤتمرات السابقة"
     }
@@ -243,7 +242,7 @@
     "title": "منتدى الابتكار والاستثمار العربي",
     "button": "اشترِ تذكرة",
     "welcome": "مرحباً بك في",
-    "location": "ذا جريك كامبس - وسط البلد",
+    "location": "القاهره",
     "date": "مايو 2025",
     "edition": "النسخة الثالثة"
   },
