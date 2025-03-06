@@ -15,16 +15,18 @@ function About() {
                 className=" rounded-xl object-cover"
                 src="../../../public/images/aboutImage1.jpeg"
                 alt="about Us image"
+                data-aos="fade-up"
               />
             </div>
             <img
               className="hidden md:block ml-auto rounded-xl object-cover"
               src="../../../public/images/aboutimage2.jpeg"
               alt="about Us image"
+              data-aos="fade-down"
             />
           </div>
           <div className="w-full flex-col justify-center lg:items-start items-center gap-10 inline-flex">
-            <div className="w-full flex-col justify-center items-start gap-8 flex">
+            <div className="w-full flex-col justify-center items-start gap-8 flex" data-aos="fade-left">
               <div className="w-full flex-col justify-start lg:items-start items-center gap-3 flex">
                 <h2 className="text-gold/90 text-4xl font-bold font-manrope leading-normal lg:text-start text-center">
                   {aboutData.slogan}
