@@ -9,9 +9,13 @@ function Home() {
   return (
     <>
       <Landing />
-      <About/>
-      <Jury/>
+      <div className="w-full h-2 bg-red-950"></div>
+      <About />
+      <div className="w-full h-1 bg-red-950"></div>
+      <Jury />
+      <div className="w-full h-1 bg-red-950"></div>
       <PackageCards />
+      <div className="w-full h-1 bg-red-950"></div>
     </>
   );
 }
