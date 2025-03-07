@@ -13,14 +13,14 @@ function About() {
             <div className="pt-24 lg:justify-center sm:justify-end justify-start items-start gap-2.5 flex">
               <img
                 className=" rounded-xl object-cover"
-                src="../../../public/images/aboutImage1.jpeg"
+                src="/images/aboutImage1.jpeg"
                 alt="about Us image"
                 data-aos="fade-up"
               />
             </div>
             <img
               className="hidden md:block ml-auto rounded-xl object-cover"
-              src="../../../public/images/aboutimage2.jpeg"
+              src="/images/aboutimage2.jpeg"
               alt="about Us image"
               data-aos="fade-down"
             />
