@@ -24,7 +24,7 @@ function Jury() {
           return (
             <div
               key={index}
-              className={`flex flex-col bg-white shadow-none w-78 hover:shadow-md border border-slate-200 rounded-lg my-6 overflow-hidden transform transition-all duration-300 `}
+              className={`flex flex-col bg-white shadow-none w-78 hover:shadow-md border border-slate-200 rounded-lg my-6 overflow-hidden transform transition-all duration-300 ${isHeadOfJury?"relative":""}`}
               data-aos={`${isHeadOfJury?"fade-down":"fade-up"}`}
             >
               {/* Add a badge for the head of the jury */}
