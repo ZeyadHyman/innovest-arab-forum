@@ -8,7 +8,7 @@ function Jury() {
 
   return (
     <section className="pt-12 continer mx-auto px-4 sm:px-6 lg:px-12 w-full">
-      <div className="text-center">
+      <div className="text-center" data-aos="fade-down">
         <h2 className=" text-3xl lg:text-5xl font-extrabold text-secondary tracking-wide leading-tight text-center">
           {t("jury.title")}
         </h2>
@@ -25,6 +25,7 @@ function Jury() {
             <div
               key={index}
               className={`flex flex-col bg-white shadow-none w-78 hover:shadow-md border border-slate-200 rounded-lg my-6 overflow-hidden transform transition-all duration-300 `}
+              data-aos={`${isHeadOfJury?"fade-down":"fade-up"}`}
             >
               {/* Add a badge for the head of the jury */}
               {isHeadOfJury && (
