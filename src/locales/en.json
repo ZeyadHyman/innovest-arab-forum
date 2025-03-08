@@ -175,7 +175,8 @@
     ]
   },
   "conference_sponsors": {
-    "title": "Sponsorship Packages",
+    "title": "Conference Sponsors – Partnership Categories",
+    "description": "The conference offers unique partnership and sponsorship opportunities, with distinct promotional and media benefits for each category, allowing sponsors to enhance their presence and interact with business leaders and innovators.",
     "diamond_sponsor": {
       "title": "Diamond Sponsor",
       "marketing_promotion": [

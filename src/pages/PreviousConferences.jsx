@@ -188,7 +188,7 @@ function PreviousConferences() {
           <div className="hidden lg:block md:w-80 lg:w-[600px]">
             <img
               className="w-full h-full object-cover rounded"
-              src={`/Conferences/${index}/0.webp`}
+              src={`images/Conferences/${index}/0.webp`}
               alt="Conference Image"
             />
           </div>
@@ -267,7 +267,7 @@ function PreviousConferences() {
               <SwiperSlide key={number}>
                 <img
                   className="w-full h-full object-contain rounded-lg"
-                  src={`/Conferences/${index}/${number}.webp`}
+                  src={`images/Conferences/${index}/${number}.webp`}
                   alt={`Conference ${number}`}
                   loading="lazy"
                 />

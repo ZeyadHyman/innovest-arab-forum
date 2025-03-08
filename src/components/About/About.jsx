@@ -12,38 +12,38 @@ function About() {
           <div className="w-full flex-col justify-center lg:items-start items-center gap-10 inline-flex">
             <div className="w-full flex-col justify-center items-start gap-8 flex" data-aos="fade-left">
               <div className="w-full flex-col justify-start lg:items-start items-center gap-3 flex">
-                <h2 className="text-gold/90 text-4xl font-bold font-manrope leading-normal lg:text-start text-center">
+                <h2 className="text-gold/90 text-2xl lg:text-4xl font-bold font-manrope leading-normal lg:text-start text-center">
                   {aboutData.slogan}
                 </h2>
-                <p className="text-transparent bg-clip-text bg-gradient-to-l from-blue-950 to-gray-800 leading-relaxed  ">
+                <p className="text-transparent text-sm lg:text-base  bg-clip-text bg-gradient-to-l from-blue-950 to-gray-800 leading-relaxed  ">
                   {aboutData.desc}
                 </p>
               </div>
               <div className="w-full lg:justify-start justify-center items-center sm:gap-10 gap-5 inline-flex">
                 <div className="flex-col justify-start items-start inline-flex">
-                  <h3 className="text-gold/90 text-4xl font-bold font-manrope leading-normal">
+                  <h3 className="text-gold/90 text-3xl lg:text-4xl font-bold font-manrope leading-normal">
                     {aboutData.stat1Num} +
                   </h3>
-                  <h6 className="text-transparent bg-clip-text bg-gradient-to-l from-blue-950 to-gray-800 leading-relaxed">
+                  <h6 className="text-transparent text-sm lg:text-base bg-clip-text bg-gradient-to-l from-blue-950 to-gray-800 leading-relaxed">
                     {aboutData.stat1}
 
                   </h6>
                 </div>
                 <div className="flex-col justify-start items-start inline-flex">
-                  <h4 className="text-gold/90 text-4xl font-bold font-manrope leading-normal text-center">
+                  <h4 className="text-gold/90 text-3xl lg:text-4xl font-bold font-manrope leading-normal text-center">
                     {aboutData.stat2Num} +
 
                   </h4>
-                  <h6 className="text-transparent bg-clip-text bg-gradient-to-l from-blue-950 to-gray-800 text-base font-normal leading-relaxed">
+                  <h6 className="text-transparent text-sm lg:text-base bg-clip-text bg-gradient-to-l from-blue-950 to-gray-800 font-normal leading-relaxed">
                     {aboutData.stat2}
 
                   </h6>
                 </div>
                 <div className="flex-col justify-start items-start inline-flex">
-                  <h4 className="text-gold/90 text-4xl font-bold font-manrope leading-normal text-center">
+                  <h4 className="text-gold/90 text-3xl lg:text-4xl font-bold font-manrope leading-normal text-center">
                     {aboutData.stat3Num} +
                   </h4>
-                  <h6 className="text-transparent bg-clip-text bg-gradient-to-l from-blue-950 to-gray-800 text-base font-normal leading-relaxed">
+                  <h6 className="text-transparent text-sm lg:text-base bg-clip-text bg-gradient-to-l from-blue-950 to-gray-800  font-normal leading-relaxed">
                     {aboutData.stat3}
                   </h6>
                 </div>

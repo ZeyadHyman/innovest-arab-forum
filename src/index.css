@@ -29,13 +29,6 @@
   font-family: "Almarai", serif;
 }
 
-@media screen and (max-width: 767px) {
-  [data-aos] {
-    pointer-events: auto !important;
-    opacity: 1 !important;
-    transform: none !important;
-  }
-}
 
 @layer base {
   html {

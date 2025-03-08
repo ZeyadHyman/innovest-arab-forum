@@ -5,12 +5,14 @@ import {
   FaLinkedinIn,
   FaWhatsapp,
 } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 function Footer() {
   const { t } = useTranslation();
+  const menuLinks = t("navbar.menu", { returnObjects: true });
 
   return (
-    <footer className="bg-gray-300/40 text-white py-10 px-5 md:px-20 mt-2 mb-20 lg:mb-0">
+    <footer className="bg-gray-300/40 text-white py-10 px-5 md:px-20 mt-2 mb-20 lg:mb-0 ">
       <div className="container mx-auto flex flex-col md:flex-row justify-between items-center">
         {/* Logo Section */}
         <div className="flex flex-col items-center space-y-2 mb-6 md:mb-0">
@@ -19,9 +21,22 @@ function Footer() {
             alt={t("navbar.forum_name")}
             className="w-48 md:w-52"
           />
-          <p className="text-lg font-bold text-gold">
+          <p className="text-lg font-bold text-gold text-center">
             {t("navbar.forum_name")}
           </p>
+        </div>
+
+        {/* Navigation Links Section */}
+        <div className="flex flex-col items-center md:flex-row space-y-2 md:space-y-0 md:space-x-4">
+        {Object.entries(menuLinks).map(([key, value]) => (
+                  <Link
+                    to={`/${key === "home" ? "" : key}`}
+                    key={key}
+                    className="text-gray-600  hover:text-zinc-700  active:text-zinc-50 font-normal hover:font-bold cursor-pointer transition-all duration-100"
+                  >
+                    {value}
+                  </Link>
+                ))}
         </div>
 
         {/* Social Media Links */}

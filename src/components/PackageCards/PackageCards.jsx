@@ -7,7 +7,7 @@ export default function PackageCards() {
   const sponsorsData = t("conference_sponsors", { returnObjects: true });
 
   const sponsors = Object.entries(sponsorsData)
-    .filter(([key]) => key !== "title")
+    .filter(([key]) => key !== "title" && key !== "description")
     .map(([key, value]) => ({ key, ...value }));
 
   const sponsorColors = {
@@ -20,8 +20,13 @@ export default function PackageCards() {
   return (
     <div className="relative px-6 lg:px-20 mt-12 lg:mt-24 pb-16 lg:pb-28">
       {/* Title */}
-      <h1 className="text-4xl font-extrabold text-center mb-14 text-gray-900">
+      <h1 className="text-xl lg:text-4xl font-extrabold text-center mb-2 lg:mb-4 text-gray-900">
         {sponsorsData.title}
+      </h1>
+
+      {/* Description */}
+      <h1 className="text-xs lg:text-lg font-extrabold text-center mb-6 lg:mb-12 text-gray-600">
+        {sponsorsData.description}
       </h1>
 
       {/* Sponsor Cards */}

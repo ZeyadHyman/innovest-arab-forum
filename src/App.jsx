@@ -15,7 +15,7 @@ const SponsorsPartners = lazy(() => import("./pages/SponsorsPartners"));
 
 function App() {
   // make it true if you want to cancel it ↓↓↓↓↓
-  const [isLoaded, setIsLoaded] = useState(true);
+  const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
     document.documentElement.lang = i18n.language;
