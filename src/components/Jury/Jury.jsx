@@ -6,7 +6,6 @@ import "swiper/css/pagination";
 
 function Jury() {
   const { t } = useTranslation();
-  const lang = t("lang");
 
   const juryMembers = t("jury.juryMembers", { returnObjects: true });
 
@@ -24,17 +23,20 @@ function Jury() {
       <div className="hidden lg:flex flex-wrap-reverse justify-center gap-x-20 gap-y-2">
         {juryMembers.map((member, index) => {
           const isHeadOfJury =
-            member.name === "Eng. Magdy Wahba" || member.name === "م. مجدي وهبه";
+            member.name === "Eng. Magdy Wahba" ||
+            member.name === "م. مجدي وهبه";
 
           return (
             <div
               key={index}
-              className={`flex flex-col bg-white shadow-none w-78 hover:shadow-md border border-slate-200 rounded-lg my-6 overflow-hidden transform transition-all duration-300 ${isHeadOfJury ? "relative" : ""}`}
+              className={`flex flex-col bg-white shadow-none w-78 hover:shadow-md border border-slate-200 rounded-lg my-6 overflow-hidden transform transition-all duration-300 ${
+                isHeadOfJury ? "relative" : ""
+              }`}
               data-aos={`${isHeadOfJury ? "fade-down" : "fade-up"}`}
             >
               {isHeadOfJury && (
                 <div className="absolute top-0 right-0 bg-gold/70 text-white px-4 py-2 rounded-bl-lg text-sm font-semibold">
-                  {lang === "ar" ? "رئيس لجنة التحكيم" : "Head of Jury"}
+                  {t("jury.headOfJury")}{" "}
                 </div>
               )}
               <div className="overflow-hidden rounded-md h-80 flex justify-center items-center">
@@ -55,7 +57,6 @@ function Jury() {
         })}
       </div>
 
-
       <div className="block lg:hidden">
         <Swiper
           dir="ltr"
@@ -72,17 +73,20 @@ function Jury() {
         >
           {juryMembers.map((member, index) => {
             const isHeadOfJury =
-              member.name === "Eng. Magdy Wahba" || member.name === "م. مجدي وهبه";
+              member.name === "Eng. Magdy Wahba" ||
+              member.name === "م. مجدي وهبه";
 
             return (
               <SwiperSlide key={index}>
                 <div
-                  className={`flex flex-col h-full bg-white shadow-none w-78 hover:shadow-md border border-slate-200 rounded-lg my-6 overflow-hidden transform transition-all duration-300 ${isHeadOfJury ? "relative" : ""}`}
+                  className={`flex flex-col h-full bg-white shadow-none w-78 hover:shadow-md border border-slate-200 rounded-lg my-6 overflow-hidden transform transition-all duration-300 ${
+                    isHeadOfJury ? "relative" : ""
+                  }`}
                   data-aos={`${isHeadOfJury ? "fade-down" : "fade-up"}`}
                 >
                   {isHeadOfJury && (
                     <div className="absolute top-0 right-0 bg-gold/70 text-white px-4 py-2 rounded-bl-lg text-sm font-semibold">
-                      {lang === "ar" ? "رئيس لجنة التحكيم" : "Head of Jury"}
+                      {t("jury.headOfJury")}
                     </div>
                   )}
                   <div className="overflow-hidden rounded-md h-80 flex justify-center items-center">
@@ -94,19 +98,19 @@ function Jury() {
                   </div>
 
                   <div className="p-6 text-center flex-grow flex flex-col justify-center h-42">
-                    <h4 className="mb-1 text-base font-semibold">{member.name}</h4>
+                    <h4 className="mb-1 text-base font-semibold">
+                      {member.name}
+                    </h4>
                     <p className="text-xs  leading-relaxed text-transparent bg-clip-text bg-gradient-to-l from-blue-950 to-gray-800 uppercase">
                       {member.role}
                     </p>
                   </div>
-
                 </div>
               </SwiperSlide>
             );
           })}
         </Swiper>
       </div>
-
     </section>
   );
 }
