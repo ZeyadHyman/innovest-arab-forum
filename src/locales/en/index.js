@@ -1,0 +1,26 @@
+import navbar from "./navbar";
+import loader from "./loader";
+import speakers from "./speakers";
+import hero from "./hero";
+import footer from "./footer";
+import about from "./about";
+import jury from "./jury";
+import previousConferences from "./previousConferences";
+import conference_sponsors from "./conference_sponsors";
+
+const ar = {
+  translation: {
+    lang: "en",
+    navbar,
+    loader,
+    speakers,
+    hero,
+    footer,
+    about,
+    jury,
+    previousConferences,
+    conference_sponsors,
+  },
+};
+
+export default ar;

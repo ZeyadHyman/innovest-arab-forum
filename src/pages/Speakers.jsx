@@ -19,7 +19,7 @@ function Speakers() {
           {t("speakers.title")}
         </h2>
         <p className="text-transparent bg-clip-text bg-gradient-to-l from-blue-950 to-gray-800 text-center text-2xl pt-4 pb-6">
-          {t("speakers.subtitile")}
+          {t("speakers.subtitle")}
         </p>
         <div className="flex flex-wrap justify-center gap-12 ">
           {Object.entries(speakersData).map(([key, value]) => (

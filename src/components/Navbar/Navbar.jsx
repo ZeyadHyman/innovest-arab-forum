@@ -17,8 +17,10 @@ function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { i18n, t } = useTranslation();
   const isArabic = i18n.language === "ar";
-  const menuLinks = t("navbar.menu", { returnObjects: true });
   const location = useLocation();
+
+  const menuLinks = t("navbar.menu", { returnObjects: true }) || {};
+
 
   const lastScrollY = useRef(window.innerHeight);
 

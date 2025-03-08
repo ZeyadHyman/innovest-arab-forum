@@ -48,7 +48,7 @@ function Jury() {
               </div>
               <div className="p-6 text-center flex-grow flex flex-col justify-center h-32">
                 <h4 className="mb-1 text-base font-semibold">{member.name}</h4>
-                <p className="text-xs font-semibold text-transparent bg-clip-text bg-gradient-to-l from-blue-950 to-gray-800 uppercase">
+                <p className="text-xs text-gray-700">
                   {member.role}
                 </p>
               </div>
@@ -101,8 +101,8 @@ function Jury() {
                     <h4 className="mb-1 text-base font-semibold">
                       {member.name}
                     </h4>
-                    <p className="text-xs  leading-relaxed text-transparent bg-clip-text bg-gradient-to-l from-blue-950 to-gray-800 uppercase">
-                      {member.role}
+                    <p className="text-xs leading-relaxed text-gray-700">
+                    {member.role}
                     </p>
                   </div>
                 </div>
