@@ -12,6 +12,7 @@ const Navbar = lazy(() => import("./components/Navbar/Navbar"));
 const Home = lazy(() => import("./pages/Home"));
 const PreviousConferences = lazy(() => import("./pages/PreviousConferences"));
 const SponsorsPartners = lazy(() => import("./pages/SponsorsPartners"));
+const RegistrationPage = lazy(() => import("./pages/RegistrationPage"));
 
 function App() {
   // make it true if you want to cancel it ↓↓↓↓↓
@@ -44,6 +45,7 @@ function App() {
             <Route path="/speakers" element={<Speakers />} />
             <Route path="/previousConferences" element={<PreviousConferences />}/>
             <Route path="/SponsorsPartners" element={<SponsorsPartners />}/>
+            <Route path="/RegistrationPage" element={<RegistrationPage />}/>
           </Routes>
 
             <Footer />

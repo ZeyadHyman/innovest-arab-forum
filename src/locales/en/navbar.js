@@ -1,6 +1,7 @@
 const navbar = {
   forum_name: "Innovation and Investment Arab Forum",
-  ticket: "Buy a Ticket",
+  register: "Register now",
+  title:"sdsad",
   langSwitcher: "ترجمة إلى العربية",
   menu: {
     home: "Home",

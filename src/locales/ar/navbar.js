@@ -1,6 +1,7 @@
 const navbar = {
   forum_name: "منتدى الابتكار والاستثمار العربي",
-  ticket: "اشترِ تذكرة",
+  title:"sdsadsadsad",
+  register: "سجل الآن",
   langSwitcher: "Translate to English",
   menu: {
     home: "الرئيسية",

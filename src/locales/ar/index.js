@@ -7,6 +7,7 @@ import about from "./about";
 import jury from "./jury";
 import previousConferences from "./previousConferences";
 import conference_sponsors from "./conference_sponsors";
+import registration from "./registration";
 
 
 const ar = {
@@ -20,7 +21,9 @@ const ar = {
     about,
     jury,
     previousConferences,
-    conference_sponsors,  },
+    conference_sponsors,
+    registration
+  },
 };
 
 export default ar;

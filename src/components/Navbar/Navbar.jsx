@@ -248,10 +248,12 @@ function Navbar() {
                 )
               )}
           </div>
-          <button className="select-none cursor-pointer bg-gradient-to-r from-gray-900 to-gray-800 text-white px-3 py-3 rounded-xl text-md font-semibold flex items-center gap-2 transition-all duration-300 hover:scale-105 active:scale-95">
-            {t("navbar.ticket")}
-            <FaTicketAlt className="text-lg" />
-          </button>
+          <Link to={"/RegistrationPage"}>
+            <button className="select-none cursor-pointer bg-gradient-to-r from-gray-900 to-gray-800 text-white px-3 py-3 rounded-xl text-md font-semibold flex items-center gap-2 transition-all duration-300 hover:scale-105 active:scale-95">
+              {t("navbar.register")}
+              <FaTicketAlt className="text-lg" />
+            </button>
+          </Link>
         </div>
       </nav>
 
@@ -287,10 +289,12 @@ function Navbar() {
             )
           )}
         </div>
-        <button className="bg-gradient-to-r from-gray-900 to-gray-800 text-white px-3 py-3 rounded-xl text-xs font-semibold flex items-center gap-1 transition-all duration-300 hover:scale-105 active:scale-95">
-          <FaTicketAlt className="text-lg" />
-          {t("navbar.ticket")}
-        </button>
+        <Link to={"/RegistrationPage"}>
+          <button className="bg-gradient-to-r from-gray-900 to-gray-800 text-white px-3 py-3 rounded-xl text-xs font-semibold flex items-center gap-1 transition-all duration-300 hover:scale-105 active:scale-95">
+            <FaTicketAlt className="text-lg" />
+            {t("navbar.register")}
+          </button>
+        </Link>
       </div>
 
       {/* Mobile Language Switcher Button */}

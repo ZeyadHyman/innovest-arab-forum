@@ -6,6 +6,7 @@ import { FaMapMarkerAlt } from "react-icons/fa";
 import { IoMdTime } from "react-icons/io";
 import { TbSchoolBell } from "react-icons/tb";
 import "./landing.css";
+import { Link } from "react-router-dom";
 
 const Landing = () => {
   const [timeLeft, setTimeLeft] = useState(getTimeLeft());
@@ -31,21 +32,19 @@ const Landing = () => {
           <div className="flex flex-col justify-center lg:items-center h-full w-full text-white mt-10 ">
             <p
               data-aos="fade-right"
-              className={`font-extrabold ${
-                isArabic
-                  ? "text-3xl lg:text-5xl ar-font"
-                  : "text-4xl lg:text-6xl"
-              }`}
+              className={`font-extrabold ${isArabic
+                ? "text-3xl lg:text-5xl ar-font"
+                : "text-4xl lg:text-6xl"
+                }`}
             >
               {t("hero.welcome")}
             </p>
             <span
               data-aos="fade-left"
-              className={`text-gold ${
-                isArabic
-                  ? "ar-font font-bold mt-6"
-                  : "org-font tracking-widest mt-4"
-              } text-4xl lg:text-7xl font-extrabold`}
+              className={`text-gold ${isArabic
+                ? "ar-font font-bold mt-6"
+                : "org-font tracking-widest mt-4"
+                } text-4xl lg:text-7xl font-extrabold`}
             >
               {t("hero.title")}
             </span>
@@ -96,10 +95,12 @@ const Landing = () => {
               </div>
             </div>
 
-            <button className="select-none cursor-pointer bg-gradient-to-r from-gold to-gold text-white px-6 py-3 rounded-xl text-md font-semibold flex items-center gap-2 transition-all duration-300 hover:scale-105 active:scale-95 w-fit">
-              {t("navbar.ticket")}
-              <FaTicketAlt className="text-lg" />
-            </button>
+            <Link to={"/RegistrationPage"}>
+              <button className="select-none cursor-pointer bg-gradient-to-r from-gold to-gold text-white px-6 py-3 rounded-xl text-md font-semibold flex items-center gap-2 transition-all duration-300 hover:scale-105 active:scale-95 w-fit">
+                {t("navbar.register")}
+                <FaTicketAlt className="text-lg" />
+              </button>
+            </Link>
           </div>
         </div>
       </div>

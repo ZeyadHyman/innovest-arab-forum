@@ -2,7 +2,7 @@ import i18next from "i18next";
 
 export function getTimeLeft() {
   const now = new Date().getTime();
-  const target = new Date("2025-05-31T01:00:00").getTime();
+  const target = new Date("2025-06-21T01:00:00").getTime();
   const timeLeft = target - now;
   const isArabic = i18next.language === "ar";
 

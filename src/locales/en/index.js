@@ -7,6 +7,7 @@ import about from "./about";
 import jury from "./jury";
 import previousConferences from "./previousConferences";
 import conference_sponsors from "./conference_sponsors";
+import registration from "./registration";
 
 const ar = {
   translation: {
@@ -20,6 +21,7 @@ const ar = {
     jury,
     previousConferences,
     conference_sponsors,
+    registration
   },
 };
 

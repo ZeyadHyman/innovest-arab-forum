@@ -1,5 +1,7 @@
 import { useTranslation } from "react-i18next";
 import { Megaphone, CheckCircle } from "lucide-react";
+import { FaTicketAlt } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 export default function PackageCards() {
   const { t } = useTranslation();
@@ -34,12 +36,12 @@ export default function PackageCards() {
         {sponsors.map((sponsor) => (
           <div
             key={sponsor.key}
-            className="group relative rounded-xl bg-white duration-300 overflow-hidden shadow-md hover:shadow-lg transform hover:-translate-y-1 transition-all"
+            className="group relative rounded-xl bg-white duration-300 overflow-hidden shadow-md hover:shadow-lg transform hover:-translate-y-1 transition-all h-full flex flex-col"
           >
-            <div className="relative bg-white rounded-xl p-6">
+            <div className="bg-white rounded-xl p-6 flex flex-col h-full">
               <h2
                 className={`text-sm font-semibold text-center px-4 py-2 rounded-md border 
-                  ${sponsorColors[sponsor.key] || "bg-gray-100 text-gray-800 border-gray-300"}`}
+            ${sponsorColors[sponsor.key] || "bg-gray-100 text-gray-800 border-gray-300"}`}
               >
                 {sponsor.title}
               </h2>
@@ -75,10 +77,21 @@ export default function PackageCards() {
                   ))}
                 </ul>
               </div>
+
+              {/* button section */}
+              <div className="mt-auto mx-auto p-5">
+                <Link to={'/RegistrationPage'}>
+                  <button className="select-none cursor-pointer bg-gradient-to-r from-gold to-gold text-white px-6 py-3 rounded-xl text-md font-semibold flex items-center gap-2 transition-all duration-300 hover:scale-105 active:scale-95 w-fit">
+                    {t("navbar.register")}
+                    <FaTicketAlt className="text-lg" />
+                  </button>
+                </Link>
+              </div>
             </div>
           </div>
         ))}
       </div>
+
     </div>
   );
 }
