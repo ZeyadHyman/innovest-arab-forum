@@ -79,7 +79,7 @@ const Landing = () => {
               <div
                 data-aos="fade-right"
                 data-aos-delay="200"
-                className="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20 flex flex-col justify-center items-center transform transition-all duration-300 hover:border-gold/30 hover:scale-105 hover:shadow-lg hover:shadow-gold/10 group"
+                className="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20 flex flex-col justify-center items-center transform transition-all duration-300 hover:border-gold/30  hover:shadow-lg hover:shadow-gold/10 group"
               >
                 <div className="flex items-center gap-2 text-gold mb-4 group-hover:text-gold/90 transition-colors duration-300">
                   <IoMdTime className="text-xl group-hover:rotate-12 transition-transform duration-300" />
@@ -100,7 +100,7 @@ const Landing = () => {
               <div
                 data-aos="fade-left"
                 data-aos-delay="200"
-                className="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20 flex flex-col justify-center items-center transform transition-all duration-300 hover:border-gold/30 hover:scale-105 hover:shadow-lg hover:shadow-gold/10 group"
+                className="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20 flex flex-col justify-center items-center transform transition-all duration-300 hover:border-gold/30  hover:shadow-lg hover:shadow-gold/10 group"
               >
                 <div className="flex items-center gap-2 text-gold mb-4 group-hover:text-gold/90 transition-colors duration-300">
                   <IoMdTime className="text-xl group-hover:rotate-12 transition-transform duration-300" />
