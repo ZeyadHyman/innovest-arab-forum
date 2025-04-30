@@ -6,22 +6,22 @@ import "swiper/css/pagination";
 
 function Jury() {
   const { t } = useTranslation();
-
   const juryMembers = t("jury.juryMembers", { returnObjects: true });
 
   return (
-    <section className="pt-12 mx-auto px-4 sm:px-6 lg:px-12 w-full bg-gray-100">
-      <div className="text-center space-y-2" data-aos="fade-down">
-        <h2 className="text-2xl lg:text-5xl font-extrabold text-secondary tracking-wide leading-tight text-center">
+    <section className="py-10 sm:py-12 lg:py- truyền w-full bg-gray-100">
+      <div className="text-center space-y-3 mb-8 px-4 sm:px-6 lg:px-12" data-aos="fade-down">
+        <h2 className="text-xl sm:text-3xl lg:text-4xl font-extrabold text-secondary tracking-wide leading-tight">
           {t("jury.title")}
         </h2>
-        <p className="text-transparent bg-clip-text bg-gradient-to-l from-blue-950 to-gray-800 text-center text-sm lg:text-2xl ">
+        <p className="text-transparent bg-clip-text bg-gradient-to-l from-blue-950 to-gray-800 text-sm sm:text-base lg:text-lg max-w-3xl mx-auto">
           {t("jury.subtitle")}
         </p>
       </div>
 
-      <div className="hidden lg:flex flex-wrap-reverse justify-center gap-x-20 gap-y-2">
-        {juryMembers.map((member, index) => {
+      {/* Desktop Grid Layout */}
+      <div className="hidden lg:flex flex-wrap justify-center gap-6 sm:gap-8 lg:gap-10 px-4 sm:px-6 lg:px-12">
+        {juryMembers.reverse().map((member, index) => {
           const isHeadOfJury =
             member.name === "Eng. Magdy Wahba" ||
             member.name === "م. مجدي وهبه";
@@ -29,47 +29,64 @@ function Jury() {
           return (
             <div
               key={index}
-              className={`flex flex-col bg-white shadow-none w-78 hover:shadow-md border border-slate-200 rounded-lg my-6 overflow-hidden transform transition-all duration-300 ${
+              className={`flex flex-col bg-white w-full max-w-[280px] hover:shadow-lg border border-slate-200 rounded-lg my-4 overflow-hidden transform transition-all duration-300 ${
                 isHeadOfJury ? "relative" : ""
               }`}
               data-aos={`${isHeadOfJury ? "fade-down" : "fade-up"}`}
             >
               {isHeadOfJury && (
-                <div className="absolute top-0 right-0 bg-gold/70 text-white px-4 py-2 rounded-bl-lg text-sm font-semibold">
-                  {t("jury.headOfJury")}{" "}
+                <div className="absolute top-0 right-0 bg-gold/70 text-white px-3 py-1.5 rounded-bl-lg text-xs font-semibold">
+                  {t("jury.headOfJury")}
                 </div>
               )}
-              <div className="overflow-hidden rounded-md h-80 flex justify-center items-center">
+              <div className="overflow-hidden rounded-t-lg h-64 sm:h-72 flex justify-center items-center">
                 <img
                   className="w-full h-full select-none object-cover"
                   src={member.image}
                   alt={member.name}
                 />
               </div>
-              <div className="p-6 text-center flex-grow flex flex-col justify-center h-32">
-                <h4 className="mb-1 text-base font-semibold">{member.name}</h4>
-                <p className="text-xs text-gray-700">
-                  {member.role}
-                </p>
+              <div className="p-4 sm:p-6 text-center flex flex-col justify-center min-h-[120px]">
+                <h4 className="mb-1 text-sm sm:text-base font-semibold">{member.name}</h4>
+                <p className="text-xs sm:text-sm text-gray-700 leading-relaxed">{member.role}</p>
               </div>
             </div>
           );
         })}
       </div>
 
-      <div className="block lg:hidden">
+      {/* Mobile Swiper Layout */}
+      <div className="lg:hidden px-4 sm:px-6">
         <Swiper
           dir="ltr"
           slidesPerView={1.2}
-          spaceBetween={10}
+          spaceBetween={12}
           centeredSlides={true}
           loop={true}
           autoplay={{
             delay: 2000,
             disableOnInteraction: false,
           }}
+          breakpoints={{
+            0: {
+              slidesPerView: 1.2,
+              spaceBetween: 12,
+            },
+            480: {
+              slidesPerView: 1.5,
+              spaceBetween: 14,
+            },
+            640: {
+              slidesPerView: 1.8,
+              spaceBetween: 16,
+            },
+            768: {
+              slidesPerView: 2.2,
+              spaceBetween: 20,
+            },
+          }}
           modules={[Autoplay]}
-          className="mt-6"
+          className="mt-6 pb-4"
         >
           {juryMembers.map((member, index) => {
             const isHeadOfJury =
@@ -79,31 +96,26 @@ function Jury() {
             return (
               <SwiperSlide key={index}>
                 <div
-                  className={`flex flex-col h-full bg-white shadow-none w-78 hover:shadow-md border border-slate-200 rounded-lg my-6 overflow-hidden transform transition-all duration-300 ${
+                  className={`flex flex-col bg-white w-full max-w-[280px] mx-auto hover:shadow-lg border border-slate-200 rounded-lg my-4 overflow-hidden transform transition-all duration-300 ${
                     isHeadOfJury ? "relative" : ""
                   }`}
                   data-aos={`${isHeadOfJury ? "fade-down" : "fade-up"}`}
                 >
                   {isHeadOfJury && (
-                    <div className="absolute top-0 right-0 bg-gold/70 text-white px-4 py-2 rounded-bl-lg text-sm font-semibold">
+                    <div className="absolute top-0 right-0 bg-gold/70 text-white px-3 py-1.5 rounded-bl-lg text-xs font-semibold">
                       {t("jury.headOfJury")}
                     </div>
                   )}
-                  <div className="overflow-hidden rounded-md h-80 flex justify-center items-center">
+                  <div className="overflow-hidden rounded-t-lg h-64 flex justify-center items-center">
                     <img
                       className="w-full h-full select-none object-cover"
                       src={member.image}
                       alt={member.name}
                     />
                   </div>
-
-                  <div className="p-6 text-center flex-grow flex flex-col justify-center h-42">
-                    <h4 className="mb-1 text-base font-semibold">
-                      {member.name}
-                    </h4>
-                    <p className="text-xs leading-relaxed text-gray-700">
-                    {member.role}
-                    </p>
+                  <div className="p-4 text-center flex flex-col justify-center min-h-[120px]">
+                    <h4 className="mb-1 text-sm font-semibold">{member.name}</h4>
+                    <p className="text-xs leading-relaxed text-gray-700">{member.role}</p>
                   </div>
                 </div>
               </SwiperSlide>
