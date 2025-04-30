@@ -114,7 +114,6 @@ const Landing = () => {
             <div className="flex justify-center">
               <Link to={"/RegistrationPage/members"}>
                 <button
-                  data-aos="fade-up"
                   data-aos-delay="400"
                   className="bg-gradient-to-r from-gold to-gold/90 text-white px-8 py-4 rounded-xl text-lg font-semibold flex items-center justify-center gap-3 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-gold/20 active:scale-95"
                 >
