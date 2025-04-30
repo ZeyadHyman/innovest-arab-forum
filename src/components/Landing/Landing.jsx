@@ -76,9 +76,13 @@ const Landing = () => {
             {/* Event Details */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-5">
               {/* Opening Day */}
-              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20 flex flex-col justify-center items-center transform transition-all duration-300  hover:border-gold/30">
-                <div className="flex items-center gap-2 text-gold mb-4">
-                  <IoMdTime className="text-xl" />
+              <div
+                data-aos="fade-right"
+                data-aos-delay="200"
+                className="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20 flex flex-col justify-center items-center transform transition-all duration-300 hover:border-gold/30 hover:scale-105 hover:shadow-lg hover:shadow-gold/10 group"
+              >
+                <div className="flex items-center gap-2 text-gold mb-4 group-hover:text-gold/90 transition-colors duration-300">
+                  <IoMdTime className="text-xl group-hover:rotate-12 transition-transform duration-300" />
                   <span className="text-lg font-medium">{t("hero.openingDate")}</span>
                 </div>
                 <a
@@ -87,15 +91,19 @@ const Landing = () => {
                   rel="noopener noreferrer"
                   className="flex items-center gap-2 text-white/90 hover:text-blue-400 transition-colors duration-300 group"
                 >
-                  <FaMapMarkerAlt className="text-gold group-hover:scale-110 transition-transform duration-300" />
+                  <FaMapMarkerAlt className="text-gold group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300" />
                   <span className="text-base text-center">{t("hero.openingVenue")}</span>
                 </a>
               </div>
 
               {/* Closing Day */}
-              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20 flex flex-col justify-center items-center transform transition-all duration-300  hover:border-gold/30">
-                <div className="flex items-center gap-2 text-gold mb-4">
-                  <IoMdTime className="text-xl" />
+              <div
+                data-aos="fade-left"
+                data-aos-delay="200"
+                className="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20 flex flex-col justify-center items-center transform transition-all duration-300 hover:border-gold/30 hover:scale-105 hover:shadow-lg hover:shadow-gold/10 group"
+              >
+                <div className="flex items-center gap-2 text-gold mb-4 group-hover:text-gold/90 transition-colors duration-300">
+                  <IoMdTime className="text-xl group-hover:rotate-12 transition-transform duration-300" />
                   <span className="text-lg font-medium">{t("hero.closingDate")}</span>
                 </div>
                 <a
@@ -104,7 +112,7 @@ const Landing = () => {
                   rel="noopener noreferrer"
                   className="flex items-center gap-2 text-white/90 hover:text-blue-400 transition-colors duration-300 group"
                 >
-                  <FaMapMarkerAlt className="text-gold group-hover:scale-110 transition-transform duration-300" />
+                  <FaMapMarkerAlt className="text-gold group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300" />
                   <span className="text-base text-center">{t("hero.closingVenue")}</span>
                 </a>
               </div>
