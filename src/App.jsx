@@ -43,7 +43,7 @@ function App() {
             <Route path="/previousConferences" element={<PreviousConferences />} />
             <Route path="/SponsorsPartners" element={<SponsorsPartners />} />
             <Route path="/RegistrationPage/members" element={<RegistrationPage index={0} />} />
-            <Route path="/RegistrationPage/sponsors" element={<RegistrationPage index={1} />} />
+            <Route path="/RegistrationPage/sponsors" element={<RegistrationPage index={2} />} />
           </Routes>
           <Footer />
         </Router>
