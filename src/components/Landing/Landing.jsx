@@ -95,7 +95,7 @@ const Landing = () => {
               </div>
             </div>
 
-            <Link to={"/RegistrationPage"}>
+            <Link to={"/RegistrationPage/members"}>
               <button className="select-none cursor-pointer bg-gradient-to-r from-gold to-gold text-white px-6 py-3 rounded-xl text-md font-semibold flex items-center gap-2 transition-all duration-300 hover:scale-105 active:scale-95 w-fit">
                 {t("navbar.register")}
                 <FaTicketAlt className="text-lg" />
