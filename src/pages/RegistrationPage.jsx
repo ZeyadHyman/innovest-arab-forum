@@ -15,7 +15,7 @@ function RegistrationPage({ index }) {
                         src={categories[index].formLink}
                         title={categories[index].title}
                         width="100%"
-                        height={index === 0 ? "600" : "1300"}
+                        height={index === 0 ? "600" : "1100"}
                         frameBorder="0"
                         className="w-full rounded-xl"
                         allow="fullscreen"
