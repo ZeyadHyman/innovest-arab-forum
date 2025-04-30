@@ -7,6 +7,7 @@ import logo from "/logos/logo_trans.webp";
 import { FaTicketAlt } from "react-icons/fa";
 import Loader from "../../utils/Loader/Loader";
 import { Link, useLocation } from "react-router-dom";
+import RegistrationModal from "../RegistrationModal/RegistrationModal";
 
 function Navbar() {
   const [timeLeft, setTimeLeft] = useState(getTimeLeft());
@@ -15,12 +16,12 @@ function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isLangSwitched, setIsLangSwitched] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const { i18n, t } = useTranslation();
   const isArabic = i18n.language === "ar";
   const location = useLocation();
 
   const menuLinks = t("navbar.menu", { returnObjects: true }) || {};
-
 
   const lastScrollY = useRef(window.innerHeight);
 
@@ -248,12 +249,15 @@ function Navbar() {
                 )
               )}
           </div>
-          <Link to={"/RegistrationPage/members"}>
-            <button className="select-none cursor-pointer bg-gradient-to-r from-gray-900 to-gray-800 text-white px-3 py-3 rounded-xl text-md font-semibold flex items-center gap-2 transition-all duration-300 hover:scale-105 active:scale-95">
+          <div className="flex items-center">
+            <button
+              onClick={() => setIsModalOpen(true)}
+              className="select-none cursor-pointer bg-gradient-to-r from-gray-900 to-gray-800 text-white px-3 py-3 rounded-xl text-md font-semibold flex items-center gap-2 transition-all duration-300 hover:scale-105 active:scale-95"
+            >
               {t("navbar.register")}
               <FaTicketAlt className="text-lg" />
             </button>
-          </Link>
+          </div>
         </div>
       </nav>
 
@@ -289,12 +293,15 @@ function Navbar() {
             )
           )}
         </div>
-        <Link to={"/RegistrationPage/members"}>
-          <button className="bg-gradient-to-r from-gray-900 to-gray-800 text-white px-3 py-3 rounded-xl text-xs font-semibold flex items-center gap-1 transition-all duration-300 hover:scale-105 active:scale-95">
+        <div className="flex items-center">
+          <button
+            onClick={() => setIsModalOpen(true)}
+            className="bg-gradient-to-r from-gray-900 to-gray-800 text-white px-3 py-3 rounded-xl text-xs font-semibold flex items-center gap-1 transition-all duration-300 hover:scale-105 active:scale-95"
+          >
             <FaTicketAlt className="text-lg" />
             {t("navbar.register")}
           </button>
-        </Link>
+        </div>
       </div>
 
       {/* Mobile Language Switcher Button */}
@@ -317,6 +324,9 @@ function Navbar() {
           className="transition-all duration-500 ease-out transform active:rotate-180 w-8"
         />
       </button>
+
+      {/* Registration Modal */}
+      <RegistrationModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </>
   );
 }

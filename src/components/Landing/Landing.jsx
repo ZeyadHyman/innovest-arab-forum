@@ -6,10 +6,11 @@ import { FaMapMarkerAlt } from "react-icons/fa";
 import { IoMdTime } from "react-icons/io";
 import { TbSchoolBell } from "react-icons/tb";
 import "./landing.css";
-import { Link } from "react-router-dom";
+import RegistrationModal from "../RegistrationModal/RegistrationModal";
 
 const Landing = () => {
   const [timeLeft, setTimeLeft] = useState(getTimeLeft());
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const { t, i18n } = useTranslation();
   const isArabic = i18n.language === "ar";
 
@@ -120,19 +121,21 @@ const Landing = () => {
 
             {/* Register Button */}
             <div className="flex justify-center">
-              <Link to={"/RegistrationPage/members"}>
-                <button
-                  data-aos-delay="400"
-                  className="bg-gradient-to-r from-gold to-gold/90 text-white px-8 py-4 rounded-xl text-lg font-semibold flex items-center justify-center gap-3 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-gold/20 active:scale-95"
-                >
-                  {t("navbar.register")}
-                  <FaTicketAlt className="text-xl transform group-hover:rotate-12 transition-transform duration-300" />
-                </button>
-              </Link>
+              <button
+                onClick={() => setIsModalOpen(true)}
+                data-aos-delay="400"
+                className="bg-gradient-to-r from-gold to-gold/90 text-white px-8 py-4 rounded-xl text-lg font-semibold flex items-center justify-center gap-3 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-gold/20 active:scale-95"
+              >
+                {t("navbar.register")}
+                <FaTicketAlt className="text-xl transform group-hover:rotate-12 transition-transform duration-300" />
+              </button>
             </div>
           </div>
         </div>
       </div>
+
+      {/* Registration Modal */}
+      <RegistrationModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </div>
   );
 };
