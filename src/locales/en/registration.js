@@ -15,6 +15,18 @@ const registration = {
       formLink: "https://tally.so/r/wkgXW6",
     },
     {
+      title: "VIP Registration",
+      price: "Contact Us",
+      description: "Exclusive VIP experience with premium benefits",
+      benefits: [
+        "Priority seating",
+        "VIP networking lounge",
+        "Exclusive sessions",
+        "Premium materials",
+      ],
+      formLink: "https://tally.so/r/wkgXW6",
+    },
+    {
       title: "Sponsors Registration",
       price: "Contact Us",
       description: "Become a sponsor and showcase your brand to our community",
@@ -26,18 +38,6 @@ const registration = {
       ],
       route: "sponsors",
       formLink: "https://tally.so/r/wggXvJ",
-    },
-    {
-      title: "VIP Registration",
-      price: "Contact Us",
-      description: "Exclusive VIP experience with premium benefits",
-      benefits: [
-        "Priority seating",
-        "VIP networking lounge",
-        "Exclusive sessions",
-        "Premium materials",
-      ],
-      formLink: "https://tally.so/r/wkgXW6",
     },
   ],
 };

@@ -17,6 +17,18 @@ const registration = {
       formLink: "https://tally.so/r/wkgXW6",
     },
     {
+      title: "تسجيل VIP",
+      price: "اتصل بنا",
+      description: "تجربة VIP حصرية مع مزايا مميزة",
+      benefits: [
+        "مقاعد ذات أولوية",
+        "صالة VIP للتواصل",
+        "جلسات حصرية",
+        "مواد مميزة",
+      ],
+      formLink: "https://tally.so/r/wkgXW6",
+    },
+    {
       title: "تسجيل الرعاة",
       price: "اتصل بنا",
       description: "كن راعياً وعرض علامتك التجارية لمجتمعنا",
@@ -28,18 +40,6 @@ const registration = {
       ],
       route: "sponsors",
       formLink: "https://tally.so/r/wggXvJ",
-    },
-    {
-      title: "التسجيل المميز",
-      price: "اتصل بنا",
-      description: "تجربة VIP حصرية مع مزايا مميزة",
-      benefits: [
-        "مقاعد ذات أولوية",
-        "صالة VIP للتواصل",
-        "جلسات حصرية",
-        "مواد مميزة",
-      ],
-      formLink: "https://tally.so/r/wkgXW6",
     },
   ],
 };
