@@ -13,20 +13,24 @@ function Speakers() {
   const closeModal = () => setSelectedSpeaker(null);
 
   return (
-    <>
-      <div className="container mx-auto my-10 px-4 sm:px-6 md:my-22 lg:px-12 ">
-        <h2 className=" text-3xl lg:text-5xl font-extrabold text-secondary tracking-wide leading-tight text-center">
-          {t("speakers.title")}
-        </h2>
-        <p className="text-transparent bg-clip-text bg-gradient-to-l from-blue-950 to-gray-800 text-center text-2xl pt-4 pb-6">
-          {t("speakers.subtitle")}
-        </p>
-        <div className="flex flex-wrap justify-center gap-12 ">
+    <section className="py-16 lg:py-24 bg-gradient-to-b from-white to-gray-50">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-12">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl lg:text-5xl font-extrabold text-secondary tracking-wide leading-tight">
+            {t("speakers.title")}
+          </h2>
+          <p className="text-gray-600 text-xl lg:text-2xl pt-4 pb-6 max-w-3xl mx-auto">
+            {t("speakers.subtitle")}
+          </p>
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {Object.entries(speakersData).map(([key, value]) => (
             <div
-              className="card group overflow-hidden cursor-pointer rounded-2xl"
+              className="card group overflow-hidden cursor-pointer rounded-2xl bg-white shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
               onClick={() => openModal(value)}
               key={key}
+              data-aos="fade-up"
+              data-aos-duration="800"
             >
               <div className="card-info">
                 <img
@@ -35,7 +39,7 @@ function Speakers() {
                   className="card-avatar select-none"
                 />
                 <div className="card-title">{value.name}</div>
-                <div className="card-subtitle mt-2 text-transparent bg-clip-text bg-gradient-to-l from-blue-950 to-gray-800">
+                <div className="card-subtitle mt-2 text-gray-600">
                   {value.role}
                 </div>
               </div>
@@ -57,22 +61,18 @@ function Speakers() {
 
       {selectedSpeaker && (
         <div
-          className="fixed inset-0 z-[999] grid h-screen w-screen place-items-center bg-black bg-opacity-20 backdrop-blur-sm transition-all duration-300 cursor-auto"
-          style={{
-            pointerEvents: "auto",
-            backgroundColor: "rgba(0, 0, 0, 0.2)",
-            backdropFilter: "blur(8px)",
-          }}
+          className="fixed inset-0 z-[999] grid h-screen w-screen place-items-center bg-black/30 backdrop-blur-sm transition-all duration-300 cursor-auto"
           onClick={closeModal}
         >
           <div
-            className="relative m-4 p-4 w-11/12 md:w-3/5 min-w-[90%] md:min-w-[60%] max-w-[90%] md:max-w-[60%] rounded-lg bg-white shadow-sm flex flex-col md:flex-row"
+            className="relative m-4 p-6 w-11/12 md:w-3/5 min-w-[90%] md:min-w-[60%] max-w-[90%] md:max-w-[60%] rounded-xl bg-white shadow-2xl flex flex-col md:flex-row transform transition-all duration-300"
             onClick={(e) => e.stopPropagation()}
+            data-aos="zoom-in"
+            data-aos-duration="300"
           >
             <button
-              className={`absolute top-2 p-2 text-white md:text-slate-600 md:hover:text-slate-800 focus:outline-none cursor-pointer ${
-                isArabic ? "left-2" : "right-2"
-              }`}
+              className={`absolute top-4 p-2 text-gray-600 hover:text-gray-800 focus:outline-none cursor-pointer transition-colors duration-200 ${isArabic ? "left-4" : "right-4"
+                }`}
               onClick={closeModal}
             >
               <svg
@@ -95,36 +95,35 @@ function Speakers() {
               href={selectedSpeaker.social_media_link}
               target="_blank"
               rel="noopener noreferrer"
-              className={`absolute top-12 p-2 text-white md:text-slate-600 md:hover:text-slate-800 focus:outline-none cursor-pointer ${
-                isArabic ? " left-2" : "right-2"
-              }`}
+              className={`absolute top-16 p-2 text-gray-600 hover:text-gray-800 focus:outline-none cursor-pointer transition-colors duration-200 ${isArabic ? "left-4" : "right-4"
+                }`}
             >
-              <IoShareSocial className="h-6 w-6 " />
+              <IoShareSocial className="h-6 w-6" />
             </a>
 
             <div className="w-full md:w-1/3 flex-shrink-0">
               <img
                 src={selectedSpeaker.image}
                 alt={selectedSpeaker.name}
-                className="w-full h-64 md:h-96 object-cover rounded-lg select-none"
+                className="w-full h-64 md:h-96 object-cover rounded-lg shadow-md select-none"
               />
             </div>
 
-            <div className="w-full md:w-2/3 md:px-6 flex flex-col mt-4 md:mt-0">
-              <div className="text-2xl px-3 text-slate-800">
+            <div className="w-full md:w-2/3 md:px-8 flex flex-col mt-6 md:mt-0">
+              <div className="text-2xl font-bold text-gray-800">
                 {selectedSpeaker.name}
               </div>
-              <div className="text-lg px-3 text-slate-600 mt-2 ar-font">
+              <div className="text-lg text-gray-600 mt-2 ar-font">
                 {selectedSpeaker.role}
               </div>
-              <div className="mt-4 text-slate-600 font-light overflow-y-auto max-h-64 md:max-h-72 p-3 py-6">
+              <div className="mt-6 text-gray-600 leading-relaxed overflow-y-auto max-h-64 md:max-h-72 pr-4">
                 {selectedSpeaker.description}
               </div>
             </div>
           </div>
         </div>
       )}
-    </>
+    </section>
   );
 }
 
