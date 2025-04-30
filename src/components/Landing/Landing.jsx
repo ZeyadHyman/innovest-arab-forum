@@ -21,90 +21,112 @@ const Landing = () => {
   }, []);
 
   return (
-    <>
+    <div className="relative pt-20 lg:pt-30 h-screen">
+      {/* Background with overlay */}
       <div
-        className="w-full h-screen md:pt-[152.28px] bg-center bg-cover bg-no-repeat lg:pb-30 text-center"
+        className="absolute inset-0 bg-center bg-cover bg-no-repeat"
         style={{
-          backgroundImage: `linear-gradient(rgba(22, 37, 86, 0.9), rgba(31, 41, 56, 0.9)), url('/images/landing-cover.webp')`,
+          backgroundImage: `linear-gradient(rgba(22, 37, 86, 0.95), rgba(31, 41, 56, 0.95)), url('/images/landing-cover.webp')`,
         }}
-      >
-        <div className="w-full h-full container m-auto py-4 px-6 md:py-5 md:px-10 lg:px-22">
-          <div className="flex flex-col justify-center lg:items-center h-full w-full text-white mt-10 ">
+      />
+
+      {/* Content */}
+      <div className="relative z-10">
+        <div className="container mx-auto px-4 md:px-6 lg:px-8 py-16 md:py-20">
+          <div className="max-w-5xl mx-auto text-center">
+            {/* Welcome Text */}
             <p
               data-aos="fade-right"
-              className={`font-extrabold ${isArabic
-                ? "text-3xl lg:text-5xl ar-font"
-                : "text-4xl lg:text-6xl"
+              className={`text-3xl md:text-4xl font-bold text-white/90 mb-3 ${isArabic ? "ar-font" : ""
                 }`}
             >
               {t("hero.welcome")}
             </p>
-            <span
+
+            {/* Title */}
+            <h1
               data-aos="fade-left"
-              className={`text-gold ${isArabic
-                ? "ar-font font-bold mt-6"
-                : "org-font tracking-widest mt-4"
-                } text-4xl lg:text-7xl font-extrabold`}
+              className={`text-4xl md:text-5xl lg:text-6xl font-extrabold text-gold mb-4 ${isArabic ? "ar-font" : "org-font tracking-widest"
+                }`}
             >
               {t("hero.title")}
-            </span>
-            <div>
-              <div className="text-lg lg:text-3xl font-bold mt-8">
-                {Object.entries(timeLeft).map(
-                  ([unit, { value, unit: formattedUnit }]) => (
-                    <span
-                      data-aos="fade-right"
-                      key={unit}
-                      className="relative inline-block text-center rounded border border-white/15 w-[60px] lg:w-[150px] text-white py-2 lg:py-4 lg:px-8 font-bold mr-3 z-10"
-                    >
-                      {value}{" "}
-                      <p className="text-xs lg:text-lg font-normal">
-                        {formattedUnit}
-                      </p>
-                    </span>
-                  )
-                )}
-              </div>
-            </div>
-            <div
-              data-aos="fade-left"
-              className="flex md:gap-5 my-10 item-center md:flex-row flex-col gap-2 item"
-            >
-              <a
-                target="_blank"
-                className="flex gap-2 "
-              >
-                <span className="">
-                  <FaMapMarkerAlt />
-                </span>
-                {t("hero.location")}
-              </a>
+            </h1>
 
-              <div className="sep"></div>
-
-              <div className="flex gap-2 ">
-                <IoMdTime className=" font-bold text-xl" />
-                {t("hero.date")}
-              </div>
-
-              <div className="sep"></div>
-
-              <div className="flex gap-2 ">
-                <TbSchoolBell className=" font-bold text-xl" />
-                {t("hero.edition")}
-              </div>
+            {/* Edition */}
+            <div className="flex items-center justify-center gap-2 text-gold mb-8">
+              <TbSchoolBell className="text-xl" />
+              <span className="text-lg font-medium tracking-wider">{t("hero.edition")}</span>
             </div>
 
-            <Link to={"/RegistrationPage/members"}>
-              <button className="select-none cursor-pointer bg-gradient-to-r from-gold to-gold text-white px-6 py-3 rounded-xl text-md font-semibold flex items-center gap-2 transition-all duration-300 hover:scale-105 active:scale-95 w-fit">
-                {t("navbar.register")}
-                <FaTicketAlt className="text-lg" />
-              </button>
-            </Link>
+            {/* Countdown Timer */}
+            <div className="flex justify-center gap-3 md:gap-4 mb-12">
+              {Object.entries(timeLeft).map(([unit, { value, unit: formattedUnit }]) => (
+                <div
+                  key={unit}
+                  data-aos="fade-up"
+                  data-aos-delay={unit === "days" ? 0 : unit === "hours" ? 100 : unit === "minutes" ? 200 : 300}
+                  className="flex flex-col items-center justify-center bg-white/10 backdrop-blur-sm rounded-xl p-4 min-w-[80px] md:min-w-[100px] border border-white/20"
+                >
+                  <span className="text-2xl md:text-3xl font-bold text-white">{value}</span>
+                  <span className="text-sm md:text-base text-white/80">{formattedUnit}</span>
+                </div>
+              ))}
+            </div>
+
+            {/* Event Details */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-5">
+              {/* Opening Day */}
+              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20 flex flex-col justify-center items-center transform transition-all duration-300  hover:border-gold/30">
+                <div className="flex items-center gap-2 text-gold mb-4">
+                  <IoMdTime className="text-xl" />
+                  <span className="text-lg font-medium">{t("hero.openingDate")}</span>
+                </div>
+                <a
+                  href="https://maps.google.com/?q=Creativa+Innovation+Hub+-+Giza,+26H2%2B6Q5,+Ad+Doqi,+Dokki,+Giza+Governorate+3750010"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 text-white/90 hover:text-blue-400 transition-colors duration-300 group"
+                >
+                  <FaMapMarkerAlt className="text-gold group-hover:scale-110 transition-transform duration-300" />
+                  <span className="text-base text-center">{t("hero.openingVenue")}</span>
+                </a>
+              </div>
+
+              {/* Closing Day */}
+              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20 flex flex-col justify-center items-center transform transition-all duration-300  hover:border-gold/30">
+                <div className="flex items-center gap-2 text-gold mb-4">
+                  <IoMdTime className="text-xl" />
+                  <span className="text-lg font-medium">{t("hero.closingDate")}</span>
+                </div>
+                <a
+                  href="https://maps.google.com/?q=Arab+League+Headquarters,+26VM%2BV8R,+Ismailia,+Qasr+El+Nil,+Cairo+Governorate+4272081"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 text-white/90 hover:text-blue-400 transition-colors duration-300 group"
+                >
+                  <FaMapMarkerAlt className="text-gold group-hover:scale-110 transition-transform duration-300" />
+                  <span className="text-base text-center">{t("hero.closingVenue")}</span>
+                </a>
+              </div>
+            </div>
+
+            {/* Register Button */}
+            <div className="flex justify-center">
+              <Link to={"/RegistrationPage/members"}>
+                <button
+                  data-aos="fade-up"
+                  data-aos-delay="400"
+                  className="bg-gradient-to-r from-gold to-gold/90 text-white px-8 py-4 rounded-xl text-lg font-semibold flex items-center justify-center gap-3 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-gold/20 active:scale-95"
+                >
+                  {t("navbar.register")}
+                  <FaTicketAlt className="text-xl transform group-hover:rotate-12 transition-transform duration-300" />
+                </button>
+              </Link>
+            </div>
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
