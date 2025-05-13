@@ -1,18 +1,18 @@
-import navbar from "./navbar";
-import loader from "./loader";
-import speakers from "./speakers";
-import hero from "./hero";
-import footer from "./footer";
-import about from "./about";
-import jury from "./jury";
-import previousConferences from "./previousConferences";
-import conference_sponsors from "./conference_sponsors";
-import registration from "./registration";
-
+import navbar from './navbar';
+import loader from './loader';
+import speakers from './speakers';
+import hero from './hero';
+import footer from './footer';
+import about from './about';
+import jury from './jury';
+import previousConferences from './previousConferences';
+import conference_sponsors from './conference_sponsors';
+import registration from './registration';
+import sponsors_partners from './sponsors_partners';
 
 const ar = {
   translation: {
-    "lang": "ar",
+    lang: 'ar',
     navbar,
     loader,
     speakers,
@@ -22,7 +22,8 @@ const ar = {
     jury,
     previousConferences,
     conference_sponsors,
-    registration
+    registration,
+    sponsors_partners,
   },
 };
 

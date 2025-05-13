@@ -1,18 +1,18 @@
-import { useEffect, useState } from "react";
-import { getTimeLeft } from "../../utils/countdownTimer";
-import { useTranslation } from "react-i18next";
-import { FaTicketAlt } from "react-icons/fa";
-import { FaMapMarkerAlt } from "react-icons/fa";
-import { IoMdTime } from "react-icons/io";
-import { TbSchoolBell } from "react-icons/tb";
-import "./landing.css";
-import RegistrationModal from "../RegistrationModal/RegistrationModal";
+import { useEffect, useState } from 'react';
+import { getTimeLeft } from '../../utils/countdownTimer';
+import { useTranslation } from 'react-i18next';
+import { FaTicketAlt } from 'react-icons/fa';
+import { FaMapMarkerAlt } from 'react-icons/fa';
+import { IoMdTime } from 'react-icons/io';
+import { TbSchoolBell } from 'react-icons/tb';
+import './landing.css';
+import RegistrationModal from '../RegistrationModal/RegistrationModal';
 
 const Landing = () => {
   const [timeLeft, setTimeLeft] = useState(getTimeLeft());
   const [isModalOpen, setIsModalOpen] = useState(false);
   const { t, i18n } = useTranslation();
-  const isArabic = i18n.language === "ar";
+  const isArabic = i18n.language === 'ar';
 
   useEffect(() => {
     const interval = setInterval(() => setTimeLeft(getTimeLeft()), 1000);
@@ -22,7 +22,7 @@ const Landing = () => {
   }, []);
 
   return (
-    <div className="relative pt-20 lg:pt-30 h-screen">
+  <div className="relative pt-24 lg:pt-30 h-screen">
       {/* Background with overlay */}
       <div
         className="absolute inset-0 bg-center bg-cover bg-no-repeat"
@@ -38,40 +38,58 @@ const Landing = () => {
             {/* Welcome Text */}
             <p
               data-aos="fade-right"
-              className={`text-3xl md:text-4xl font-bold text-white/90 mb-3 ${isArabic ? "ar-font" : ""
-                }`}
+              className={`text-3xl md:text-4xl font-bold text-white/90 mb-3 ${
+                isArabic ? 'ar-font' : ''
+              }`}
             >
-              {t("hero.welcome")}
+              {t('hero.welcome')}
             </p>
 
             {/* Title */}
             <h1
               data-aos="fade-left"
-              className={`text-4xl md:text-5xl lg:text-6xl font-extrabold text-gold mb-4 ${isArabic ? "ar-font" : "org-font tracking-widest"
-                }`}
+              className={`text-4xl md:text-5xl lg:text-6xl font-extrabold text-gold mb-4 ${
+                isArabic ? 'ar-font' : 'org-font tracking-widest'
+              }`}
             >
-              {t("hero.title")}
+              {t('hero.title')}
             </h1>
 
             {/* Edition */}
             <div className="flex items-center justify-center gap-2 text-gold mb-8">
               <TbSchoolBell className="text-xl" />
-              <span className="text-lg font-medium tracking-wider">{t("hero.edition")}</span>
+              <span className="text-lg font-medium tracking-wider">
+                {t('hero.edition')}
+              </span>
             </div>
 
             {/* Countdown Timer */}
             <div className="flex justify-center gap-3 md:gap-4 mb-12">
-              {Object.entries(timeLeft).map(([unit, { value, unit: formattedUnit }]) => (
-                <div
-                  key={unit}
-                  data-aos="fade-up"
-                  data-aos-delay={unit === "days" ? 0 : unit === "hours" ? 100 : unit === "minutes" ? 200 : 300}
-                  className="flex flex-col items-center justify-center bg-white/10 backdrop-blur-sm rounded-xl p-4 min-w-[80px] md:min-w-[100px] border border-white/20"
-                >
-                  <span className="text-2xl md:text-3xl font-bold text-white">{value}</span>
-                  <span className="text-sm md:text-base text-white/80">{formattedUnit}</span>
-                </div>
-              ))}
+              {Object.entries(timeLeft).map(
+                ([unit, { value, unit: formattedUnit }]) => (
+                  <div
+                    key={unit}
+                    data-aos="fade-up"
+                    data-aos-delay={
+                      unit === 'days'
+                        ? 0
+                        : unit === 'hours'
+                          ? 100
+                          : unit === 'minutes'
+                            ? 200
+                            : 300
+                    }
+                    className="flex flex-col items-center justify-center bg-white/10 backdrop-blur-sm rounded-xl p-4 min-w-[80px] md:min-w-[100px] border border-white/20"
+                  >
+                    <span className="text-2xl md:text-3xl font-bold text-white">
+                      {value}
+                    </span>
+                    <span className="text-sm md:text-base text-white/80">
+                      {formattedUnit}
+                    </span>
+                  </div>
+                )
+              )}
             </div>
 
             {/* Event Details */}
@@ -84,7 +102,9 @@ const Landing = () => {
               >
                 <div className="flex items-center gap-2 text-gold mb-4 group-hover:text-gold/90 transition-colors duration-300">
                   <IoMdTime className="text-xl group-hover:rotate-12 transition-transform duration-300" />
-                  <span className="text-lg font-medium">{t("hero.openingDate")}</span>
+                  <span className="text-lg font-medium">
+                    {t('hero.openingDate')}
+                  </span>
                 </div>
                 <a
                   href="https://maps.google.com/?q=Creativa+Innovation+Hub+-+Giza,+26H2%2B6Q5,+Ad+Doqi,+Dokki,+Giza+Governorate+3750010"
@@ -93,7 +113,9 @@ const Landing = () => {
                   className="flex items-center gap-2 text-white/90 hover:text-blue-400 transition-colors duration-300 group"
                 >
                   <FaMapMarkerAlt className="text-gold group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300" />
-                  <span className="text-base text-center">{t("hero.openingVenue")}</span>
+                  <span className="text-base text-center">
+                    {t('hero.openingVenue')}
+                  </span>
                 </a>
               </div>
 
@@ -105,7 +127,9 @@ const Landing = () => {
               >
                 <div className="flex items-center gap-2 text-gold mb-4 group-hover:text-gold/90 transition-colors duration-300">
                   <IoMdTime className="text-xl group-hover:rotate-12 transition-transform duration-300" />
-                  <span className="text-lg font-medium">{t("hero.closingDate")}</span>
+                  <span className="text-lg font-medium">
+                    {t('hero.closingDate')}
+                  </span>
                 </div>
                 <a
                   href="https://maps.google.com/?q=Arab+League+Headquarters,+26VM%2BV8R,+Ismailia,+Qasr+El+Nil,+Cairo+Governorate+4272081"
@@ -114,7 +138,9 @@ const Landing = () => {
                   className="flex items-center gap-2 text-white/90 hover:text-blue-400 transition-colors duration-300 group"
                 >
                   <FaMapMarkerAlt className="text-gold group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300" />
-                  <span className="text-base text-center">{t("hero.closingVenue")}</span>
+                  <span className="text-base text-center">
+                    {t('hero.closingVenue')}
+                  </span>
                 </a>
               </div>
             </div>
@@ -126,7 +152,7 @@ const Landing = () => {
                 data-aos-delay="400"
                 className="bg-gradient-to-r from-gold to-gold/90 text-white px-8 py-4 rounded-xl text-lg font-semibold flex items-center justify-center gap-3 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-gold/20 active:scale-95"
               >
-                {t("navbar.register")}
+                {t('navbar.register')}
                 <FaTicketAlt className="text-xl transform group-hover:rotate-12 transition-transform duration-300" />
               </button>
             </div>
@@ -135,7 +161,10 @@ const Landing = () => {
       </div>
 
       {/* Registration Modal */}
-      <RegistrationModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+      <RegistrationModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+      />
     </div>
   );
 };

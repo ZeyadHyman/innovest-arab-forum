@@ -1,38 +1,36 @@
-@import "tailwindcss";
-@import "@fontsource/readex-pro";
+@import 'tailwindcss';
+@import '@fontsource/readex-pro';
 
 @font-face {
-  font-family: "itcMachine";
-  src: url("./fonts/ITC-Machine-Medium.woff2") format("woff2");
+  font-family: 'itcMachine';
+  src: url('./fonts/ITC-Machine-Medium.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
 
-
 @font-face {
-  font-family: "Almarai";
-  src: url("./fonts/Almarai-Regular.ttf") format("truetype");
+  font-family: 'Almarai';
+  src: url('./fonts/Almarai-Regular.ttf') format('truetype');
 }
 
 @font-face {
-  font-family: "Almarai";
-  src: url("./fonts/Almarai-Light.ttf") format("truetype");
+  font-family: 'Almarai';
+  src: url('./fonts/Almarai-Light.ttf') format('truetype');
 }
 
 @font-face {
-  font-family: "Almarai";
-  src: url("./fonts/Almarai-Bold.ttf") format("truetype");
+  font-family: 'Almarai';
+  src: url('./fonts/Almarai-Bold.ttf') format('truetype');
 }
 
 .ar-font {
-  font-family: "Almarai", serif;
+  font-family: 'Almarai', serif;
 }
-
 
 @layer base {
   html {
-    font-family: "Readex Pro", sans-serif;
+    font-family: 'Readex Pro', sans-serif;
   }
 }
 
@@ -54,7 +52,7 @@
 }
 
 .org-font {
-  font-family: "itcMachine", sans-serif;
+  font-family: 'itcMachine', sans-serif;
 }
 
 body::-webkit-scrollbar {

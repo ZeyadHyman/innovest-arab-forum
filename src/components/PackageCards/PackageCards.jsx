@@ -1,22 +1,22 @@
-import { useTranslation } from "react-i18next";
-import { Megaphone, CheckCircle } from "lucide-react";
-import { FaTicketAlt } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { useTranslation } from 'react-i18next';
+import { Megaphone, CheckCircle } from 'lucide-react';
+import { FaTicketAlt } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 export default function PackageCards() {
   const { t } = useTranslation();
-  const lang = localStorage.getItem("language");
-  const sponsorsData = t("conference_sponsors", { returnObjects: true });
+  const lang = localStorage.getItem('language');
+  const sponsorsData = t('conference_sponsors', { returnObjects: true });
 
   const sponsors = Object.entries(sponsorsData)
-    .filter(([key]) => key !== "title" && key !== "description")
+    .filter(([key]) => key !== 'title' && key !== 'description')
     .map(([key, value]) => ({ key, ...value }));
 
   const sponsorColors = {
-    diamond_sponsor: "bg-cyan-100 text-cyan-900 border-cyan-300",
-    platinum_sponsor: "bg-gray-100 text-gray-900 border-gray-300",
-    gold_sponsor: "bg-amber-200 text-amber-900 border-amber-400",
-    silver_partner: "bg-gray-200 text-gray-900 border-gray-400",
+    diamond_sponsor: 'bg-cyan-100 text-cyan-900 border-cyan-300',
+    platinum_sponsor: 'bg-gray-100 text-gray-900 border-gray-300',
+    gold_sponsor: 'bg-amber-200 text-amber-900 border-amber-400',
+    silver_partner: 'bg-gray-200 text-gray-900 border-gray-400',
   };
 
   return (
@@ -41,7 +41,7 @@ export default function PackageCards() {
             <div className="bg-white rounded-xl p-6 flex flex-col h-full">
               <h2
                 className={`text-sm font-semibold text-center px-4 py-2 rounded-md border 
-            ${sponsorColors[sponsor.key] || "bg-gray-100 text-gray-800 border-gray-300"}`}
+            ${sponsorColors[sponsor.key] || 'bg-gray-100 text-gray-800 border-gray-300'}`}
               >
                 {sponsor.title}
               </h2>
@@ -50,7 +50,11 @@ export default function PackageCards() {
               <div className="mt-5">
                 <h3 className="text-base font-medium flex items-center space-x-2 text-gray-800">
                   <Megaphone className="text-blue-500 w-5 h-5" />
-                  <span>{lang === "en" ? "Marketing & Promotion" : "التسويق والترويج"}</span>
+                  <span>
+                    {lang === 'en'
+                      ? 'Marketing & Promotion'
+                      : 'التسويق والترويج'}
+                  </span>
                 </h3>
                 <ul className="text-sm space-y-2 text-gray-600 mt-2">
                   {sponsor.marketing_promotion?.map((item, idx) => (
@@ -66,7 +70,11 @@ export default function PackageCards() {
               <div className="mt-5">
                 <h3 className="text-base font-medium flex items-center space-x-2 text-gray-800">
                   <CheckCircle className="text-purple-500 w-5 h-5" />
-                  <span>{lang === "en" ? "Conference Benefits" : "مزايا يوم المؤتمر"}</span>
+                  <span>
+                    {lang === 'en'
+                      ? 'Conference Benefits'
+                      : 'مزايا يوم المؤتمر'}
+                  </span>
                 </h3>
                 <ul className="text-sm space-y-2 text-gray-600 mt-2">
                   {sponsor.conference_benefits?.map((item, idx) => (
@@ -82,7 +90,7 @@ export default function PackageCards() {
               <div className="mt-auto mx-auto p-5">
                 <Link to={'/RegistrationPage/sponsors'}>
                   <button className="select-none cursor-pointer bg-gradient-to-r from-gold to-gold text-white px-6 py-3 rounded-xl text-md font-semibold flex items-center gap-2 transition-all duration-300 hover:scale-105 active:scale-95 w-fit">
-                    {t("navbar.register")}
+                    {t('navbar.register')}
                     <FaTicketAlt className="text-lg" />
                   </button>
                 </Link>
@@ -91,7 +99,6 @@ export default function PackageCards() {
           </div>
         ))}
       </div>
-
     </div>
   );
 }

@@ -1,13 +1,13 @@
-import { useState } from "react";
-import "./speakers.css";
-import { IoShareSocial } from "react-icons/io5";
-import { useTranslation } from "react-i18next";
+import { useState } from 'react';
+import './speakers.css';
+import { IoShareSocial } from 'react-icons/io5';
+import { useTranslation } from 'react-i18next';
 
 function Speakers() {
   const [selectedSpeaker, setSelectedSpeaker] = useState(null);
   const { i18n, t } = useTranslation();
-  const isArabic = i18n.language === "ar";
-  const speakersData = t("speakers.speakersList", { returnObjects: true });
+  const isArabic = i18n.language === 'ar';
+  const speakersData = t('speakers.speakersList', { returnObjects: true });
 
   const openModal = (speaker) => setSelectedSpeaker(speaker);
   const closeModal = () => setSelectedSpeaker(null);
@@ -17,10 +17,10 @@ function Speakers() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-12">
         <div className="text-center mb-12">
           <h2 className="text-3xl lg:text-5xl font-extrabold text-secondary tracking-wide leading-tight">
-            {t("speakers.title")}
+            {t('speakers.title')}
           </h2>
           <p className="text-gray-600 text-xl lg:text-2xl pt-4 pb-6 max-w-3xl mx-auto">
-            {t("speakers.subtitle")}
+            {t('speakers.subtitle')}
           </p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -71,8 +71,9 @@ function Speakers() {
             data-aos-duration="300"
           >
             <button
-              className={`absolute top-4 p-2 text-gray-600 hover:text-gray-800 focus:outline-none cursor-pointer transition-colors duration-200 ${isArabic ? "left-4" : "right-4"
-                }`}
+              className={`absolute top-4 p-2 text-gray-600 hover:text-gray-800 focus:outline-none cursor-pointer transition-colors duration-200 ${
+                isArabic ? 'left-4' : 'right-4'
+              }`}
               onClick={closeModal}
             >
               <svg
@@ -95,8 +96,9 @@ function Speakers() {
               href={selectedSpeaker.social_media_link}
               target="_blank"
               rel="noopener noreferrer"
-              className={`absolute top-16 p-2 text-gray-600 hover:text-gray-800 focus:outline-none cursor-pointer transition-colors duration-200 ${isArabic ? "left-4" : "right-4"
-                }`}
+              className={`absolute top-16 p-2 text-gray-600 hover:text-gray-800 focus:outline-none cursor-pointer transition-colors duration-200 ${
+                isArabic ? 'left-4' : 'right-4'
+              }`}
             >
               <IoShareSocial className="h-6 w-6" />
             </a>

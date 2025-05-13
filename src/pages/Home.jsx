@@ -1,8 +1,10 @@
-import { lazy, Suspense } from "react";
-import Landing from "../components/Landing/Landing";
-import About from "../components/About/About";
-import Jury from "../components/Jury/Jury";
-const PackageCards = lazy(() => import("../components/PackageCards/PackageCards"));
+import { lazy, Suspense } from 'react';
+import Landing from '../components/Landing/Landing';
+import About from '../components/About/About';
+import Jury from '../components/Jury/Jury';
+const PackageCards = lazy(
+  () => import('../components/PackageCards/PackageCards')
+);
 
 function Home() {
   return (
@@ -10,11 +12,13 @@ function Home() {
       <Landing />
       <About />
       <Jury />
-      <Suspense fallback={
-        <div className="min-h-screen flex items-center justify-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-gold"></div>
-        </div>
-      }>
+      <Suspense
+        fallback={
+          <div className="min-h-screen flex items-center justify-center">
+            <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-gold"></div>
+          </div>
+        }
+      >
         <PackageCards />
       </Suspense>
     </main>

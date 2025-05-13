@@ -1,10 +1,10 @@
-import i18next from "i18next";
+import i18next from 'i18next';
 
 export function getTimeLeft() {
   const now = new Date().getTime();
-  const target = new Date("2025-06-21T01:00:00").getTime();
+  const target = new Date('2025-06-21T01:00:00').getTime();
   const timeLeft = target - now;
-  const isArabic = i18next.language === "ar";
+  const isArabic = i18next.language === 'ar';
 
   if (timeLeft <= 0) return null;
 
@@ -19,41 +19,41 @@ export function getTimeLeft() {
     const units = {
       days: isArabic
         ? value > 10
-          ? "يوم"
-          : "أيام"
+          ? 'يوم'
+          : 'أيام'
         : value > 10
-        ? "Day"
-        : "Days",
+          ? 'Day'
+          : 'Days',
       hours: isArabic
         ? value > 10
-          ? "ساعة"
-          : "ساعات"
+          ? 'ساعة'
+          : 'ساعات'
         : value > 10
-        ? "Hour"
-        : "Hours",
+          ? 'Hour'
+          : 'Hours',
       minutes: isArabic
         ? value > 10
-          ? "دقيقة"
-          : "دقائق"
+          ? 'دقيقة'
+          : 'دقائق'
         : value > 10
-        ? "Minute"
-        : "Minutes",
+          ? 'Minute'
+          : 'Minutes',
       seconds: isArabic
         ? value > 10
-          ? "ثانية"
-          : "ثواني"
+          ? 'ثانية'
+          : 'ثواني'
         : value > 10
-        ? "Second"
-        : "Seconds",
+          ? 'Second'
+          : 'Seconds',
     };
 
     return units[key] || key;
   };
 
   return {
-    days: { value: days, unit: formatKey("days", days) },
-    hours: { value: hours, unit: formatKey("hours", hours) },
-    minutes: { value: minutes, unit: formatKey("minutes", minutes) },
-    seconds: { value: seconds, unit: formatKey("seconds", seconds) },
+    days: { value: days, unit: formatKey('days', days) },
+    hours: { value: hours, unit: formatKey('hours', hours) },
+    minutes: { value: minutes, unit: formatKey('minutes', minutes) },
+    seconds: { value: seconds, unit: formatKey('seconds', seconds) },
   };
 }

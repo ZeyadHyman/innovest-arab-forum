@@ -1,15 +1,15 @@
-import { useTranslation } from "react-i18next";
+import { useTranslation } from 'react-i18next';
 import {
   FaFacebookF,
   FaInstagram,
   FaLinkedinIn,
   FaWhatsapp,
-} from "react-icons/fa";
-import { Link } from "react-router-dom";
+} from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 function Footer() {
   const { t } = useTranslation();
-  const menuLinks = t("navbar.menu", { returnObjects: true });
+  const menuLinks = t('navbar.menu', { returnObjects: true });
 
   return (
     <footer className="bg-gray-300/40 text-white py-10 px-5 md:px-20 mt-2 mb-20 lg:mb-0 ">
@@ -18,25 +18,25 @@ function Footer() {
         <div className="flex flex-col items-center space-y-2 mb-6 md:mb-0">
           <img
             src="/logos/logo_trans.webp"
-            alt={t("navbar.forum_name")}
+            alt={t('navbar.forum_name')}
             className="w-48 md:w-52"
           />
           <p className="text-lg font-bold text-gold text-center">
-            {t("navbar.forum_name")}
+            {t('navbar.forum_name')}
           </p>
         </div>
 
         {/* Navigation Links Section */}
         <div className="flex flex-col items-center md:flex-row space-y-2 md:space-y-0 md:space-x-4">
-        {Object.entries(menuLinks).map(([key, value]) => (
-                  <Link
-                    to={`/${key === "home" ? "" : key}`}
-                    key={key}
-                    className="text-gray-600  hover:text-zinc-700  active:text-zinc-50 font-normal hover:font-bold cursor-pointer transition-all duration-100"
-                  >
-                    {value}
-                  </Link>
-                ))}
+          {Object.entries(menuLinks).map(([key, value]) => (
+            <Link
+              to={`/${key === 'home' ? '' : key}`}
+              key={key}
+              className="text-gray-600  hover:text-zinc-700  active:text-zinc-50 font-normal hover:font-bold cursor-pointer transition-all duration-100"
+            >
+              {value}
+            </Link>
+          ))}
         </div>
 
         {/* Social Media Links */}
@@ -82,7 +82,7 @@ function Footer() {
 
       {/* Copyright */}
       <div className="text-center text-gray-400 text-xs lg:text-sm mt-10">
-        <p>{t("footer.copyRight")}</p>
+        <p>{t('footer.copyRight')}</p>
       </div>
     </footer>
   );

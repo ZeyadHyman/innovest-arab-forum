@@ -267,9 +267,9 @@
     "stat3Num": "1650"
   },
   "jury": {
-    "title":"Meet the Jury",
-    "subtitle":"Their collective expertise ensures a fair and insightful assessment of all entries in the forum",
-    "headOfJury":"Head of Jury",
+    "title": "Meet the Jury",
+    "subtitle": "Their collective expertise ensures a fair and insightful assessment of all entries in the forum",
+    "headOfJury": "Head of Jury",
     "juryMembers": [
       {
         "name": "Perihan Tawfiq",
@@ -309,6 +309,5 @@
         "image": "/images/juryImages/juryHead.jpeg"
       }
     ]
-    
   }
 }

@@ -104,7 +104,7 @@
 }
 
 .hover-button:after {
-  content: "";
+  content: '';
   pointer-events: none;
   inset-block-end: -2px;
   inset-inline-start: 50%;
