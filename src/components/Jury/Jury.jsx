@@ -20,8 +20,9 @@ function Jury() {
         </p>
       </div>
 
-      <div className="hidden lg:flex flex-wrap-reverse justify-center gap-x-20 gap-y-2">
-        {juryMembers.map((member, index) => {
+      {/* Desktop Grid Layout */}
+      <div className="hidden lg:flex flex-wrap justify-center gap-6 sm:gap-8 lg:gap-10 px-4 sm:px-6 lg:px-12">
+        {juryMembers.reverse().map((member, index) => {
           const isHeadOfJury =
             member.name === 'Eng. Magdy Wahba' ||
             member.name === 'م. مجدي وهبه';
@@ -39,7 +40,7 @@ function Jury() {
                   {t('jury.headOfJury')}{' '}
                 </div>
               )}
-              <div className="overflow-hidden rounded-md h-80 flex justify-center items-center">
+              <div className="overflow-hidden rounded-t-lg h-64 sm:h-72 flex justify-center items-center">
                 <img
                   className="w-full h-full select-none object-cover"
                   src={member.image}
@@ -55,19 +56,38 @@ function Jury() {
         })}
       </div>
 
-      <div className="block lg:hidden">
+      {/* Mobile Swiper Layout */}
+      <div className="lg:hidden px-4 sm:px-6">
         <Swiper
           dir="ltr"
           slidesPerView={1.2}
-          spaceBetween={10}
+          spaceBetween={12}
           centeredSlides={true}
           loop={true}
           autoplay={{
             delay: 2000,
             disableOnInteraction: false,
           }}
+          breakpoints={{
+            0: {
+              slidesPerView: 1.2,
+              spaceBetween: 12,
+            },
+            480: {
+              slidesPerView: 1.5,
+              spaceBetween: 14,
+            },
+            640: {
+              slidesPerView: 1.8,
+              spaceBetween: 16,
+            },
+            768: {
+              slidesPerView: 2.2,
+              spaceBetween: 20,
+            },
+          }}
           modules={[Autoplay]}
-          className="mt-6"
+          className="mt-6 pb-4"
         >
           {juryMembers.map((member, index) => {
             const isHeadOfJury =
@@ -87,7 +107,7 @@ function Jury() {
                       {t('jury.headOfJury')}
                     </div>
                   )}
-                  <div className="overflow-hidden rounded-md h-80 flex justify-center items-center">
+                  <div className="overflow-hidden rounded-t-lg h-64 flex justify-center items-center">
                     <img
                       className="w-full h-full select-none object-cover"
                       src={member.image}

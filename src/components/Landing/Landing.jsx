@@ -33,8 +33,8 @@ const Landing = () => {
 
       {/* Content */}
       <div className="relative z-10">
-        <div className="container mx-auto px-4 md:px-6 lg:px-8 py-16 md:py-20">
-          <div className="max-w-5xl mx-auto text-center">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
+          <div className="max-w-4xl sm:max-w-5xl lg:max-w-6xl mx-auto text-center">
             {/* Welcome Text */}
             <p
               data-aos="fade-right"
@@ -93,12 +93,12 @@ const Landing = () => {
             </div>
 
             {/* Event Details */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-5">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 lg:gap-6 mb-6 sm:mb-8">
               {/* Opening Day */}
               <div
                 data-aos="fade-right"
                 data-aos-delay="200"
-                className="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20 flex flex-col justify-center items-center transform transition-all duration-300 hover:border-gold/30  hover:shadow-lg hover:shadow-gold/10 group"
+                className="bg-white/10 backdrop-blur-sm rounded-xl p-4 sm:p-5 lg:p-6 border border-white/20 flex flex-col justify-center items-center transform transition-all duration-300 hover:border-gold/30 hover:shadow-lg hover:shadow-gold/10 group"
               >
                 <div className="flex items-center gap-2 text-gold mb-4 group-hover:text-gold/90 transition-colors duration-300">
                   <IoMdTime className="text-xl group-hover:rotate-12 transition-transform duration-300" />
@@ -123,7 +123,7 @@ const Landing = () => {
               <div
                 data-aos="fade-left"
                 data-aos-delay="200"
-                className="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20 flex flex-col justify-center items-center transform transition-all duration-300 hover:border-gold/30  hover:shadow-lg hover:shadow-gold/10 group"
+                className="bg-white/10 backdrop-blur-sm rounded-xl p-4 sm:p-5 lg:p-6 border border-white/20 flex flex-col justify-center items-center transform transition-all duration-300 hover:border-gold/30 hover:shadow-lg hover:shadow-gold/10 group"
               >
                 <div className="flex items-center gap-2 text-gold mb-4 group-hover:text-gold/90 transition-colors duration-300">
                   <IoMdTime className="text-xl group-hover:rotate-12 transition-transform duration-300" />
@@ -150,7 +150,7 @@ const Landing = () => {
               <button
                 onClick={() => setIsModalOpen(true)}
                 data-aos-delay="400"
-                className="bg-gradient-to-r from-gold to-gold/90 text-white px-8 py-4 rounded-xl text-lg font-semibold flex items-center justify-center gap-3 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-gold/20 active:scale-95"
+                className="bg-gradient-to-r from-gold to-gold/90 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-xl text-base sm:text-lg font-semibold flex items-center justify-center gap-2 sm:gap-3 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-gold/20 active:scale-95"
               >
                 {t('navbar.register')}
                 <FaTicketAlt className="text-xl transform group-hover:rotate-12 transition-transform duration-300" />
