@@ -146,7 +146,7 @@ const Landing = () => {
             </div>
 
             {/* Register Button */}
-            <div className="flex justify-center">
+            {/* <div className="flex justify-center">
               <button
                 onClick={() => setIsModalOpen(true)}
                 data-aos-delay="400"
@@ -155,7 +155,7 @@ const Landing = () => {
                 {t('navbar.register')}
                 <FaTicketAlt className="text-xl transform group-hover:rotate-12 transition-transform duration-300" />
               </button>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

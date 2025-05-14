@@ -155,7 +155,8 @@ const RegistrationModal = ({ isOpen, onClose }) => {
 
                 {/* Register Button */}
                 <div className="mt-auto">
-
+                  {/* Register Button */}
+                  {/* 
                   <Link
                     to={category.route ? `/RegistrationPage/${category.route}` : '/RegistrationPage'}
                     onClick={onClose}
@@ -170,7 +171,7 @@ const RegistrationModal = ({ isOpen, onClose }) => {
                       {t('navbar.register')}
                       <FaTicketAlt className="text-xs sm:text-sm" />
                     </button>
-                  </Link>
+                  </Link> */}
                 </div>
               </div>
             ))}
