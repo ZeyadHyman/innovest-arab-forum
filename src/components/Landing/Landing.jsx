@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { motion } from 'framer-motion';
 import { getTimeLeft } from '../../utils/countdownTimer';
 import { useTranslation } from 'react-i18next';
 import { FaTicketAlt } from 'react-icons/fa';
@@ -22,12 +23,17 @@ const Landing = () => {
   }, []);
 
   return (
-  <div className="relative pt-24 lg:pt-30 h-screen">
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.8 }}
+      className="relative pt-24 lg:pt-30 h-screen"
+    >
       {/* Background with overlay */}
       <div
         className="absolute inset-0 bg-center bg-cover bg-no-repeat"
         style={{
-          backgroundImage: `linear-gradient(rgba(22, 37, 86, 0.95), rgba(31, 41, 56, 0.95)), url('/images/landing-cover.webp')`,
+          backgroundImage: 'linear-gradient(rgba(22, 37, 86, 0.95), rgba(31, 41, 56, 0.95)), url(\'/images/landing-cover.webp\')',
         }}
       />
 
@@ -36,49 +42,49 @@ const Landing = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
           <div className="max-w-4xl sm:max-w-5xl lg:max-w-6xl mx-auto text-center">
             {/* Welcome Text */}
-            <p
-              data-aos="fade-right"
-              className={`text-3xl md:text-4xl font-bold text-white/90 mb-3 ${
-                isArabic ? 'ar-font' : ''
-              }`}
+            <motion.p
+              initial={{ opacity: 0, x: -50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.2, duration: 0.5 }}
+              className={`text-3xl md:text-4xl font-bold text-white/90 mb-3 ${isArabic ? 'ar-font' : ''
+                }`}
             >
               {t('hero.welcome')}
-            </p>
+            </motion.p>
 
             {/* Title */}
-            <h1
-              data-aos="fade-left"
-              className={`text-4xl md:text-5xl lg:text-6xl font-extrabold text-gold mb-4 ${
-                isArabic ? 'ar-font' : 'org-font tracking-widest'
-              }`}
+            <motion.h1
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.4, duration: 0.5 }}
+              className={`text-4xl md:text-5xl lg:text-6xl font-extrabold text-gold mb-4 ${isArabic ? 'ar-font' : 'org-font tracking-widest'
+                }`}
             >
               {t('hero.title')}
-            </h1>
+            </motion.h1>
 
             {/* Edition */}
-            <div className="flex items-center justify-center gap-2 text-gold mb-8">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.6, duration: 0.5 }}
+              className="flex items-center justify-center gap-2 text-gold mb-8"
+            >
               <TbSchoolBell className="text-xl" />
               <span className="text-lg font-medium tracking-wider">
                 {t('hero.edition')}
               </span>
-            </div>
+            </motion.div>
 
             {/* Countdown Timer */}
             <div className="flex justify-center gap-3 md:gap-4 mb-12">
               {Object.entries(timeLeft).map(
-                ([unit, { value, unit: formattedUnit }]) => (
-                  <div
+                ([unit, { value, unit: formattedUnit }], index) => (
+                  <motion.div
                     key={unit}
-                    data-aos="fade-up"
-                    data-aos-delay={
-                      unit === 'days'
-                        ? 0
-                        : unit === 'hours'
-                          ? 100
-                          : unit === 'minutes'
-                            ? 200
-                            : 300
-                    }
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.8 + index * 0.1, duration: 0.5 }}
                     className="flex flex-col items-center justify-center bg-white/10 backdrop-blur-sm rounded-xl p-4 min-w-[80px] md:min-w-[100px] border border-white/20"
                   >
                     <span className="text-2xl md:text-3xl font-bold text-white">
@@ -87,7 +93,7 @@ const Landing = () => {
                     <span className="text-sm md:text-base text-white/80">
                       {formattedUnit}
                     </span>
-                  </div>
+                  </motion.div>
                 )
               )}
             </div>
@@ -95,9 +101,10 @@ const Landing = () => {
             {/* Event Details */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 lg:gap-6 mb-6 sm:mb-8">
               {/* Opening Day */}
-              <div
-                data-aos="fade-right"
-                data-aos-delay="200"
+              <motion.div
+                initial={{ opacity: 0, x: -30 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 1.2, duration: 0.5 }}
                 className="bg-white/10 backdrop-blur-sm rounded-xl p-4 sm:p-5 lg:p-6 border border-white/20 flex flex-col justify-center items-center transform transition-all duration-300 hover:border-gold/30 hover:shadow-lg hover:shadow-gold/10 group"
               >
                 <div className="flex items-center gap-2 text-gold mb-4 group-hover:text-gold/90 transition-colors duration-300">
@@ -117,12 +124,13 @@ const Landing = () => {
                     {t('hero.openingVenue')}
                   </span>
                 </a>
-              </div>
+              </motion.div>
 
               {/* Closing Day */}
-              <div
-                data-aos="fade-left"
-                data-aos-delay="200"
+              <motion.div
+                initial={{ opacity: 0, x: 30 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 1.4, duration: 0.5 }}
                 className="bg-white/10 backdrop-blur-sm rounded-xl p-4 sm:p-5 lg:p-6 border border-white/20 flex flex-col justify-center items-center transform transition-all duration-300 hover:border-gold/30 hover:shadow-lg hover:shadow-gold/10 group"
               >
                 <div className="flex items-center gap-2 text-gold mb-4 group-hover:text-gold/90 transition-colors duration-300">
@@ -142,20 +150,19 @@ const Landing = () => {
                     {t('hero.closingVenue')}
                   </span>
                 </a>
-              </div>
+              </motion.div>
             </div>
 
             {/* Register Button */}
-            {/* <div className="flex justify-center">
+            <div className="flex justify-center">
               <button
                 onClick={() => setIsModalOpen(true)}
-                data-aos-delay="400"
                 className="bg-gradient-to-r from-gold to-gold/90 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-xl text-base sm:text-lg font-semibold flex items-center justify-center gap-2 sm:gap-3 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-gold/20 active:scale-95"
               >
                 {t('navbar.register')}
                 <FaTicketAlt className="text-xl transform group-hover:rotate-12 transition-transform duration-300" />
               </button>
-            </div> */}
+            </div>
           </div>
         </div>
       </div>
@@ -165,7 +172,7 @@ const Landing = () => {
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
       />
-    </div>
+    </motion.div>
   );
 };
 

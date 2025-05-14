@@ -2,6 +2,7 @@ import { useTranslation } from 'react-i18next';
 import { Megaphone, CheckCircle } from 'lucide-react';
 import { FaTicketAlt } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 
 export default function PackageCards() {
   const { t } = useTranslation();
@@ -20,22 +21,44 @@ export default function PackageCards() {
   };
 
   return (
-    <div className="relative px-6 lg:px-20 mt-12 lg:mt-24 pb-16 lg:pb-28">
+    <motion.div
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.1 }}
+      transition={{ staggerChildren: 0.2 }}
+      className="relative px-6 lg:px-20 mt-12 lg:mt-24 pb-16 lg:pb-28"
+    >
       {/* Title */}
-      <h1 className="text-xl lg:text-4xl font-extrabold text-center mb-2 lg:mb-4 text-gray-900">
+      <motion.h1
+        variants={{
+          hidden: { opacity: 0, y: -30 },
+          visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+        }}
+        className="text-xl lg:text-4xl font-extrabold text-center mb-2 lg:mb-4 text-gray-900"
+      >
         {sponsorsData.title}
-      </h1>
+      </motion.h1>
 
       {/* Description */}
-      <h1 className="text-xs lg:text-lg font-extrabold text-center mb-6 lg:mb-12 text-gray-600">
+      <motion.h1
+        variants={{
+          hidden: { opacity: 0, y: -20 },
+          visible: { opacity: 1, y: 0, transition: { duration: 0.5, delay: 0.1 } },
+        }}
+        className="text-xs lg:text-lg font-extrabold text-center mb-6 lg:mb-12 text-gray-600"
+      >
         {sponsorsData.description}
-      </h1>
+      </motion.h1>
 
       {/* Sponsor Cards */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
         {sponsors.map((sponsor) => (
-          <div
+          <motion.div
             key={sponsor.key}
+            variants={{
+              hidden: { opacity: 0, y: 50 },
+              visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+            }}
             className="group relative rounded-xl bg-white duration-300 overflow-hidden shadow-md hover:shadow-lg transform hover:-translate-y-1 transition-all h-full flex flex-col"
           >
             <div className="bg-white rounded-xl p-6 flex flex-col h-full">
@@ -87,18 +110,18 @@ export default function PackageCards() {
               </div>
 
               {/* Register Button */}
-              {/* <div className="mt-auto mx-auto p-5">
+              <div className="mt-auto mx-auto p-5">
                 <Link to={'/RegistrationPage/sponsors'}>
                   <button className="select-none cursor-pointer bg-gradient-to-r from-gold to-gold text-white px-6 py-3 rounded-xl text-md font-semibold flex items-center gap-2 transition-all duration-300 hover:scale-105 active:scale-95 w-fit">
                     {t('navbar.register')}
                     <FaTicketAlt className="text-lg" />
                   </button>
                 </Link>
-              </div> */}
+              </div>
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
-    </div>
+    </motion.div>
   );
 }

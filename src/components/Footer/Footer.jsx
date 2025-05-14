@@ -1,4 +1,5 @@
 import { useTranslation } from 'react-i18next';
+import { motion } from 'framer-motion';
 import {
   FaFacebookF,
   FaInstagram,
@@ -12,7 +13,12 @@ function Footer() {
   const menuLinks = t('navbar.menu', { returnObjects: true });
 
   return (
-    <footer className="bg-gray-300/40 text-white py-10 px-5 md:px-20 mt-2 mb-20 lg:mb-0 ">
+    <motion.footer
+      initial={{ y: 100, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ delay: 0.4, type: 'spring', stiffness: 50 }}
+      className="bg-gray-300/40 text-white py-10 px-5 md:px-20 mt-2 mb-20 lg:mb-0 "
+    >
       <div className="container mx-auto flex flex-col md:flex-row justify-between items-center">
         {/* Logo Section */}
         <div className="flex flex-col items-center space-y-2 mb-6 md:mb-0">
@@ -84,7 +90,7 @@ function Footer() {
       <div className="text-center text-gray-400 text-xs lg:text-sm mt-10">
         <p>{t('footer.copyRight')}</p>
       </div>
-    </footer>
+    </motion.footer>
   );
 }
 
