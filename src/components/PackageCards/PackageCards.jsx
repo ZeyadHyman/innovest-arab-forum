@@ -94,8 +94,8 @@ export default function PackageCards() {
                     <FaTicketAlt className="text-lg" />
                   </button>
                 </Link>
-              </div>
-            </div> */}
+              </div> */}
+            </div>
           </div>
         ))}
       </div>
