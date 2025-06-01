@@ -40,7 +40,7 @@ const Landing = () => {
       {/* Content */}
       <div className="relative z-10">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
-          <div className="max-w-4xl sm:max-w-5xl lg:max-w-6xl mx-auto text-center">
+          <div className=" text-center">
             {/* Welcome Text */}
             <motion.p
               initial={{ opacity: 0, x: -50 }}
@@ -120,7 +120,7 @@ const Landing = () => {
                   className="flex items-center gap-2 text-white/90 hover:text-blue-400 transition-colors duration-300 group"
                 >
                   <FaMapMarkerAlt className="text-gold group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300" />
-                  <span className="text-base text-center">
+                  <span className="text-sm text-center">
                     {t('hero.openingVenue')}
                   </span>
                 </a>
