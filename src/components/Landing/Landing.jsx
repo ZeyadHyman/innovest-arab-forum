@@ -40,14 +40,14 @@ const Landing = () => {
       {/* Content */}
       <div className="relative z-10">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
-          <div className=" text-center">
+          <div className="mx-auto text-center">
             {/* Welcome Text */}
             <motion.p
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.2, duration: 0.5 }}
               className={`text-3xl md:text-4xl font-bold text-white/90 mb-3 ${isArabic ? 'ar-font' : ''
-                }`}
+              }`}
             >
               {t('hero.welcome')}
             </motion.p>
@@ -58,7 +58,7 @@ const Landing = () => {
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.4, duration: 0.5 }}
               className={`text-4xl md:text-5xl lg:text-6xl font-extrabold text-gold mb-4 ${isArabic ? 'ar-font' : 'org-font tracking-widest'
-                }`}
+              }`}
             >
               {t('hero.title')}
             </motion.h1>
@@ -77,7 +77,7 @@ const Landing = () => {
             </motion.div>
 
             {/* Countdown Timer */}
-            <div className="flex justify-center gap-3 md:gap-4 mb-12">
+            <div className="flex justify-center gap-3 md:gap-4 mb-8">
               {Object.entries(timeLeft).map(
                 ([unit, { value, unit: formattedUnit }], index) => (
                   <motion.div
@@ -109,7 +109,7 @@ const Landing = () => {
               >
                 <div className="flex items-center gap-2 text-gold mb-4 group-hover:text-gold/90 transition-colors duration-300">
                   <IoMdTime className="text-xl group-hover:rotate-12 transition-transform duration-300" />
-                  <span className="text-lg font-medium">
+                  <span className="text-xs lg:text-lg font-medium">
                     {t('hero.openingDate')}
                   </span>
                 </div>
@@ -119,8 +119,8 @@ const Landing = () => {
                   rel="noopener noreferrer"
                   className="flex items-center gap-2 text-white/90 hover:text-blue-400 transition-colors duration-300 group"
                 >
-                  <FaMapMarkerAlt className="text-gold group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300" />
-                  <span className="text-sm text-center">
+                  <FaMapMarkerAlt  className="text-gold group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300" />
+                  <span className="text-sm lg:text-base text-center">
                     {t('hero.openingVenue')}
                   </span>
                 </a>
@@ -135,7 +135,7 @@ const Landing = () => {
               >
                 <div className="flex items-center gap-2 text-gold mb-4 group-hover:text-gold/90 transition-colors duration-300">
                   <IoMdTime className="text-xl group-hover:rotate-12 transition-transform duration-300" />
-                  <span className="text-lg font-medium">
+                  <span className="text-xs lg:text-lg font-medium">
                     {t('hero.closingDate')}
                   </span>
                 </div>
@@ -146,7 +146,7 @@ const Landing = () => {
                   className="flex items-center gap-2 text-white/90 hover:text-blue-400 transition-colors duration-300 group"
                 >
                   <FaMapMarkerAlt className="text-gold group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300" />
-                  <span className="text-base text-center">
+                  <span className="text-sm lg:text-base text-center">
                     {t('hero.closingVenue')}
                   </span>
                 </a>
