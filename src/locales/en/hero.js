@@ -6,7 +6,8 @@ const hero = {
   date: 'June 21 - 22, 2025',
   openingDate: 'Opening Day: June 21, 2025',
   closingDate: 'Closing Day: June 22, 2025',
-  openingVenue: 'Creativa Innovation Hub - Giza',
+  openingVenue:
+    'Creativa Innovation Hub at The Giza Factory — an affiliate of the Ministry of Communications and Information Technology',
   closingVenue: 'Arab League Headquarters - Cairo',
   edition: '3rd Edition',
 };

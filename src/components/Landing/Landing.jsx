@@ -114,7 +114,7 @@ const Landing = () => {
                   </span>
                 </div>
                 <a
-                  href="https://maps.google.com/?q=Creativa+Innovation+Hub+-+Giza,+26H2%2B6Q5,+Ad+Doqi,+Dokki,+Giza+Governorate+3750010"
+                  href="https://maps.app.goo.gl/FRzpbjABGg37PZzj8"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-2 text-white/90 hover:text-blue-400 transition-colors duration-300 group"
